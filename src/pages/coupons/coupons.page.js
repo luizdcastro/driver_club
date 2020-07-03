@@ -17,8 +17,6 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
     }
   }, [getme]);
 
-  const values = getMeData && getMeData.coupon.map((item) => item._id);
-
   const handleDeleteCoupon = (itemId) => {
     dispatchDeleteCoupon(itemId);
     setCoupon((coupon) => [...coupon, itemId]);
@@ -28,7 +26,7 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
   return (
     <div>
       <h2>Coupons List</h2>
-      {getMeData && !getMeData.coupon.includes(values)
+      {getMeData
         ? getMeData.coupon.map((item) => (
             <React.Fragment key={item._id}>
               {!coupon.includes(item._id) ? (

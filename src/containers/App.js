@@ -9,7 +9,8 @@ import Home from '../pages/home/home.page';
 import DriverPanel from '../pages/driver-panel/driver-panel.page';
 import Partners from '../pages/partners/partners.page';
 import PartnerDetails from '../pages/partner-details/partner-details.component';
-import Coupons from '../pages/coupons/coupos.page';
+import Coupons from '../pages/coupons/coupons.page';
+import Favorites from '../pages/favorites/favorites.page';
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -39,6 +40,7 @@ const App = ({ user, dispatchLogoutAction }) => {
               component={PartnerDetails}
             />
             <Route exact path="/coupons" component={Coupons} />
+            <Route exact path="/favorites" component={Favorites} />
             <Redirect to="/categories" />
           </Switch>
         )}
