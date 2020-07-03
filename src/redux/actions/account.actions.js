@@ -1,38 +1,22 @@
 import * as constants from '../constants';
 
-export const registerUser = (data, onSuccess, onError) => ({
+export const updateUser = (data, onSuccess, onError) => ({
   type: constants.API,
   payload: {
-    method: 'POST',
-    url: '/users/signup',
+    method: 'PATCH',
+    url: '/users/updateMe',
     data,
     success: (response) => setUserInfo(response),
     postProccessSuccess: onSuccess,
     postProccessError: onError,
   },
 });
-
-export const loginUser = (data, onSuccess, onError) => ({
-  type: constants.API,
-  payload: {
-    method: 'POST',
-    url: '/users/login',
-    data,
-    success: (response) => setUserInfo(response),
-    postProccessSuccess: onSuccess,
-    postProccessError: onError,
-  },
-});
-
-export const logoutUser = () => {
-  localStorage.removeItem('USER_INFO');
-  return { type: constants.RESET_USER_INFO };
-};
 
 const setUserInfo = (data) => {
   const parsedToken = JSON.parse(atob(data.token.split('.')[1]));
   const userInfo = {
     userId: parsedToken.id,
+    name: data.data.user.name.split(' ')[0],
     token: data.token,
     isLoggedIn: true,
   };

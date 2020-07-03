@@ -11,6 +11,7 @@ import Partners from '../pages/partners/partners.page';
 import PartnerDetails from '../pages/partner-details/partner-details.component';
 import Coupons from '../pages/coupons/coupons.page';
 import Favorites from '../pages/favorites/favorites.page';
+import Account from '../pages/account/account.page';
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -41,6 +42,7 @@ const App = ({ user, dispatchLogoutAction }) => {
             />
             <Route exact path="/coupons" component={Coupons} />
             <Route exact path="/favorites" component={Favorites} />
+            <Route exact path="/account" component={Account} />
             <Redirect to="/categories" />
           </Switch>
         )}
