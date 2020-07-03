@@ -19,6 +19,7 @@ const Header = ({ userName, isLoggedIn, onLogout }) => {
           <div>
             <p>Olá {userName}</p>
             <button onClick={onLogout}>Logout</button>
+            <Link to="/coupons">Coupons</Link>
           </div>
         )}
       </div>

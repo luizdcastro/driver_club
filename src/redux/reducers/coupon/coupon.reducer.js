@@ -6,6 +6,7 @@ export default function addCoupon(state = [], action) {
       return { ...action.payload };
     case constants.DELETE_COUPON:
       return { ...action.payload };
+
     default:
       return state;
   }
