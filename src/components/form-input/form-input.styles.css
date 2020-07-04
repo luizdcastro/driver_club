@@ -1,0 +1,23 @@
+.form-input {
+  display: block;
+  width: 300px;
+  height: 30px;
+  margin: 15px;
+  padding: 5px;
+  border: solid 1px #dadce1;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #484a4d;
+  transition: 300ms;
+}
+
+.form-input:focus {
+  outline: none;
+  opacity: 0.8;
+}
+
+.form-input:hover {
+  border: solid 1px #474a4d;
+  opacity: 0.8;
+}

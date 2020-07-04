@@ -4,9 +4,9 @@ import './custom-button.styles.css';
 
 const CustomButton = ({ name, ...otherProps }) => {
   return (
-    <div>
-      <button {...otherProps}>{name}</button>
-    </div>
+    <button {...otherProps} className="custom-button">
+      {name}
+    </button>
   );
 };
 

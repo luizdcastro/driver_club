@@ -1,0 +1,24 @@
+.custom-button {
+  display: block;
+  width: 312px;
+  height: 42px;
+  margin: 0 15px 15px 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px #2ea44f;
+  background-color: #2ea44f;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f4f4f4;
+  transition: 300ms;
+}
+
+.custom-button:focus,
+.custom-button:active {
+  outline: none;
+}
+
+.custom-button:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
