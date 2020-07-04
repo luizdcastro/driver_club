@@ -49,22 +49,24 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
   }
 
   return (
-    <Navbar>
-      {isLoggedIn ? (
-        <React.Fragment>
-          <NavItem name="Favorites" to="/favorites" />
-          <NavItem name="Coupons" to="/coupons" />
-          <NavItem name="Menu">
-            <DropdownMenu />
-          </NavItem>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <NavItem name="Login" to="/login" />
-          <NavItem name="Registrar" to="/register" />
-        </React.Fragment>
-      )}
-    </Navbar>
+    <div className="header">
+      <Navbar>
+        {isLoggedIn ? (
+          <React.Fragment>
+            <NavItem name="Favorites" to="/favorites" />
+            <NavItem name="Coupons" to="/coupons" />
+            <NavItem name="Menu">
+              <DropdownMenu />
+            </NavItem>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <NavItem name="Login" to="/login" />
+            <NavItem name="Registrar" to="/register" />
+          </React.Fragment>
+        )}
+      </Navbar>
+    </div>
   );
 };
 

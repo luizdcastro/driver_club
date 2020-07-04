@@ -31,7 +31,6 @@ const Partners = ({ partner, dispatchGetPartners }) => {
 
   return (
     <div>
-      <br />
       <SearchBar onChange={(e) => setSearch(e.target.value)} />
       {filteredPartners
         ? filteredPartners.map((item) => (

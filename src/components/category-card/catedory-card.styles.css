@@ -1,0 +1,21 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f42d;
+  height: 200px;
+  border: solid 1px #dadce1;
+  border-radius: 10px;
+  padding-left: 15px;
+  transition: 300ms;
+}
+
+.card-container:hover {
+  filter: brightness(1.1);
+}
+
+.card-title {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #484a4d;
+}

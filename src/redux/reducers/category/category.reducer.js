@@ -30,6 +30,18 @@ const INITIAL_STATE = {
       id: 5,
       linkUrl: 'category/manutencao',
     },
+    {
+      title: 'Lava-car',
+      imageUrl: '',
+      id: 6,
+      linkUrl: 'category/lava-car',
+    },
+    {
+      title: 'Lazer',
+      imageUrl: '',
+      id: 7,
+      linkUrl: 'category/lava-car',
+    },
   ],
 };
 
