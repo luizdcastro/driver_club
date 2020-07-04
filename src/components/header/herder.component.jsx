@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -8,28 +8,63 @@ import './header.styles.css';
 const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
   useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction, isLoggedIn]);
 
-  return (
-    <div>
-      <Link to="/">
-        <h2>Logo</h2>
-      </Link>
-      <div>
-        {!isLoggedIn ? (
-          <div>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </div>
-        ) : (
-          <div>
-            <p>Olá {getme[0].name.split(' ')[0]} </p>
-            <button onClick={onLogout}>Logout</button>
-            <Link to="/coupons">Coupons</Link>
-            <Link to="/favorites">Favorites</Link>
-            <Link to="/account">Account</Link>
-          </div>
-        )}
+  function Navbar({ children }) {
+    return (
+      <nav className="nav-container">
+        <Link className="nav-logo" to="/home">
+          rocketcab
+        </Link>
+        <ul className="nav-menu">{children}</ul>
+      </nav>
+    );
+  }
+
+  function NavItem({ name, children, to }) {
+    const [open, setOpen] = useState(false);
+    return (
+      <li className="nav-item">
+        <Link className="nav-link" onClick={() => setOpen(!open)} to={to}>
+          {name}
+        </Link>
+        {open && children}
+      </li>
+    );
+  }
+
+  function DropdownMenu() {
+    function DropdownItem({ children, to, onClick }) {
+      return (
+        <Link className="menu-item" to={to} onClick={onClick}>
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <div className="menu-dropdown">
+        <DropdownItem to="account">Profile</DropdownItem>
+        <DropdownItem>Assinatura</DropdownItem>
+        <DropdownItem onClick={onLogout}>Logout</DropdownItem>
       </div>
-    </div>
+    );
+  }
+
+  return (
+    <Navbar>
+      {isLoggedIn ? (
+        <React.Fragment>
+          <NavItem name="Favorites" to="/favorites" />
+          <NavItem name="Coupons" to="/coupons" />
+          <NavItem name="Menu">
+            <DropdownMenu />
+          </NavItem>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <NavItem name="Login" to="/login" />
+          <NavItem name="Registrar" to="/register" />
+        </React.Fragment>
+      )}
+    </Navbar>
   );
 };
 
