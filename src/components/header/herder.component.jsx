@@ -34,16 +34,18 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
   function DropdownMenu() {
     function DropdownItem({ children, to, onClick }) {
       return (
-        <Link className="menu-item" to={to} onClick={onClick}>
+        <Link className="menu-item" to="" onClick={onClick}>
           {children}
         </Link>
       );
     }
     return (
       <div className="menu-dropdown">
-        <DropdownItem to="account">Profile</DropdownItem>
-        <DropdownItem>Assinatura</DropdownItem>
-        <DropdownItem onClick={onLogout}>Logout</DropdownItem>
+        <DropdownItem to="/account">Profile</DropdownItem>
+        <DropdownItem to="/account">Assinatura</DropdownItem>
+        <DropdownItem to="" onClick={onLogout}>
+          Logout
+        </DropdownItem>
       </div>
     );
   }
@@ -55,7 +57,7 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
           <React.Fragment>
             <NavItem name="Favorites" to="/favorites" />
             <NavItem name="Coupons" to="/coupons" />
-            <NavItem name="Menu">
+            <NavItem name="Menu" to="">
               <DropdownMenu />
             </NavItem>
           </React.Fragment>

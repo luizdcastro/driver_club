@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ArrowDropDownCircleSharpIcon from '@material-ui/icons/ArrowDropDownCircleSharp';
 
+import DiscontCard from '../../components/discont-card/discont-card.component';
 import {
   addFavorite,
   deleteFavorite,
@@ -10,7 +13,6 @@ import '../../redux/actions/coupon.actions.js';
 import { fetchPartnerDetails } from '../../redux/actions/partner.actions';
 import { getMe } from '../../redux/actions/getme.action.js';
 import './partner-details.styles.css';
-import { addCoupon } from '../../redux/actions/coupon.actions.js';
 
 const PartnerDetails = ({
   partner,
@@ -19,12 +21,10 @@ const PartnerDetails = ({
   dispatchGetMeAction,
   dispatchAddFavorite,
   dispatchDeleteFavorite,
-  dispatchAddCoupon,
 }) => {
   const [partnerDetail, setPartnerDetail] = useState('');
   const [getMeData, setGetMeData] = useState('');
   const [favorite, setFavorite] = useState('');
-  const [coupon, setCoupon] = useState([]);
   const { partnerId } = useParams();
 
   // Get all user data to check if has favorite and discont card
@@ -66,39 +66,47 @@ const PartnerDetails = ({
       }
   };
 
-  const values = getMeData && getMeData.coupon.map((item) => item._id);
-  console.log(values);
-
-  const handleAddCoupon = (itemId) => {
-    dispatchAddCoupon(itemId);
-    setCoupon((coupon) => [...coupon, itemId]);
-  };
+  const valueFavorites =
+    getMeData && getMeData.favorite.map((item) => item._id);
 
   return (
-    <div>
-      <h3>{partnerDetail.name}</h3>
-      <p>{partnerDetail.address}</p>
-      {!favorite ? (
-        <button onClick={handleFavorite}>Add Favorite</button>
-      ) : (
-        <button onClick={handleFavorite}>Delete Favorite</button>
-      )}
-      <div>
-        <h3>Descontos oferecidos:</h3>
+    <div className="partner-datails__container">
+      <div className="partner-details__hero">
+        <h3 className="details-hero__title">{partnerDetail.name}</h3>
+        <p className="details-hero__subtitle">{partnerDetail.category}</p>
+        {getMeData.favorite &&
+        !valueFavorites.includes(partnerId) & !favorite.includes(partnerId) ? (
+          <Link to="" onClick={handleFavorite} className="details_favicon">
+            <FavoriteIcon color="disabled" style={{ fontSize: 35 }} />
+          </Link>
+        ) : (
+          <Link to="" onClick={handleFavorite} className="details_favicon">
+            <FavoriteIcon color="secondary" style={{ fontSize: 35 }} />
+          </Link>
+        )}
+      </div>
+      <div className="partner-details__info">
+        <h3 className="info-title">Informações adicionais</h3>
+        <Link to="" className="info-dropicon">
+          <ArrowDropDownCircleSharpIcon
+            style={{ fontSize: 40 }}
+            color="disabled"
+          />
+        </Link>
+        <p className="info-address">Endereço: {partnerDetail.address}</p>
+        <p className="info-time">Horário de atendimento:</p>
+      </div>
+      <div className="partner-details__disconts">
+        <h3 className="disconts-title">Descontos oferecidos:</h3>
         {partnerDetail.discont
           ? partnerDetail.discont.map((item) => (
               <React.Fragment key={item._id}>
-                <div>
-                  <p>{item.name}</p>
-                  <p>Desconto: {item.percentage} %</p>
-                  {values &&
-                  !values.includes(item._id) & !coupon.includes(item._id) ? (
-                    <button onClick={() => handleAddCoupon(item._id)}>
-                      Gerar Desconto
-                    </button>
-                  ) : (
-                    <button disabled> Gerar Desconto</button>
-                  )}
+                <div className="discont-cards">
+                  <DiscontCard
+                    title={item.name}
+                    percentage={item.percentage}
+                    couponId={item._id}
+                  />
                 </div>
               </React.Fragment>
             ))
@@ -119,7 +127,6 @@ const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
   dispatchAddFavorite: (partnerId) => dispatch(addFavorite(partnerId)),
   dispatchDeleteFavorite: (partnerId) => dispatch(deleteFavorite(partnerId)),
-  dispatchAddCoupon: (discontId) => dispatch(addCoupon(discontId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartnerDetails);

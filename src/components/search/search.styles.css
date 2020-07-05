@@ -1,8 +1,9 @@
 .search-container {
   display: flex;
   width: 100%;
-  max-width: 75%;
+  max-width: 78.5%;
   margin: auto;
+  margin-top: 15px;
 }
 
 .search-input {

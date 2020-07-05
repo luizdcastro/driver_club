@@ -6,7 +6,7 @@ import { apiMiddleware } from './middlewares';
 export function saveToLocalStorage(state) {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem('state', serializedState);
+    localStorage.setItem('STATE', serializedState);
   } catch (e) {
     console.log(e);
   }
@@ -14,7 +14,7 @@ export function saveToLocalStorage(state) {
 
 export function loadFromLocalStorage() {
   try {
-    const serializedState = localStorage.getItem('state');
+    const serializedState = localStorage.getItem('STATE');
     if (serializedState === null) return undefined;
     return JSON.parse(serializedState);
   } catch (e) {

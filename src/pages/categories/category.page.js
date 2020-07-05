@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Link } from 'react-router-dom';
 
 import CategoryCard from '../../components/category-card/category-card.component';
 import { selectCategorySections } from '../../redux/reducers/category/category.selector';

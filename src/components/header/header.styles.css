@@ -68,6 +68,7 @@
   border-radius: 5px;
   padding: 1rem;
   overflow: hidden;
+  z-index: 1;
 }
 
 .menu-item {
