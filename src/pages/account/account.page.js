@@ -35,12 +35,11 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
   }, [getme]);
 
   return (
-    <div>
-      <h2>Account Settings</h2>
-      <div>
-        <h3>Information</h3>
+    <div className="account-container">
+      <h2 className="account-title">Configurações da Conta</h2>
+      <div className="account-data__pessoal ">
+        <h3>Dados Pessoais</h3>
         <form>
-          <label>Name</label>
           <FormInput
             type="text"
             name="name"
@@ -48,7 +47,6 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
             value={name}
             handleChange={(e) => setName(e.target.value)}
           />
-          <label>Email</label>
           <FormInput
             type="email"
             name="email"
@@ -58,14 +56,26 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
           />
           <CustomButton name="Save Changes" onClick={handleOnUpdate} />
           {serverError ? (
-            <div>
-              <p>{serverError}</p>
-            </div>
+            <p className="account-data__error">{serverError}</p>
           ) : null}
         </form>
       </div>
-      <div>
-        <h3>Billing</h3>
+      <div className="account-data__password">
+        <form>
+          <h3>Alterar Senha</h3>
+          <FormInput
+            type="password"
+            name="password"
+            placeholder="Senha atual"
+          />
+          <FormInput type="password" name="password" placeholder="Nova senha" />
+          <FormInput
+            type="password"
+            name="password"
+            placeholder="Confirmar senha"
+          />
+          <CustomButton name="Change Password" onClick={handleOnUpdate} />
+        </form>
       </div>
     </div>
   );
