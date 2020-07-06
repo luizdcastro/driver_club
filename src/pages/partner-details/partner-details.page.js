@@ -1,45 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import { useParams } from 'react-router-dom';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import Favorite from '../../components/favorite/favorite.component';
 import DiscontCard from '../../components/discont-card/discont-card.component';
-import {
-  addFavorite,
-  deleteFavorite,
-} from '../../redux/actions/favorite.actions';
-import '../../redux/actions/coupon.actions.js';
 import { fetchPartnerDetails } from '../../redux/actions/partner.actions';
 import { getMe } from '../../redux/actions/getme.action.js';
 import './partner-details.styles.css';
 
 const PartnerDetails = ({
   partner,
-  getme,
   dispatchPartnerDetails,
   dispatchGetMeAction,
-  dispatchAddFavorite,
-  dispatchDeleteFavorite,
 }) => {
   const [partnerDetail, setPartnerDetail] = useState('');
   const [details, setDetails] = useState([]);
-  const [getMeData, setGetMeData] = useState('');
-  const [favorite, setFavorite] = useState('');
   const { partnerId } = useParams();
 
   // Get all user data to check if has favorite and discont card
   useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction]);
-
-  useEffect(() => {
-    if (getme.length > 0) {
-      setGetMeData(getme[0]);
-      if (getMeData)
-        if (getMeData.favorite.includes(partnerId)) {
-          setFavorite(partnerId);
-        }
-    }
-  }, [getme, partnerId, getMeData]);
 
   // Get partner details
   useEffect(() => {
@@ -53,22 +33,6 @@ const PartnerDetails = ({
       setPartnerDetail(partner[0]);
     }
   }, [partner]);
-
-  // Add and delete partner as favorite
-
-  const handleFavorite = () => {
-    if (getMeData && partnerId)
-      if (!favorite) {
-        dispatchAddFavorite(partnerId);
-        setFavorite(partnerId);
-      } else {
-        dispatchDeleteFavorite(partnerId);
-        setFavorite('');
-      }
-  };
-
-  const valueFavorites =
-    getMeData && getMeData.favorite.map((item) => item._id);
 
   // Expanded partner details info
 
@@ -89,16 +53,9 @@ const PartnerDetails = ({
       <div className="partner-details__hero">
         <h3 className="details-hero__title">{partnerDetail.name}</h3>
         <p className="details-hero__subtitle">{partnerDetail.category}</p>
-        {getMeData.favorite &&
-        !valueFavorites.includes(partnerId) & !favorite.includes(partnerId) ? (
-          <Link onClick={handleFavorite} className="details_favicon">
-            <FavoriteIcon color="disabled" style={{ fontSize: 35 }} />
-          </Link>
-        ) : (
-          <Link onClick={handleFavorite} className="details_favicon">
-            <FavoriteIcon color="secondary" style={{ fontSize: 35 }} />
-          </Link>
-        )}
+        <div className="details_favicon">
+          <Favorite />
+        </div>
       </div>
       <div className="partner-details__info">
         <h3 className="info-title">Informações adicionais</h3>
@@ -155,8 +112,6 @@ const mapDispatchToProps = (dispatch) => ({
   dispatchPartnerDetails: (partnerId) =>
     dispatch(fetchPartnerDetails(partnerId)),
   dispatchGetMeAction: () => dispatch(getMe()),
-  dispatchAddFavorite: (partnerId) => dispatch(addFavorite(partnerId)),
-  dispatchDeleteFavorite: (partnerId) => dispatch(deleteFavorite(partnerId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartnerDetails);
