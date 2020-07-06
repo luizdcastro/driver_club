@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ArrowDropDownCircleSharpIcon from '@material-ui/icons/ArrowDropDownCircleSharp';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import DiscontCard from '../../components/discont-card/discont-card.component';
 import {
@@ -23,6 +23,7 @@ const PartnerDetails = ({
   dispatchDeleteFavorite,
 }) => {
   const [partnerDetail, setPartnerDetail] = useState('');
+  const [details, setDetails] = useState([]);
   const [getMeData, setGetMeData] = useState('');
   const [favorite, setFavorite] = useState('');
   const { partnerId } = useParams();
@@ -69,6 +70,20 @@ const PartnerDetails = ({
   const valueFavorites =
     getMeData && getMeData.favorite.map((item) => item._id);
 
+  // Expanded partner details info
+
+  const toggleShow = (id) => {
+    const showState = details.slice();
+    const index = showState.indexOf(id);
+    if (index >= 0) {
+      showState.splice(index, 1);
+      setDetails(showState);
+    } else {
+      showState.push(id);
+      setDetails(showState);
+    }
+  };
+
   return (
     <div className="partner-datails__container">
       <div className="partner-details__hero">
@@ -76,28 +91,43 @@ const PartnerDetails = ({
         <p className="details-hero__subtitle">{partnerDetail.category}</p>
         {getMeData.favorite &&
         !valueFavorites.includes(partnerId) & !favorite.includes(partnerId) ? (
-          <Link to="" onClick={handleFavorite} className="details_favicon">
+          <Link onClick={handleFavorite} className="details_favicon">
             <FavoriteIcon color="disabled" style={{ fontSize: 35 }} />
           </Link>
         ) : (
-          <Link to="" onClick={handleFavorite} className="details_favicon">
+          <Link onClick={handleFavorite} className="details_favicon">
             <FavoriteIcon color="secondary" style={{ fontSize: 35 }} />
           </Link>
         )}
       </div>
       <div className="partner-details__info">
         <h3 className="info-title">Informações adicionais</h3>
-        <Link to="" className="info-dropicon">
-          <ArrowDropDownCircleSharpIcon
-            style={{ fontSize: 40 }}
-            color="disabled"
-          />
-        </Link>
+        <ExpandMoreIcon
+          onClick={() => toggleShow(partnerId)}
+          className="info-dropicon"
+          style={{ fontSize: 40 }}
+        />
         <p className="info-address">Endereço: {partnerDetail.address}</p>
         <p className="info-time">Horário de atendimento:</p>
       </div>
+      {details.includes(partnerId) && (
+        <div className="expanded-details">
+          <h3 className="expanded-payment">Formas de pagamento</h3>
+          <ul className="payment-list">
+            <li className="payment-item">- Visa</li>
+            <li>- Mastercard</li>
+          </ul>
+          <h3 className="expanded-contact">Contato</h3>
+          <p className="expanded-phone">Telefone: </p>
+          <p className="expanded-site">Site:</p>
+          <h3 className="expanded-map">Mostrar no mapa</h3>
+          <button className="expanded-button__map">
+            Abrir com Google Maps
+          </button>
+        </div>
+      )}
       <div className="partner-details__disconts">
-        <h3 className="disconts-title">Descontos oferecidos:</h3>
+        <h3 className="disconts-title">Descontos disponíveis</h3>
         {partnerDetail.discont
           ? partnerDetail.discont.map((item) => (
               <React.Fragment key={item._id}>
