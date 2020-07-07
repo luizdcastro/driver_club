@@ -6,20 +6,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Favorite from '../../components/favorite/favorite.component';
 import DiscontCard from '../../components/discont-card/discont-card.component';
 import { fetchPartnerDetails } from '../../redux/actions/partner.actions';
-import { getMe } from '../../redux/actions/getme.action.js';
 import './partner-details.styles.css';
 
-const PartnerDetails = ({
-  partner,
-  dispatchPartnerDetails,
-  dispatchGetMeAction,
-}) => {
+const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
   const [partnerDetail, setPartnerDetail] = useState('');
   const [details, setDetails] = useState([]);
   const { partnerId } = useParams();
-
-  // Get all user data to check if has favorite and discont card
-  useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction]);
 
   // Get partner details
   useEffect(() => {
@@ -105,13 +97,11 @@ const PartnerDetails = ({
 
 const mapStateToProps = (state) => ({
   partner: state.partner,
-  getme: state.getme,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchPartnerDetails: (partnerId) =>
     dispatch(fetchPartnerDetails(partnerId)),
-  dispatchGetMeAction: () => dispatch(getMe()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartnerDetails);

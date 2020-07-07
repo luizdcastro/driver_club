@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import {
   addFavorite,
   deleteFavorite,
 } from '../../redux/actions/favorite.actions';
+import { getMe } from '../../redux/actions/getme.action';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import './favorite.styles.css';
 
@@ -16,32 +18,34 @@ const Favorite = ({
   dispatchGetMeAction,
 }) => {
   const [favorite, setFavorite] = useState('');
+  const { partnerId } = useParams();
 
   useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
 
+  const userFavorites = getme[0] && getme[0].favorite.map((item) => item._id);
+
   useEffect(() => {
     const userFavorites = getme[0] && getme[0].favorite.map((item) => item._id);
-    const partnerId = partner[0] && partner[0]._id;
     if (userFavorites.includes(partnerId)) {
       setFavorite(partnerId);
     }
-  }, []);
-
-  const partnerId = partner[0] && partner[0]._id;
+  }, [getme, partner, userFavorites, favorite, partnerId]);
 
   const handleAddfavorite = () => {
     dispatchAddFavorite(partnerId);
+    dispatchGetMeAction();
     setFavorite(partnerId);
   };
 
   const handdleDeleteFavorite = () => {
     dispatchDeleteFavorite(partnerId);
+    dispatchGetMeAction();
     setFavorite('');
   };
 
   return (
     <div className="favorite">
-      {!favorite ? (
+      {setFavorite && !favorite ? (
         <FavoriteIcon
           color="disabled"
           style={{ fontSize: 35 }}
@@ -66,6 +70,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   dispatchAddFavorite: (partnerId) => dispatch(addFavorite(partnerId)),
   dispatchDeleteFavorite: (partnerId) => dispatch(deleteFavorite(partnerId)),
+  dispatchGetMeAction: () => dispatch(getMe()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorite);

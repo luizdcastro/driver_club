@@ -1,0 +1,77 @@
+.coupon-card__container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  border: solid 1px #dadce1;
+  max-width: 700px;
+  height: 160px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #484a4d;
+}
+
+.coupon-card__title {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 700;
+  left: 3%;
+}
+
+.coupon-card__name {
+  position: absolute;
+  font-size: 13px;
+  left: 3%;
+  top: 15%;
+}
+
+.coupon-card__percentage {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  left: 3%;
+  top: 37%;
+}
+
+.coupon-card__delete {
+  position: absolute;
+  right: 3%;
+  top: 12%;
+  cursor: pointer;
+}
+
+.coupon-card__button {
+  position: absolute;
+  right: 3%;
+  top: 64%;
+  background-color: #484a4d;
+  border: solid 1px #484a4d;
+  border-radius: 5px;
+  color: #f4f4f4;
+  font-size: 13px;
+  font-weight: 700;
+  height: 40px;
+}
+
+.coupon-card__button:focus {
+  outline: none;
+}
+
+.coupon-card__button:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+.coupon-card__link {
+  top: 75%;
+  left: 3%;
+  position: absolute;
+  color: #484a4d;
+  font-weight: 600;
+  font-size: 13px;
+  height: 40px;
+}
+
+.coupon-card__link:hover {
+  text-decoration: none;
+  filter: brightness(1.2);
+}

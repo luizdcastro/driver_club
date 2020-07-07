@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   background-color: #fff;
-  height: 200px;
+  height: 170px;
   border: solid 1px #dadce1;
-  border-radius: 10px;
+  border-radius: 10px 0 10px 0;
   padding-left: 15px;
   transition: 300ms;
 }
@@ -16,7 +16,7 @@
 
 .card-title {
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: #484a4d;
 }

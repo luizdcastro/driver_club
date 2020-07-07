@@ -1,0 +1,10 @@
+.favorite-page__container {
+  width: 100%;
+  max-width: 75%;
+  margin: auto;
+}
+.favorite-page__title {
+  font-size: 21px;
+  color: #484a4d;
+  font-weight: 700;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
+import CouponCard from '../../components/coupon-card/coupon-card.component';
 import { getMe } from '../../redux/actions/getme.action.js';
 import { deleteCoupon } from '../../redux/actions/coupon.actions';
 import './copons.styles.css';
@@ -24,20 +25,18 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
   };
 
   return (
-    <div>
-      <h2>Coupons List</h2>
+    <div className="coupon-page__container">
+      <h2 className="coupon-page__title">Meus Coupons</h2>
       {getMeData
         ? getMeData.coupon.map((item) => (
             <React.Fragment key={item._id}>
               {!coupon.includes(item._id) ? (
-                <div>
-                  <p>{item.name}</p>
-                  <p>{item.percentage}%</p>
-                  <p>{item.partner[0].name}</p>
-                  <button onClick={() => handleDeleteCoupon(item._id)}>
-                    Delete
-                  </button>
-                </div>
+                <CouponCard
+                  partnerName={item.partner[0].name}
+                  discontTitle={item.name}
+                  percentage={item.percentage}
+                  deleteCoupon={() => handleDeleteCoupon(item._id)}
+                />
               ) : null}
             </React.Fragment>
           ))

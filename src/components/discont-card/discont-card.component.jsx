@@ -38,7 +38,7 @@ const DiscontCard = ({
     <div>
       <div className="discont-container">
         <p className="discont-title">{title}</p>
-        <p className="discont-percentage">{percentage} %</p>
+        <p className="discont-percentage">{percentage}%</p>
         <div className="discont-details">
           <ExpandMoreIcon
             style={{ fontSize: 40 }}

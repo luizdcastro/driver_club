@@ -1,15 +1,14 @@
 .custom-button {
   display: block;
+  margin: 0 15px 15px 15px;
   width: 312px;
   height: 42px;
-  margin: 0 15px 15px 15px;
-  padding: 5px;
+  background-color: #484a4d;
+  border: solid 1px #484a4d;
   border-radius: 5px;
-  border: solid 1px #2ebc4f;
-  background-color: #2ebc4f;
+  color: #f4f4f4;
   font-size: 13px;
   font-weight: 700;
-  color: #f4f4f4;
   transition: 300ms;
 }
 

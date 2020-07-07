@@ -4,7 +4,8 @@
   min-height: 100px;
   background-color: #fff;
   border: solid 1px #dadce1;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+  color: #484a4d;
 }
 
 .discont-title {
@@ -16,7 +17,8 @@
 
 .discont-percentage {
   position: absolute;
-  font-size: 21px;
+  font-size: 16px;
+  font-weight: 700;
   left: 2%;
   top: 30%;
   margin-bottom: 150px;
@@ -34,13 +36,13 @@
   height: 40px;
   right: 2%;
   top: 29%;
-  padding: 8px;
+  background-color: #484a4d;
+  border: solid 1px #484a4d;
   border-radius: 5px;
-  border: solid 1px #2ebc4f;
-  background-color: #2ebc4f;
-  font-size: 12px;
-  font-weight: 600;
   color: #f4f4f4;
+  font-size: 13px;
+  font-weight: 700;
+  height: 40px;
   transition: 300ms;
 }
 
@@ -55,7 +57,7 @@
 }
 
 #discont-button__disabled {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 #discont-button__disabled:hover {
   cursor: default;
@@ -72,7 +74,7 @@
   position: relative;
   display: table;
   width: 100%;
-  background-color: #fff;
+  background-color: #f4f4f4;
   border: solid 1px#dadce1;
   border-top: none;
   height: 160px;

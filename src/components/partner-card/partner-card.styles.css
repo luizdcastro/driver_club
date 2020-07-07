@@ -1,12 +1,13 @@
 .partner-container {
-  display: block;
-  align-items: center;
+  position: relative;
   background-color: #fff;
-  height: 110px;
+  min-height: 110px;
   border: solid 1px #dadce1;
-  border-radius: 10px;
+  border-radius: 10px 0 10px 0;
   padding-left: 15px;
   transition: 300ms;
+  text-decoration: none;
+  color: #484a4d;
 }
 
 .partner-container:hover {
@@ -15,15 +16,19 @@
 }
 
 .partner-title {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  color: #484a4d;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.partner-details {
-  text-decoration: none;
+.partner-subtitle {
+  position: absolute;
   font-size: 12px;
-  font-weight: 400;
-  color: #484a4d;
+  top: 24%;
+}
+
+.partner-address {
+  position: absolute;
+  font-size: 12px;
+  top: 60%;
 }
