@@ -75,3 +75,89 @@
   text-decoration: none;
   filter: brightness(1.2);
 }
+
+.modal-coupon__container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 75%;
+  height: 80vh;
+  top: 13.8%;
+  background-color: rgba(185, 185, 185, 0.8);
+  z-index: 2;
+}
+
+.modal-coupon__close {
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  cursor: pointer;
+}
+
+.modal-coupon__content {
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 75%;
+  max-height: 75%;
+  color: #484a4d;
+}
+.modal-coupon__name {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.modal-coupon__title {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  top: 14%;
+  left: 5%;
+}
+
+.modal-coupon__percentage {
+  position: absolute;
+  font-size: 21px;
+  font-weight: 700;
+  top: 19%;
+  left: 5%;
+}
+
+.modal-coupon__qrcode {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 180px;
+  max-width: 180px;
+  top: 34%;
+}
+
+.modal-coupon__validate {
+  position: absolute;
+  left: 5%;
+  top: 75%;
+  font-size: 14px;
+}
+
+.modal-coupon__date {
+  position: absolute;
+  font-size: 13px;
+  left: 5%;
+  top: 80%;
+}
+
+.modal-coupon__time {
+  position: absolute;
+  font-size: 13px;
+  left: 5%;
+  top: 85%;
+}

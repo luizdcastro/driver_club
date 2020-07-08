@@ -5,7 +5,7 @@ import './spinner.styles.css';
 
 const Spinner = ({ isLoading }) => (
   <React.Fragment>
-    {isLoading ? (
+    {!isLoading ? (
       <div className="spinner-fade">
         <p className="default-spinner">Loading...</p>
       </div>
