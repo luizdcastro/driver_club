@@ -69,8 +69,7 @@ const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
           <CustomButton
             type="submit"
             name="Registrar"
-            onClick={handleOnSubmmit}
-            onTouchStart={handleOnSubmmit}
+            onClick={() => handleOnSubmmit}
           />
           {serverError ? <p className="register-error">{serverError}</p> : null}
           <Link className="register-link" to="/login">
