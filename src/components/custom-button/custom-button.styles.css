@@ -10,6 +10,7 @@
   font-size: 13px;
   font-weight: 700;
   transition: 300ms;
+  cursor: pointer;
 }
 
 .custom-button:focus,

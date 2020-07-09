@@ -66,7 +66,11 @@ const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
             value={passwordConfirm}
             handleChange={(e) => setPasswordConfirm(e.target.value)}
           />
-          <CustomButton name="Registrar" onClick={handleOnSubmmit} />
+          <CustomButton
+            type="submit"
+            name="Registrar"
+            onClick={handleOnSubmmit}
+          />
           {serverError ? <p className="register-error">{serverError}</p> : null}
           <Link className="register-link" to="/login">
             Já possui uma conta?

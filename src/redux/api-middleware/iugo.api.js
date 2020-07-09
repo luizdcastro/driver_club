@@ -23,6 +23,8 @@ export const apiIugoMiddleware = ({ dispatch }) => (next) => (action) => {
     headers: {
       authorization:
         'Basic MmM1YjM3ODE4ZjE4YzlmYjY3YmQwNDcyOGI2ZDUxNTY6OTEyNTEwODZ3Nw',
+      crossDomain: true,
+      dataType: 'jsonp',
     },
   })
     .then((response) => {
