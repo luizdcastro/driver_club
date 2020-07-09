@@ -70,6 +70,7 @@ const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
             type="submit"
             name="Registrar"
             onClick={handleOnSubmmit}
+            onTouchStart={handleOnSubmmit}
           />
           {serverError ? <p className="register-error">{serverError}</p> : null}
           <Link className="register-link" to="/login">

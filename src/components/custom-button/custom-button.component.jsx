@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 
 import './custom-button.styles.css';
 
-const CustomButton = ({ name, isLoading, ...otherProps }) => {
+const CustomButton = ({ name, isLoading, onTouchStart, ...otherProps }) => {
   return (
     <React.Fragment>
       {!isLoading ? (
-        <button {...otherProps} className="custom-button">
+        <button
+          {...otherProps}
+          className="custom-button"
+          onTouchStart={onTouchStart}
+        >
           {name}
         </button>
       ) : (

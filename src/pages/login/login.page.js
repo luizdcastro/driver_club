@@ -41,7 +41,11 @@ const Login = ({ dispatchLoginAction }) => {
             value={password}
             handleChange={(e) => setPassword(e.target.value)}
           />
-          <CustomButton type="submit" name="Login" onClick={handleOnSubmmit} />
+          <CustomButton
+            name="Login"
+            onClick={handleOnSubmmit}
+            onTouchStart={handleOnSubmmit}
+          />
           <div className="login-link__container">
             <Link className="login-link">Esqueceu sua senha?</Link>
             <Link to="/register" className="login-link">
