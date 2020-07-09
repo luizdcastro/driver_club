@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { registerUser } from '../../redux/actions/auth.actions';
+import { createIugoClient } from '../../redux/actions/iugo.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import './register.styles.css';
 
-const Register = ({ dispatchRegisterAction }) => {
+const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,6 +23,12 @@ const Register = ({ dispatchRegisterAction }) => {
       password,
       passwordConfirm,
       () => console.log('Account created'),
+      (message) => setServerError(message)
+    );
+    dispatchIugoAction(
+      name,
+      email,
+      () => console.log('Client Iugo create'),
       (message) => setServerError(message)
     );
   };
@@ -86,6 +93,8 @@ const mapDispathToProps = (dispatch) => ({
         onError
       )
     ),
+  dispatchIugoAction: (name, email, onSuccess, onError) =>
+    dispatch(createIugoClient({ name, email }, onSuccess, onError)),
 });
 
 export default connect(null, mapDispathToProps)(Register);
