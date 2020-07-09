@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { registerUser } from '../../redux/actions/auth.actions';
-import { createIugoClient } from '../../redux/actions/iugo.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import './register.styles.css';
 
-const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
+const Register = ({ dispatchRegisterAction }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [serverError, setServerError] = useState('');
+  const [iugoId, setIugoId] = useState('');
 
   const handleOnSubmmit = (event) => {
     event.preventDefault();
@@ -25,19 +26,35 @@ const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
       () => console.log('Account created'),
       (message) => setServerError(message)
     );
-    dispatchIugoAction(
-      name,
-      email,
-      () => console.log('Client Iugo create'),
-      (message) => setServerError(message)
-    );
   };
+
+  useEffect(() => {
+    axios
+      .post('https://api.iugu.com/v1/customers', {
+        data: {
+          name,
+          email,
+        },
+        headers: {
+          authorization:
+            'Basic MmM1YjM3ODE4ZjE4YzlmYjY3YmQwNDcyOGI2ZDUxNTY6OTEyNTEwODZ3Nw',
+        },
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+        'Access-Control-Allow-Credentials': 'true',
+      })
+      .then((res) => {
+        const data = res.data;
+        setIugoId(data);
+      });
+  }, []);
 
   return (
     <div className="register-container">
       <div className="register">
         <h2 className="register-title">Cadastre uma nova conta</h2>
-        <form onSubmit={handleOnSubmmit}>
+        <form onSubmit={() => handleOnSubmmit}>
           <FormInput
             type="name"
             name="name"
@@ -69,7 +86,7 @@ const Register = ({ dispatchRegisterAction, dispatchIugoAction }) => {
           <CustomButton
             type="submit"
             name="Registrar"
-            onSubmit={handleOnSubmmit}
+            onClick={() => handleOnSubmmit}
           />
           {serverError ? <p className="register-error">{serverError}</p> : null}
           <Link className="register-link" to="/login">
@@ -97,8 +114,6 @@ const mapDispathToProps = (dispatch) => ({
         onError
       )
     ),
-  dispatchIugoAction: (name, email, onSuccess, onError) =>
-    dispatch(createIugoClient({ name, email }, onSuccess, onError)),
 });
 
 export default connect(null, mapDispathToProps)(Register);

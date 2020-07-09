@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 
 import rootReducer from './reducers';
 import { apiMiddleware } from './api-middleware/rocket.api';
-import { apiIugoMiddleware } from './api-middleware/iugo.api';
 
 export function saveToLocalStorage(state) {
   try {
@@ -32,7 +31,7 @@ export function configureStore() {
   return createStore(
     rootReducer,
     persistedState,
-    composeEnhancers(applyMiddleware(apiMiddleware, apiIugoMiddleware))
+    composeEnhancers(applyMiddleware(apiMiddleware))
   );
 }
 
