@@ -26,7 +26,7 @@ const Login = ({ dispatchLoginAction }) => {
     <div className="login-container">
       <div className="login">
         <h2 className="login-title">Entrar na sua conta</h2>
-        <form onSubmit={() => handleOnSubmmit}>
+        <form onSubmit={handleOnSubmmit}>
           <FormInput
             type="email"
             name="email"
@@ -41,11 +41,7 @@ const Login = ({ dispatchLoginAction }) => {
             value={password}
             handleChange={(e) => setPassword(e.target.value)}
           />
-          <CustomButton
-            name="Login"
-            type="submit"
-            onClick={() => handleOnSubmmit}
-          />
+          <CustomButton name="Login" onClick={handleOnSubmmit} />
           <div className="login-link__container">
             <Link className="login-link">Esqueceu sua senha?</Link>
             <Link to="/register" className="login-link">

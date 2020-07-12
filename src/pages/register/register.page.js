@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 import { registerUser } from '../../redux/actions/auth.actions';
 import FormInput from '../../components/form-input/form-input.component';
@@ -14,7 +13,6 @@ const Register = ({ dispatchRegisterAction }) => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [serverError, setServerError] = useState('');
-  const [iugoId, setIugoId] = useState('');
 
   const handleOnSubmmit = (event) => {
     event.preventDefault();
@@ -28,33 +26,11 @@ const Register = ({ dispatchRegisterAction }) => {
     );
   };
 
-  useEffect(() => {
-    axios
-      .post('https://api.iugu.com/v1/customers', {
-        data: {
-          name,
-          email,
-        },
-        headers: {
-          authorization:
-            'Basic MmM1YjM3ODE4ZjE4YzlmYjY3YmQwNDcyOGI2ZDUxNTY6OTEyNTEwODZ3Nw',
-        },
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type,Authorization',
-        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-        'Access-Control-Allow-Credentials': 'true',
-      })
-      .then((res) => {
-        const data = res.data;
-        setIugoId(data);
-      });
-  }, []);
-
   return (
     <div className="register-container">
       <div className="register">
         <h2 className="register-title">Cadastre uma nova conta</h2>
-        <form onSubmit={() => handleOnSubmmit}>
+        <form onSubmit={handleOnSubmmit}>
           <FormInput
             type="name"
             name="name"
@@ -83,11 +59,7 @@ const Register = ({ dispatchRegisterAction }) => {
             value={passwordConfirm}
             handleChange={(e) => setPasswordConfirm(e.target.value)}
           />
-          <CustomButton
-            type="submit"
-            name="Registrar"
-            onClick={() => handleOnSubmmit}
-          />
+          <CustomButton name="Registrar" onClick={handleOnSubmmit} />
           {serverError ? <p className="register-error">{serverError}</p> : null}
           <Link className="register-link" to="/login">
             Já possui uma conta?

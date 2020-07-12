@@ -32,7 +32,6 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
       if (postProccessSuccess) postProccessSuccess(response.data);
     })
     .catch((err) => {
-      dispatch({ type: constants.TOGGLE_LOADER });
       if (!err.response) console.log(err);
       else {
         if (err.response.data.message) {
