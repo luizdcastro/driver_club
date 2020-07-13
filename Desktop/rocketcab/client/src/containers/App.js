@@ -6,9 +6,13 @@ import Header from '../components/header/herder.component';
 import Login from '../pages/login/login.page';
 import Register from '../pages/register/register.page';
 import Home from '../pages/home/home.page';
-import DriverPanel from '../pages/driver-panel/driver-panel.page';
+import Categories from '../pages/categories/category.page';
 import Partners from '../pages/partners/partners.page';
-import PartnerDetails from '../pages/partner-details/partner-details.component';
+import PartnerDetails from '../pages/partner-details/partner-details.page';
+import Coupons from '../pages/coupons/coupons.page';
+import Favorites from '../pages/favorites/favorites.page';
+import Account from '../pages/account/account.page';
+import Subscription from '../pages/subscription/subscription.page';
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -20,7 +24,7 @@ const App = ({ user, dispatchLogoutAction }) => {
         userName={user.name}
         onLogout={dispatchLogoutAction}
       />
-      <div>
+      <div className="App">
         {!user.isLoggedIn ? (
           <Switch>
             <Route exact path="/login" component={Login} />
@@ -30,13 +34,17 @@ const App = ({ user, dispatchLogoutAction }) => {
           </Switch>
         ) : (
           <Switch>
-            <Route exact path="/categories" component={DriverPanel} />
+            <Route exact path="/categories" component={Categories} />
             <Route exact path="/categories/:categoryId" component={Partners} />
             <Route
               exact
               path="/partner/:partnerId"
               component={PartnerDetails}
             />
+            <Route exact path="/coupons" component={Coupons} />
+            <Route exact path="/favorites" component={Favorites} />
+            <Route exact path="/account" component={Account} />
+            <Route exact path="/subscription" component={Subscription} />
             <Redirect to="/categories" />
           </Switch>
         )}

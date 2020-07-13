@@ -33,7 +33,6 @@ const setUserInfo = (data) => {
   const parsedToken = JSON.parse(atob(data.token.split('.')[1]));
   const userInfo = {
     userId: parsedToken.id,
-    name: data.data.user.name.split(' ')[0],
     token: data.token,
     isLoggedIn: true,
   };

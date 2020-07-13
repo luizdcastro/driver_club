@@ -1,10 +1,15 @@
 import React from 'react';
+import SearchIcon from '@material-ui/icons/Search';
+
+import './search.styles.css';
 
 const SearchBar = ({ onChange }) => {
   return (
-    <div>
+    <div className="search-container">
+      <SearchIcon className="search-icon" style={{ fontSize: 32 }} />
       <input
-        placeholder="Pesquise por estabelecimentos"
+        className="search-input"
+        placeholder="Busque pelo nome do parceiro"
         type="text"
         onChange={onChange}
       />

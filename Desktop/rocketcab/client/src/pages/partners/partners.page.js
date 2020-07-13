@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { fetchPartnersByCategory } from '../../redux/actions/partner.actions';
 import SearchBar from '../../components/search/search.component';
+import PartnerCard from '../../components/partner-card/partner-card.component';
 import './partners.styles.css';
 
 const Partners = ({ partner, dispatchGetPartners }) => {
@@ -31,19 +32,23 @@ const Partners = ({ partner, dispatchGetPartners }) => {
 
   return (
     <div>
-      <br />
       <SearchBar onChange={(e) => setSearch(e.target.value)} />
-      {filteredPartners
-        ? filteredPartners.map((item) => (
-            <React.Fragment key={item._id}>
-              <div>
-                <p>{item.name}</p>
-                <Link to={`/partner/${item._id}`}>{item._id}</Link>
-                <br />
-              </div>
-            </React.Fragment>
-          ))
-        : null}
+      <div className="partners-container">
+        <div className="partners-grid">
+          {filteredPartners
+            ? filteredPartners.map((item) => (
+                <React.Fragment key={item._id}>
+                  <PartnerCard
+                    to={`/partner/${item._id}`}
+                    name={item.name}
+                    category={item.category}
+                    address={item.address}
+                  />
+                </React.Fragment>
+              ))
+            : null}
+        </div>
+      </div>
     </div>
   );
 };

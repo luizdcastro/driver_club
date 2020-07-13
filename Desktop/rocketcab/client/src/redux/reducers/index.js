@@ -7,6 +7,7 @@ import partner from './partner/partner.reducer';
 import getme from './getme/getme.reducer';
 import favorite from './favorite/favorite.reducer';
 import coupon from './coupon/coupon.reducer';
+import account from './account/account.reducer';
 
 const rootReducer = combineReducers({
   user,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   getme,
   favorite,
   coupon,
+  account,
 });
 
 export default rootReducer;
