@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-import * as constants from '../constants';
-import { logoutUser } from '../actions/auth.actions';
+import * as constants from './constants';
+import { logoutUser } from './actions/auth.actions';
 
 export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
   if (action.type !== constants.API) return next(action);
 
-  dispatch({ type: constants.TOGGLE_LOADER });
   const BASE_URL = 'http://127.0.0.1:8000/api/v1';
   const AUTH_TOKEN = getState().user.token;
   if (AUTH_TOKEN)
@@ -27,7 +26,6 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
     data: data ? data : null,
   })
     .then((response) => {
-      dispatch({ type: constants.TOGGLE_LOADER });
       if (success) dispatch(success(response.data));
       if (postProccessSuccess) postProccessSuccess(response.data);
     })

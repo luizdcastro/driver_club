@@ -42,7 +42,7 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
     return (
       <div className="menu-dropdown">
         <DropdownItem to="/account">Profile</DropdownItem>
-        <DropdownItem to="/account">Assinatura</DropdownItem>
+        <DropdownItem to="/subscription">Assinatura</DropdownItem>
         <DropdownItem onClick={onLogout}>Logout</DropdownItem>
       </div>
     );

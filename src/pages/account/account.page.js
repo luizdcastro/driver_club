@@ -8,12 +8,11 @@ import CustomButton from '../../components/custom-button/custom-button.component
 import './account.styles.css';
 
 const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
-  const [getMeData, setGetMeData] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [serverError, setServerError] = useState('');
 
-  const handleOnUpdate = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     dispatchUpdateUser(
       name,
@@ -28,33 +27,27 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
 
   useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction]);
 
-  useEffect(() => {
-    if (getme.length > 0) {
-      setGetMeData(getme[0]);
-    }
-  }, [getme]);
-
   return (
     <div className="account-container">
       <h2 className="account-title">Configurações da Conta</h2>
       <div className="account-data__pessoal ">
         <h3>Dados Pessoais</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <FormInput
             type="text"
             name="name"
-            placeholder={getMeData.name}
+            placeholder={getme[0].name}
             value={name}
             handleChange={(e) => setName(e.target.value)}
           />
           <FormInput
             type="email"
             name="email"
-            placeholder={getMeData.email}
+            placeholder={getme[0].email}
             value={email}
             handleChange={(e) => setEmail(e.target.value)}
           />
-          <CustomButton name="Save Changes" onClick={handleOnUpdate} />
+          <CustomButton name="Save Changes" onClick={handleSubmit} />
           {serverError ? (
             <p className="account-data__error">{serverError}</p>
           ) : null}
@@ -74,7 +67,7 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
             name="password"
             placeholder="Confirmar senha"
           />
-          <CustomButton name="Change Password" onClick={handleOnUpdate} />
+          <CustomButton name="Change Password" />
         </form>
       </div>
     </div>

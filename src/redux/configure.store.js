@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 
 import rootReducer from './reducers';
-import { apiMiddleware } from './api-middleware/rocket.api';
+import { apiMiddleware } from './apiMiddleware';
 
 export function saveToLocalStorage(state) {
   try {

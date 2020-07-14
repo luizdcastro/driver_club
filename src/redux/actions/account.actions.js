@@ -6,13 +6,13 @@ export const updateUser = (data, onSuccess, onError) => ({
     method: 'PATCH',
     url: '/users/updateMe',
     data,
-    success: (response) => setUserInfo(response),
+    success: (response) => updatedUserInfo(response),
     postProccessSuccess: onSuccess,
     postProccessError: onError,
   },
 });
 
-const setUserInfo = (data) => ({
-  type: constants.ADD_COUPON,
+const updatedUserInfo = (data) => ({
+  type: constants.UPDATE_USER_INFO,
   payload: data.data.user,
 });

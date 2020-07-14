@@ -8,6 +8,7 @@ import getme from './getme/getme.reducer';
 import favorite from './favorite/favorite.reducer';
 import coupon from './coupon/coupon.reducer';
 import account from './account/account.reducer';
+import subscription from './subscription/subscription.reducer';
 
 const rootReducer = combineReducers({
   user,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   favorite,
   coupon,
   account,
+  subscription,
 });
 
 export default rootReducer;
