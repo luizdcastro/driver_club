@@ -1,0 +1,22 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 170px;
+  border: solid 1px #dadce1;
+  border-radius: 10px 0 10px 0;
+  padding-left: 15px;
+  transition: 300ms;
+}
+
+.card-container:hover {
+  filter: brightness(1.1);
+  background-color: #f4f4f4;
+}
+
+.card-title {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #484a4d;
+}
