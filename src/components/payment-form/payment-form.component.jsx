@@ -31,10 +31,15 @@ const PaymentForm = ({ dispatchAddcard }) => {
         console.log('Erro salvando cartão:' + JSON.stringify(response.errors));
       } else {
         const data = await response;
-        console.log(data.id);
+        console.log(data.extra_info);
         if (response) {
           dispatchAddcard(
             data.id,
+            data.extra_info.brand,
+            data.extra_info.display_number,
+            data.extra_info.holder_name,
+            data.extra_info.month,
+            data.extra_info.year,
             () => console.log('Logedd In'),
             (message) => console.log(message)
           );
@@ -84,8 +89,14 @@ const PaymentForm = ({ dispatchAddcard }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchAddcard: (token, onSuccess, onError) =>
-    dispatch(addCard({ token }, onSuccess, onError)),
+  dispatchAddcard: (id, brand, number, name, month, year, onSuccess, onError) =>
+    dispatch(
+      addCard(
+        { card_data: { id, brand, number, name, month, year } },
+        onSuccess,
+        onError
+      )
+    ),
 });
 
 export default connect(null, mapDispatchToProps)(PaymentForm);
