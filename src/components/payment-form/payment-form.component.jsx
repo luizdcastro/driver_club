@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { addCard } from '../../redux/actions/subscription.action';
+import {
+  addCard,
+  createPaymentMethod,
+} from '../../redux/actions/subscription.action';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-const PaymentForm = ({ dispatchAddcard }) => {
+const PaymentForm = ({
+  dispatchAddcard,
+  dispatchCreatePaymentMehod,
+  getme,
+}) => {
   const [cardNumber, setCardNumber] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -39,10 +46,9 @@ const PaymentForm = ({ dispatchAddcard }) => {
             data.extra_info.display_number,
             data.extra_info.holder_name,
             data.extra_info.month,
-            data.extra_info.year,
-            () => console.log('Logedd In'),
-            (message) => console.log(message)
+            data.extra_info.year
           );
+          dispatchCreatePaymentMehod(getme[0].id);
         }
       }
     });
@@ -89,14 +95,19 @@ const PaymentForm = ({ dispatchAddcard }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  dispatchCreatePaymentMehod: (id) => dispatch(createPaymentMethod({ id })),
   dispatchAddcard: (id, brand, number, name, month, year, onSuccess, onError) =>
     dispatch(
       addCard(
-        { card_data: { id, brand, number, name, month, year } },
+        { iugu_card_data: { id, brand, number, name, month, year } },
         onSuccess,
         onError
       )
     ),
 });
 
-export default connect(null, mapDispatchToProps)(PaymentForm);
+const mapStateToProps = (state) => ({
+  getme: state.getme,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaymentForm);
