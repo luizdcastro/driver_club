@@ -5,12 +5,14 @@ import {
   addCard,
   createPaymentMethod,
 } from '../../redux/actions/subscription.action';
+import { getMe } from '../../redux/actions/getme.action';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 const PaymentForm = ({
   dispatchAddcard,
   dispatchCreatePaymentMehod,
+  dispatchGetMe,
   getme,
 }) => {
   const [cardNumber, setCardNumber] = useState('');
@@ -49,6 +51,7 @@ const PaymentForm = ({
             data.extra_info.year
           );
           dispatchCreatePaymentMehod(getme[0].id);
+          dispatchGetMe();
         }
       }
     });
@@ -88,13 +91,17 @@ const PaymentForm = ({
           handleChange={(e) => setCcvCode(e.target.value)}
           value={ccvCode}
         />
-        <CustomButton name="Adicionar Pagamento" onClick={handleSubmit} />
+        <CustomButton
+          name="Adicionar Método de Pagamento"
+          onClick={handleSubmit}
+        />
       </form>
     </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  dispatchGetMe: () => dispatch(getMe()),
   dispatchCreatePaymentMehod: (id) => dispatch(createPaymentMethod({ id })),
   dispatchAddcard: (id, brand, number, name, month, year, onSuccess, onError) =>
     dispatch(
