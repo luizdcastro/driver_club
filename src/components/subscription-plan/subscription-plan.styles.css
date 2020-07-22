@@ -1,0 +1,48 @@
+.subscription-plan__container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  border: solid 1px #dadce1;
+  max-width: 700px;
+  height: 370px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #484a4d;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+}
+
+.subscription-plan__title {
+  position: absolute;
+  font-size: 16px;
+  color: #484a4d;
+  top: 4%;
+  left: 40%;
+}
+
+.subsctiption-plan__price {
+  position: absolute;
+  top: 12%;
+  left: 41%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2ea44f;
+}
+
+.subscription-plan__description {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+}
+
+#create-subscription__button {
+  position: relative;
+  margin: auto;
+  top: 63%;
+}
+
+#cancel-subscription__button {
+  position: relative;
+  margin: auto;
+  top: 67%;
+}

@@ -4,6 +4,8 @@ export default function addfavorite(state = {}, action) {
   switch (action.type) {
     case constants.IUGU_CARD_DATA:
       return { ...action.payload };
+    case constants.IUGU_REMOVE_CARD:
+      return { ...action.payload };
     case constants.IUGU_PAYMENT_METHOD:
       return { ...action.payload };
     case constants.IUGU_SUBSCRIPTION:

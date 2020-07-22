@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CheckIcon from '@material-ui/icons/Check';
+import { green } from '@material-ui/core/colors';
 
 import {
   createSubscription,
@@ -23,12 +25,32 @@ const SubscriptionPlan = ({
   };
 
   return (
-    <div>
-      <h3>Selecione seu plano</h3>
-      <p>Rocketcab Basic</p>
-      <p>R$ 14,90 / Mensal</p>
-      <CustomButtom name="Assinar Plano" onClick={createSubscription} />
-      <CustomButtom name="Cancelar Assinatura" onClick={cancelSubscription} />
+    <div className="subscription-plan__container">
+      <h3 className="subscription-plan__title">Rocketcab Basic Plan</h3>
+      <h4 className="subsctiption-plan__price">R$ 14,90 / Mensal</h4>
+      <ul className="subscription-plan__description">
+        <li>
+          <CheckIcon style={{ color: green[500] }} /> Descontos ilimitados
+        </li>
+        <li>
+          <CheckIcon style={{ color: green[500] }} />
+          Acesso a toda a rede de parceiros
+        </li>
+        <li>
+          <CheckIcon style={{ color: green[500] }} />
+          Média de economia por mês R$ 240,00
+        </li>
+      </ul>
+      <CustomButtom
+        id="create-subscription__button"
+        name="Assinar Plano"
+        onClick={createSubscription}
+      />
+      <CustomButtom
+        id="cancel-subscription__button"
+        name="Cancelar Assinatura"
+        onClick={cancelSubscription}
+      />
     </div>
   );
 };

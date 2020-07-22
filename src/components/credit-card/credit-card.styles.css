@@ -1,0 +1,33 @@
+.credit-card__container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  border: solid 1px #dadce1;
+  max-width: 700px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #484a4d;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  max-width: 700px;
+}
+
+.credit-card__delete {
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  cursor: pointer;
+}
+
+.credit-card__brand {
+  position: absolute;
+  top: 20%;
+  left: 3%;
+}
+
+.credit-card__number {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}

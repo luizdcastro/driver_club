@@ -10,6 +10,16 @@ export const addCard = (data) => ({
   },
 });
 
+export const removeCard = (data) => ({
+  type: constants.API,
+  payload: {
+    method: 'PATCH',
+    url: '/users/removePaymentMethod',
+    data,
+    success: (response) => removedCard(response),
+  },
+});
+
 export const createPaymentMethod = (data) => ({
   type: constants.API,
   payload: {
@@ -57,5 +67,10 @@ const paymentMethod = (data) => ({
 
 const cardDetails = (data) => ({
   type: constants.IUGU_CARD_DATA,
+  payload: data,
+});
+
+const removedCard = (data) => ({
+  type: constants.IUGU_REMOVE_CARD,
   payload: data,
 });
