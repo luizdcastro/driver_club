@@ -28,19 +28,21 @@ const SubscriptionPlan = ({
     <div className="subscription-plan__container">
       <h3 className="subscription-plan__title">Rocketcab Basic Plan</h3>
       <h4 className="subsctiption-plan__price">R$ 14,90 / Mensal</h4>
-      <ul className="subscription-plan__description">
-        <li>
-          <CheckIcon style={{ color: green[500] }} /> Descontos ilimitados
-        </li>
-        <li>
-          <CheckIcon style={{ color: green[500] }} />
-          Acesso a toda a rede de parceiros
-        </li>
-        <li>
-          <CheckIcon style={{ color: green[500] }} />
-          Média de economia por mês R$ 240,00
-        </li>
-      </ul>
+      <div className="subscription-plan__description">
+        <ul>
+          <li>
+            <CheckIcon style={{ color: green[500] }} /> Descontos ilimitados
+          </li>
+          <li>
+            <CheckIcon style={{ color: green[500] }} />
+            Acesso a toda a rede de parceiros
+          </li>
+          <li>
+            <CheckIcon style={{ color: green[500] }} />
+            Média de economia por mês R$ 240,00
+          </li>
+        </ul>
+      </div>
       <CustomButtom
         id="create-subscription__button"
         name="Assinar Plano"

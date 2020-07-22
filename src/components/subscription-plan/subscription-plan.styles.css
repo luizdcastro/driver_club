@@ -13,36 +13,39 @@
 }
 
 .subscription-plan__title {
-  position: absolute;
+  position: relative;
   font-size: 16px;
   color: #484a4d;
   top: 4%;
-  left: 40%;
+  text-align: center;
 }
 
 .subsctiption-plan__price {
-  position: absolute;
-  top: 12%;
-  left: 41%;
+  position: relative;
+  top: 4%;
+  text-align: center;
   font-size: 18px;
   font-weight: 600;
   color: #2ea44f;
 }
 
 .subscription-plan__description {
-  position: absolute;
-  top: 30%;
-  left: 25%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  top: 3%;
 }
 
 #create-subscription__button {
   position: relative;
   margin: auto;
-  top: 63%;
+  top: 12%;
 }
 
 #cancel-subscription__button {
   position: relative;
   margin: auto;
-  top: 67%;
+  top: 15%;
 }
