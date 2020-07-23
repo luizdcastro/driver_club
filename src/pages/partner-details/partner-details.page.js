@@ -40,6 +40,12 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
     }
   };
 
+  const openGoogleMap = () => {
+    window.open(
+      `https://www.google.com/maps/dir/?api=1&destination=${partnerDetail.address}&travelmode=driving`
+    );
+  };
+
   return (
     <div className="partner-datails__container">
       <div className="partner-details__hero">
@@ -70,7 +76,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
           <p className="expanded-phone">Telefone: </p>
           <p className="expanded-site">Site:</p>
           <h3 className="expanded-map">Mostrar no mapa</h3>
-          <button className="expanded-button__map">
+          <button className="expanded-button__map" onClick={openGoogleMap}>
             Abrir com Google Maps
           </button>
         </div>
