@@ -24,6 +24,8 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
     dispatchGetMeAction();
   };
 
+  console.log(getMeData.coupon);
+
   return (
     <div className="coupon-page__container">
       <h2 className="coupon-page__title">Meus Coupons</h2>
@@ -35,6 +37,8 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
                   partnerName={item.partner[0].name}
                   discontTitle={item.name}
                   percentage={item.percentage}
+                  days={item.days}
+                  time={item.time}
                   deleteCoupon={() => handleDeleteCoupon(item._id)}
                 />
               ) : null}

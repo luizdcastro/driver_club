@@ -9,6 +9,9 @@ const DiscontCard = ({
   getme,
   title,
   percentage,
+  days,
+  time,
+  rules,
   couponId,
   dispatchAddCoupon,
 }) => {
@@ -21,6 +24,8 @@ const DiscontCard = ({
     dispatchAddCoupon(itemId);
     setCoupon((coupon) => [...coupon, itemId]);
   };
+
+  console.log(couponId);
 
   const toggleShow = (id) => {
     const showState = details.slice();
@@ -67,12 +72,16 @@ const DiscontCard = ({
           <h3 className="expanded-details__title">
             Desconto válido para o período abaixo
           </h3>
-          <p className="expanded-details__time">Dias: </p>
-          <p className="expanded-details__days">Horários: </p>
+          <p className="expanded-details__time">Dias: {days}</p>
+          <p className="expanded-details__days">Horários: {time}</p>
           <h3 className="expanded-details__regras">Regras de utilização</h3>
-          <p className="expanded-details__item">
-            - Apresentar cupom no estabelecimento
-          </p>
+          <ul className="expanded-details__item">
+            {rules.map((item) => (
+              <React.Fragment key="1">
+                <li>- {item}</li>
+              </React.Fragment>
+            ))}
+          </ul>
         </div>
       )}
     </div>

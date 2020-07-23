@@ -40,6 +40,8 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
     }
   };
 
+  console.log(partnerDetail.discont);
+
   const openGoogleMap = () => {
     window.open(
       `https://www.google.com/maps/dir/?api=1&destination=${partnerDetail.address}&travelmode=driving`
@@ -63,18 +65,38 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
           style={{ fontSize: 40 }}
         />
         <p className="info-address">Endereço: {partnerDetail.address}</p>
-        <p className="info-time">Horário de atendimento:</p>
+        <p className="info-time">
+          Horário de atendimento: {partnerDetail.open_at} às{' '}
+          {partnerDetail.close_at}
+        </p>
       </div>
       {details.includes(partnerId) && (
         <div className="expanded-details">
           <h3 className="expanded-payment">Formas de pagamento</h3>
           <ul className="payment-list">
-            <li className="payment-item">- Visa</li>
-            <li>- Mastercard</li>
+            {partnerDetail.payment_methods.map((item) => (
+              <React.Fragment key="1">
+                <li className="payment-item">{item}</li>
+              </React.Fragment>
+            ))}
           </ul>
           <h3 className="expanded-contact">Contato</h3>
-          <p className="expanded-phone">Telefone: </p>
-          <p className="expanded-site">Site:</p>
+          <p className="expanded-phone">
+            Telefone:{' '}
+            <span>
+              <a id="links" href={`tel:${partnerDetail.phone}`}>
+                {partnerDetail.phone}
+              </a>
+            </span>
+          </p>
+          <p className="expanded-site">
+            Site:{' '}
+            <span>
+              <a id="links" href={partnerDetail.website} target="_blank">
+                {partnerDetail.website}
+              </a>
+            </span>
+          </p>
           <h3 className="expanded-map">Mostrar no mapa</h3>
           <button className="expanded-button__map" onClick={openGoogleMap}>
             Abrir com Google Maps
@@ -88,9 +110,12 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
               <React.Fragment key={item._id}>
                 <div className="discont-cards">
                   <DiscontCard
+                    couponId={item._id}
                     title={item.name}
                     percentage={item.percentage}
-                    couponId={item._id}
+                    days={item.days}
+                    time={item.time}
+                    rules={item.rules}
                   />
                 </div>
               </React.Fragment>

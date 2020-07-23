@@ -10,6 +10,8 @@ const CounponCard = ({
   partnerName,
   discontTitle,
   percentage,
+  days,
+  time,
   deleteCoupon,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -28,8 +30,8 @@ const CounponCard = ({
             />
             <img className="modal-coupon__qrcode" src={Qrcode} alt="qrcode" />
             <h3 className="modal-coupon__validate">Período para utilizar</h3>
-            <p className="modal-coupon__date">Dias:</p>
-            <p className="modal-coupon__time">Horários: </p>
+            <p className="modal-coupon__date">Dias: {days}</p>
+            <p className="modal-coupon__time">Horários: {time}</p>
           </div>
         </div>
       ) : null}

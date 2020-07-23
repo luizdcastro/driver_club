@@ -87,6 +87,17 @@
   top: 23%;
 }
 
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+#links {
+  color: #0366d6;
+}
+
 .expanded-phone {
   position: absolute;
   left: 2%;
@@ -97,6 +108,7 @@
   position: absolute;
   left: 2%;
   top: 45%;
+  text-decoration: none;
 }
 
 .expanded-map {
