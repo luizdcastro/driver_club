@@ -21,6 +21,7 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
 
   function NavItem({ name, children, to }) {
     const [open, setOpen] = useState(false);
+
     return (
       <li className="nav-item">
         <Link className="nav-link" onClick={() => setOpen(!open)} to={to}>
