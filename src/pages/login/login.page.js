@@ -42,7 +42,28 @@ const Login = ({ dispatchLoginAction }) => {
             handleChange={(e) => setPassword(e.target.value)}
           />
           <CustomButton name="Login" onClick={handleOnSubmmit} />
-          <CustomButton name="Teste" onClick={() => alert('teste')} />
+          <CustomButton name="Teste 1" onClick={() => alert('teste')} />
+          <CustomButton
+            name="Teste 2"
+            onClick={(event) => {
+              event.preventDefault();
+              dispatchLoginAction(
+                email,
+                password,
+                () => console.log('Logedd In'),
+                (message) => setServerError(message)
+              );
+            }}
+          />
+          <CustomButton
+            name="teste 3"
+            onClick={dispatchLoginAction(
+              email,
+              password,
+              () => console.log('Logedd In'),
+              (message) => setServerError(message)
+            )}
+          />
           <div className="login-link__container">
             <Link className="login-link">Esqueceu sua senha?</Link>
             <Link to="/register" className="login-link">
