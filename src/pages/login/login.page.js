@@ -12,7 +12,7 @@ const Login = ({ dispatchLoginAction }) => {
   const [password, setPassword] = useState('');
   const [serverError, setServerError] = useState('');
 
-  const handleOnSubmmit = (event) => {
+  function handleOnSubmmit(event) {
     event.preventDefault();
     dispatchLoginAction(
       email,
@@ -20,13 +20,13 @@ const Login = ({ dispatchLoginAction }) => {
       () => console.log('Logedd In'),
       (message) => setServerError(message)
     );
-  };
+  }
 
   return (
     <div className="login-container">
       <div className="login">
         <h2 className="login-title">Entrar na sua conta</h2>
-        <form onSubmit={handleOnSubmmit}>
+        <form>
           <FormInput
             type="email"
             name="email"
@@ -43,27 +43,7 @@ const Login = ({ dispatchLoginAction }) => {
           />
           <CustomButton name="Login" onClick={handleOnSubmmit} />
           <CustomButton name="Teste 1" onClick={() => alert('teste')} />
-          <CustomButton
-            name="Teste 2"
-            onClick={(event) => {
-              event.preventDefault();
-              dispatchLoginAction(
-                email,
-                password,
-                () => console.log('Logedd In'),
-                (message) => setServerError(message)
-              );
-            }}
-          />
-          <CustomButton
-            name="teste 3"
-            onClick={dispatchLoginAction(
-              email,
-              password,
-              () => console.log('Logedd In'),
-              (message) => setServerError(message)
-            )}
-          />
+
           <div className="login-link__container">
             <Link className="login-link">Esqueceu sua senha?</Link>
             <Link to="/register" className="login-link">
