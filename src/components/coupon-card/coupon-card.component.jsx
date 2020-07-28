@@ -13,6 +13,7 @@ const CounponCard = ({
   days,
   time,
   deleteCoupon,
+  to,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -50,7 +51,9 @@ const CounponCard = ({
         >
           Utilizar Desconto
         </button>
-        <Link className="coupon-card__link">Detalhes do Parceiro</Link>
+        <Link className="coupon-card__link" to={to}>
+          Detalhes do Parceiro
+        </Link>
       </div>
     </div>
   );

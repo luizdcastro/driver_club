@@ -80,11 +80,12 @@
   position: absolute;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
   align-items: center;
   width: 100%;
   max-width: 75%;
   height: 820px;
-  top: 12%;
+  top: 11%;
   background-color: rgba(185, 185, 185, 0.8);
   z-index: 2;
 }
@@ -98,6 +99,7 @@
 
 .modal-coupon__content {
   background-color: #f4f4f4;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;

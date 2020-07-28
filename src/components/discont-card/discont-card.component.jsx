@@ -24,9 +24,6 @@ const DiscontCard = ({
     dispatchAddCoupon(itemId);
     setCoupon((coupon) => [...coupon, itemId]);
   };
-
-  console.log(couponId);
-
   const toggleShow = (id) => {
     const showState = details.slice();
     const index = showState.indexOf(id);

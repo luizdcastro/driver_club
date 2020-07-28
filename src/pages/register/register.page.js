@@ -28,44 +28,42 @@ const Register = ({ dispatchRegisterAction }) => {
 
   return (
     <div className="register-container">
-      <div className="register">
+      <form className="register" onSubmit={handleOnSubmmit}>
         <h2 className="register-title">Cadastre uma nova conta</h2>
-        <form onSubmit={handleOnSubmmit}>
-          <FormInput
-            type="name"
-            name="name"
-            placeholder="Name"
-            value={name}
-            handleChange={(e) => setName(e.target.value)}
-          />
-          <FormInput
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            handleChange={(e) => setEmail(e.target.value)}
-          />
-          <FormInput
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={password}
-            handleChange={(e) => setPassword(e.target.value)}
-          />
-          <FormInput
-            type="password"
-            name="passwordConfirm"
-            placeholder="Confirm Password"
-            value={passwordConfirm}
-            handleChange={(e) => setPasswordConfirm(e.target.value)}
-          />
-          <CustomButton name="Registrar" onClick={handleOnSubmmit} />
-          {serverError ? <p className="register-error">{serverError}</p> : null}
-          <Link className="register-link" to="/login">
-            Já possui uma conta?
-          </Link>
-        </form>
-      </div>
+        <FormInput
+          type="name"
+          name="name"
+          placeholder="Name"
+          value={name}
+          handleChange={(e) => setName(e.target.value)}
+        />
+        <FormInput
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          handleChange={(e) => setEmail(e.target.value)}
+        />
+        <FormInput
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          handleChange={(e) => setPassword(e.target.value)}
+        />
+        <FormInput
+          type="password"
+          name="passwordConfirm"
+          placeholder="Confirm Password"
+          value={passwordConfirm}
+          handleChange={(e) => setPasswordConfirm(e.target.value)}
+        />
+        <CustomButton name="Registrar" onClick={handleOnSubmmit} />
+        {serverError ? <p className="register-error">{serverError}</p> : null}
+        <Link className="register-link" to="/login">
+          Já possui uma conta?
+        </Link>
+      </form>
     </div>
   );
 };

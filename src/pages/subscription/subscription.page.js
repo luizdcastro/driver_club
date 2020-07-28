@@ -13,8 +13,13 @@ const Subscription = ({ getme }) => {
       <h3 className="subscription-page__subtitle">Métodos de pagamento</h3>
       {getme[0].iugu_card_data ? <CreditCard /> : <PaymentForm />}
       <h3 className="subscription-page__subtitle">Selecione seu Plano</h3>
-
       <SubscriptionPlan />
+      <h3 className="subscription-page__subtitle">Gerenciar Assinatura</h3>
+      {getme[0].subscription == false ? (
+        <p>Você não possui assinaturas ativas</p>
+      ) : (
+        <p>Minha Assinatura</p>
+      )}
     </div>
   );
 };

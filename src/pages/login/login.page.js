@@ -24,33 +24,33 @@ const Login = ({ dispatchLoginAciton }) => {
 
   return (
     <div className="login-container">
-      <div className="login">
+      <form className="login" onSubmit={handleOnSubmmit}>
         <h2 className="login-title">Entrar na sua conta</h2>
-        <form onSubmit={handleOnSubmmit}>
-          <FormInput
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            handleChange={(e) => setEmail(e.target.value)}
-          />
-          <FormInput
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={password}
-            handleChange={(e) => setPassword(e.target.value)}
-          />
-          <CustomButton name="Login" onClick={handleOnSubmmit} />
-          <div className="login-link__container">
-            <Link className="login-link">Esqueceu sua senha?</Link>
-            <Link to="/register" className="login-link">
-              Criar uma conta
-            </Link>
-          </div>
-          {serverError ? <p className="login-error">{serverError}</p> : null}
-        </form>
-      </div>
+        <FormInput
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          handleChange={(e) => setEmail(e.target.value)}
+        />
+        <FormInput
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          handleChange={(e) => setPassword(e.target.value)}
+        />
+        <CustomButton name="Login" onClick={handleOnSubmmit} />
+        <div className="login-link__container">
+          <Link className="login-link" to="/forgot-password">
+            Esqueceu sua senha?
+          </Link>
+          <Link to="/register" className="login-link">
+            Criar uma conta
+          </Link>
+        </div>
+        {serverError ? <p className="login-error">{serverError}</p> : null}
+      </form>
     </div>
   );
 };

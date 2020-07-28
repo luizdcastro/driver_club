@@ -17,7 +17,7 @@ const Category = ({ category, getme, dispatchGetMeAction }) => {
         <div className="category-title">
           {getme[0] ? (
             <h2 className="category-title__greeting">
-              Olá {getme[0].name.split(' ')[0]}
+              Bem-vindo, {getme[0].name.split(' ')[0]}
             </h2>
           ) : null}
           <h3 className="category-title__text">

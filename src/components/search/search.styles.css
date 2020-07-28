@@ -1,7 +1,7 @@
 .search-container {
   display: flex;
   width: 100%;
-  max-width: 78.5%;
+  max-width: 80%;
   margin: auto;
   margin-top: 15px;
 }
@@ -15,7 +15,7 @@
   margin: 15px 30px 15px 0;
   padding: 5px 5px 5px 60px;
   border: solid 1px #dadce1;
-  border-radius: 15px;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: 500;
   color: #484a4d;

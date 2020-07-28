@@ -43,16 +43,15 @@ const SubscriptionPlan = ({
           </li>
         </ul>
       </div>
-      <CustomButtom
-        id="create-subscription__button"
-        name="Assinar Plano"
-        onClick={createSubscription}
-      />
-      <CustomButtom
-        id="cancel-subscription__button"
-        name="Cancelar Assinatura"
-        onClick={cancelSubscription}
-      />
+      {getme[0].subscription == false ? (
+        <CustomButtom
+          id="create-subscription__button"
+          name="Assinar Plano"
+          onClick={createSubscription}
+        />
+      ) : (
+        <p className="subscription-paln__active">Assinatura Ativa</p>
+      )}
     </div>
   );
 };

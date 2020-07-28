@@ -44,7 +44,6 @@ const PaymentForm = ({
         console.log('Erro salvando cartão:' + JSON.stringify(response.errors));
       } else {
         const data = await response;
-        console.log(data.extra_info);
         if (response) {
           dispatchAddcard(
             data.id,

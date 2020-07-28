@@ -14,9 +14,10 @@
   width: 100%;
   max-width: 75%;
   height: 820px;
-  top: 12%;
+  top: 11%;
   background-color: rgba(185, 185, 185, 0.8);
   z-index: 2;
+  border-radius: 10px;
 }
 
 .modal-payment__content {

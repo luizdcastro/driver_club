@@ -12,6 +12,8 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
   const [email, setEmail] = useState('');
   const [serverError, setServerError] = useState('');
 
+  useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatchUpdateUser(
@@ -21,11 +23,7 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
       (message) => setServerError(message)
     );
     dispatchGetMeAction();
-    setName('');
-    setEmail('');
   };
-
-  useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction]);
 
   return (
     <div className="account-container">

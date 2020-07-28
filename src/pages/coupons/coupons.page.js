@@ -40,6 +40,7 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
                   days={item.days}
                   time={item.time}
                   deleteCoupon={() => handleDeleteCoupon(item._id)}
+                  to={`/partner/${item.partner[0]._id}`}
                 />
               ) : null}
             </React.Fragment>
