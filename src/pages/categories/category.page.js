@@ -7,7 +7,6 @@ import { getMe } from '../../redux/actions/getme.action';
 import { selectCategorySections } from '../../redux/reducers/category/category.selector';
 import { selectGetMeData } from '../../redux/reducers/getme/getme.selector';
 import './category.styles.css';
-
 const Category = ({ category, getme, dispatchGetMeAction }) => {
   useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
 

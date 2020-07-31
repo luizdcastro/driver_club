@@ -66,7 +66,8 @@ const PaymentForm = ({
       {!modalVisible ? (
         <div className="payment-method__container">
           <CustomButton
-            name="Adicionar Forma de Pagamento"
+            id="payment-method__addbtn"
+            name="Adicionar Cartão"
             onClick={() => setModalVisible(true)}
           />
         </div>

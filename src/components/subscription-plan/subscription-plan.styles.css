@@ -4,9 +4,8 @@
   border-radius: 10px 0 10px 0;
   border: solid 1px #dadce1;
   max-width: 700px;
-  height: 330px;
+  height: 300px;
   margin: auto;
-  margin-bottom: 15px;
   color: #484a4d;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
@@ -18,6 +17,17 @@
   color: #484a4d;
   top: 4%;
   text-align: center;
+}
+
+.subscription-subtitle__container {
+  display: flex;
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+  color: #484a4d;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .subsctiption-plan__price {
@@ -35,13 +45,24 @@
   justify-content: center;
   font-size: 14px;
   font-weight: 500;
+  line-height: 5px;
   top: 3%;
+}
+
+.description-item {
+  display: flex;
+}
+
+.check-icon {
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 #create-subscription__button {
   position: relative;
+  width: 285px;
   margin: auto;
-  top: 14%;
+  top: 8%;
 }
 
 #cancel-subscription__button {
@@ -50,11 +71,70 @@
   top: 15%;
 }
 
-.subscription-paln__active {
+.subscription-plan__active {
   position: relative;
   text-align: center;
-  top: 14%;
+  top: 6%;
   font-size: 14px;
   font-weight: 700;
   color: #2ea44f;
+}
+
+.subscription-page__subtitle {
+  font-size: 16px;
+  color: #484a4d;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+.subscription-page__active {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  border: solid 1px #dadce1;
+  max-width: 700px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #484a4d;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  max-width: 700px;
+}
+
+.subscription-active__content {
+  font-size: 13px;
+  line-height: 4px;
+  margin-left: 15px;
+  margin-top: 16px;
+}
+
+.subscription-active__cancel {
+  position: absolute;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #f08080;
+  top: 45%;
+  right: 3%;
+}
+
+.subscription-container__inative {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  border: solid 1px #dadce1;
+  max-width: 700px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #484a4d;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  max-width: 700px;
+  font-size: 14px;
 }
