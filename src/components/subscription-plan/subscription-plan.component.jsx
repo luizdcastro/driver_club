@@ -28,9 +28,13 @@ const SubscriptionPlan = ({
 
   const createSubscription = (event) => {
     event.preventDefault();
-    dispatchCreateSubscription(getme[0].id);
-    setSubscription(true);
-    dispatchGetme();
+    if (!getme[0].iugu_card_data) {
+      alert('Adicione um método de pagamento');
+    } else {
+      dispatchCreateSubscription(getme[0].id);
+      setSubscription(true);
+      dispatchGetme();
+    }
   };
   const cancelSubscription = (event) => {
     event.preventDefault();
@@ -39,7 +43,7 @@ const SubscriptionPlan = ({
     dispatchGetme();
   };
   return (
-    <div className="subscription-page__container">
+    <div>
       <div className="subscription-subtitle__container">
         <h3>Métodos de Pagamento</h3>
       </div>

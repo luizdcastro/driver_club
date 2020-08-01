@@ -10,13 +10,13 @@
   color: #484a4d;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 #payment-method__addbtn {
-  position: absolute;
-  width: 285px;
-  top: 20%;
+  width: 230px;
+  margin: 0;
 }
 
 .modal-payment__container {
@@ -24,12 +24,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75%;
-  height: 820px;
-  top: 11%;
+  width: 100%;
+  height: 120%;
+  left: 0%;
+  top: 0%;
   background-color: rgba(185, 185, 185, 0.8);
   z-index: 2;
-  border-radius: 10px;
 }
 
 .modal-payment__content {
