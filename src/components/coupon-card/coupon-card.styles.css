@@ -62,7 +62,7 @@
 }
 
 .coupon-card__link {
-  top: 75%;
+  top: 80%;
   left: 3%;
   position: absolute;
   color: #484a4d;
@@ -83,7 +83,7 @@
   border-radius: 10px;
   align-items: center;
   width: 100%;
-  max-width: 75%;
+  max-width: 80%;
   height: 820px;
   top: 11%;
   background-color: rgba(185, 185, 185, 0.8);
@@ -105,7 +105,7 @@
   justify-content: center;
   position: absolute;
   width: 100%;
-  max-width: 75%;
+  max-width: 80%;
   height: 500px;
   color: #484a4d;
 }
@@ -145,7 +145,7 @@
 .modal-coupon__validate {
   position: absolute;
   left: 5%;
-  top: 75%;
+  top: 80%;
   font-size: 14px;
 }
 

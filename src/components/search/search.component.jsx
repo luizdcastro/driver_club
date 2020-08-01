@@ -6,7 +6,7 @@ import './search.styles.css';
 const SearchBar = ({ onChange }) => {
   return (
     <div className="search-container">
-      <SearchIcon className="search-icon" style={{ fontSize: 32 }} />
+      <SearchIcon className="search-icon" style={{ fontSize: 30 }} />
       <input
         className="search-input"
         placeholder="Busque pelo nome do parceiro"

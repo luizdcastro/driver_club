@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import MenuIcon from '@material-ui/icons/Menu';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 
-import { getMe } from '../../redux/actions/getme.action';
 import './header.styles.css';
 
-const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
-  useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction, isLoggedIn]);
-
+const Header = ({ isLoggedIn, onLogout }) => {
   function Navbar({ children }) {
     return (
       <nav className="nav-container">
@@ -24,7 +23,11 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
 
     return (
       <li className="nav-item">
-        <Link className="nav-link" onClick={() => setOpen(!open)} to={to}>
+        <Link
+          className={`nav-link__${isLoggedIn}`}
+          onClick={() => setOpen(!open)}
+          to={to}
+        >
           {name}
         </Link>
         {open && children}
@@ -54,9 +57,9 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
       <Navbar>
         {isLoggedIn ? (
           <React.Fragment>
-            <NavItem name="Favorites" to="/favorites" />
-            <NavItem name="Coupons" to="/coupons" />
-            <NavItem name="Menu">
+            <NavItem name={<FavoriteIcon />} to="/favorites" />
+            <NavItem name={<LoyaltyIcon />} to="/coupons" />
+            <NavItem name={<MenuIcon />}>
               <DropdownMenu />
             </NavItem>
           </React.Fragment>
@@ -71,12 +74,4 @@ const Header = ({ getme, isLoggedIn, onLogout, dispatchGetMeAction }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  getme: state.getme,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  dispatchGetMeAction: () => dispatch(getMe()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
