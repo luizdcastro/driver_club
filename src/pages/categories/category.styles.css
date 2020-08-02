@@ -19,16 +19,14 @@
 
 .category-title__greeting {
   color: #484a4d;
-  margin-left: 10px;
   font-size: 21px;
   font-weight: 700;
 }
 
 .category-title__text {
   color: #484a4d;
-  margin-left: 10px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .category-main {

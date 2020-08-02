@@ -29,8 +29,8 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
     <div className="account-container">
       <h2 className="account-title">Configurações da Conta</h2>
       <div className="account-data__pessoal ">
-        <h3>Dados Pessoais</h3>
         <form onSubmit={handleSubmit}>
+          <h3 className="account-data__subtitle">Dados Pessoais</h3>
           <FormInput
             type="text"
             name="name"
@@ -53,7 +53,7 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
       </div>
       <div className="account-data__password">
         <form>
-          <h3>Alterar Senha</h3>
+          <h3 className="account-data__subtitle">Alterar Senha</h3>
           <FormInput
             type="password"
             name="password"
