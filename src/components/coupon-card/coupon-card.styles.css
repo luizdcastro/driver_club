@@ -78,21 +78,20 @@
 
 .modal-coupon__container {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
-  border-radius: 10px;
   align-items: center;
-  width: 100%;
-  max-width: 80%;
-  height: 820px;
-  top: 11%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(185, 185, 185, 0.8);
   z-index: 2;
 }
 
 .modal-coupon__close {
   position: absolute;
-  right: 4%;
+  right: 2%;
   top: 4%;
   cursor: pointer;
 }
@@ -105,7 +104,7 @@
   justify-content: center;
   position: absolute;
   width: 100%;
-  max-width: 80%;
+  max-width: 90%;
   height: 500px;
   color: #484a4d;
 }
@@ -145,7 +144,7 @@
 .modal-coupon__validate {
   position: absolute;
   left: 5%;
-  top: 80%;
+  top: 73%;
   font-size: 14px;
 }
 
@@ -153,12 +152,12 @@
   position: absolute;
   font-size: 13px;
   left: 5%;
-  top: 80%;
+  top: 78%;
 }
 
 .modal-coupon__time {
   position: absolute;
   font-size: 13px;
   left: 5%;
-  top: 85%;
+  top: 82%;
 }

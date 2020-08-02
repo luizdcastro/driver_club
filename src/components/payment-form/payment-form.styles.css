@@ -22,87 +22,88 @@
 .modal-payment__container {
   position: absolute;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 120%;
+  height: 105%;
   left: 0%;
   top: 0%;
   background-color: rgba(185, 185, 185, 0.8);
   z-index: 2;
 }
 
-.modal-payment__content {
-  background-color: #f4f4f4;
-  display: block;
+.modal-payment__title {
+  font-size: 14;
+}
+
+.modal-payment__icon {
   position: absolute;
+  top: 4%;
+  right: 3%;
+  cursor: pointer;
+}
+
+.modal-payment__content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 13%;
+  background-color: #f4f4f4;
   width: 100%;
   height: 100%;
-  max-height: 350px;
-  max-width: 320px;
+  max-height: 65%;
+  max-width: 93%;
   color: #484a4d;
   border-radius: 10px;
-  margin: 5px;
+}
+
+.credit-card__group {
+  display: inline-block;
+}
+
+.credit-card__flex {
+  display: flex;
+  margin: 3px;
 }
 
 #modal-payment__card {
-  position: absolute;
-  top: 10%;
-  width: 280px;
+  width: 300px;
+  margin: 3px;
 }
 
 #modal-payment__firstName {
-  position: absolute;
-  width: 131px;
-  top: 24.5%;
-  left: 0;
+  width: 141px;
+  margin: 3px;
 }
 
 #modal-payment__lastName {
-  position: absolute;
-  width: 132px;
-  top: 24.5%;
-  right: 0;
+  width: 141px;
+  margin: 3px;
 }
 
 #modal-payment__month {
-  position: absolute;
-  display: block;
-  width: 81px;
-  height: 30px;
-  left: 0%;
-  top: 39%;
+  width: 88px;
+  margin: 3px;
 }
 
 #modal-payment__year {
-  position: absolute;
-  display: block;
-  width: 81px;
-  height: 30px;
-  position: absolute;
-  left: 30%;
-  top: 39%;
+  width: 88px;
+  margin: 3px;
 }
 
 #modal-payment__cvv {
-  position: absolute;
-  display: block;
-  width: 86px;
-  height: 30px;
-  right: 0%;
-  top: 39%;
+  width: 88px;
+  margin: 3px;
 }
 
 #modal-payment__save {
-  position: absolute;
-  width: 285px;
-  left: 1%;
-  top: 59%;
+  width: 312px;
+  margin: 3px;
 }
 
 #modal-payment__cancel {
-  position: absolute;
-  width: 285px;
-  left: 1%;
-  bottom: 10%;
+  width: 312px;
+  margin: 3px;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import CloseIcon from '@material-ui/icons/Close';
 
 import {
   addCard,
@@ -73,54 +74,73 @@ const PaymentForm = ({
         </div>
       ) : (
         <div className="modal-payment__container">
-          <h3>Adicionar Médodo de Pagamento</h3>
           <form className="modal-payment__content" onSubmit={handleSubmit}>
-            <FormInput
-              id="modal-payment__card"
-              placeholder="Número do Cartão"
-              handleChange={(e) => setCardNumber(e.target.value)}
-              value={cardNumber}
-            />
-            <FormInput
-              id="modal-payment__firstName"
-              placeholder="Nome"
-              handleChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
-            />
-            <FormInput
-              id="modal-payment__lastName"
-              placeholder="Sobrenome"
-              handleChange={(e) => setLastName(e.target.value)}
-              value={lastName}
-            />
-            <FormInput
-              id="modal-payment__month"
-              placeholder="Mês"
-              handleChange={(e) => setMonth(e.target.value)}
-              value={month}
-            />
-            <FormInput
-              id="modal-payment__year"
-              placeholder="Ano"
-              handleChange={(e) => setYear(e.target.value)}
-              value={year}
-            />
-            <FormInput
-              id="modal-payment__cvv"
-              placeholder="CCV"
-              handleChange={(e) => setCcvCode(e.target.value)}
-              value={ccvCode}
-            />
-            <CustomButton
-              id="modal-payment__save"
-              name="Salvar"
-              onClick={handleSubmit}
-            />
-            <CustomButton
-              id="modal-payment__cancel"
-              name="Cancelar"
-              onClick={() => setModalVisible(false)}
-            />
+            <div className="credit-card__group">
+              <CloseIcon
+                className="modal-payment__icon"
+                style={{ fontSize: 25 }}
+                onClick={() => setModalVisible(false)}
+              />
+              <h4 className="modal-payment__title">
+                Adicionar Médodo de Pagamento
+              </h4>
+              <div className="credit-card__flex">
+                <FormInput
+                  id="modal-payment__card"
+                  placeholder="Número do Cartão"
+                  handleChange={(e) => setCardNumber(e.target.value)}
+                  value={cardNumber}
+                />
+              </div>
+              <div className="credit-card__flex">
+                <FormInput
+                  id="modal-payment__firstName"
+                  placeholder="Nome"
+                  handleChange={(e) => setFirstName(e.target.value)}
+                  value={firstName}
+                />
+                <FormInput
+                  id="modal-payment__lastName"
+                  placeholder="Sobrenome"
+                  handleChange={(e) => setLastName(e.target.value)}
+                  value={lastName}
+                />
+              </div>
+              <div className="credit-card__flex">
+                <FormInput
+                  id="modal-payment__month"
+                  placeholder="Mês"
+                  handleChange={(e) => setMonth(e.target.value)}
+                  value={month}
+                />
+                <FormInput
+                  id="modal-payment__year"
+                  placeholder="Ano"
+                  handleChange={(e) => setYear(e.target.value)}
+                  value={year}
+                />
+                <FormInput
+                  id="modal-payment__cvv"
+                  placeholder="CCV"
+                  handleChange={(e) => setCcvCode(e.target.value)}
+                  value={ccvCode}
+                />
+              </div>
+              <div className="credit-card__flex">
+                <CustomButton
+                  id="modal-payment__save"
+                  name="Salvar"
+                  onClick={handleSubmit}
+                />
+              </div>
+              <div className="credit-card__flex">
+                <CustomButton
+                  id="modal-payment__cancel"
+                  name="Cancelar"
+                  onClick={() => setModalVisible(false)}
+                />
+              </div>
+            </div>
           </form>
         </div>
       )}
