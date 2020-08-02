@@ -1,0 +1,56 @@
+.home-page__container {
+  height: 93.8vh;
+  width: 80%;
+  margin: auto;
+  background-color: #f7f6f4;
+  color: #484a4d;
+}
+
+.home-page__hero {
+  display: grid;
+  max-width: 100%;
+  height: 100%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 750px));
+  grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+}
+
+.home-page__callaction {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-callaction__container {
+  display: inline-block;
+}
+
+.home-callaction__title {
+  font-size: 2.4rem;
+  font-weight: 650;
+  line-height: 3rem;
+}
+
+.home-callaction__subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.home-callaction__buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#driver-button {
+  height: 50px;
+}
+
+#partner-button {
+  height: 50px;
+}
+
+.home-page__calculator {
+  background-color: lightcoral;
+}
