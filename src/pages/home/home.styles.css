@@ -52,5 +52,40 @@
 }
 
 .home-page__calculator {
-  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-calculator__title {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.home-calculator__container {
+  display: block;
+  padding: 25px;
+  max-width: 400px;
+  background: #fff;
+  border: solid 1px #dadce1;
+  border-radius: 10px;
+}
+
+.home-calculator__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#home-calculator__button {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+#calculator-input {
+  width: 92px;
+  margin-right: 0;
+  margin-bottom: 5px;
 }
