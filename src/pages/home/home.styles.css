@@ -1,15 +1,44 @@
 .home-page__container {
+  width: 80%;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 80vh 50vh 50vh 30vh;
+  margin: auto;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 50vh 50vh 20vh;
 }
 
 .home-page__hero {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: red;
+  padding: 10px;
+}
+
+.hero-main {
+  max-width: 780px;
+  color: #484a4d;
+  margin-bottom: 20px;
+}
+
+.hero-main__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.hero-main__subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.hero-button {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#custom-button {
+  height: 50px;
+  max-width: 350px;
+  margin: 5px;
 }
 
 .home-page__main {
