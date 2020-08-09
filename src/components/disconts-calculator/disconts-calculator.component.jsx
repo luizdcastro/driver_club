@@ -25,7 +25,7 @@ const DiscontCalculator = () => {
     <div className="home-page__calculator">
       <form className="home-calculator__container">
         <h2 className="home-calculator__title">
-          Calcule quanto você pode economizar por mês:
+          Calcule quanto você pode economizar
         </h2>
         <ul>
           <li className="home-calculator__items">

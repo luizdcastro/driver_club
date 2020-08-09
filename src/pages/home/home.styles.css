@@ -1,13 +1,11 @@
 .home-page__container {
   width: 80%;
-  display: grid;
   margin: auto;
-  grid-template-columns: 100%;
-  grid-template-rows: 40% 50vh 50vh 20vh;
 }
 
 .home-page__hero {
   display: flex;
+  height: 80vh;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
