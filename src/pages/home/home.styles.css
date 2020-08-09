@@ -5,11 +5,12 @@
 
 .home-page__hero {
   display: flex;
-  height: 80vh;
   flex-wrap: wrap;
-  justify-content: space-around;
+  min-height: 650px;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 .hero-main {
@@ -40,7 +41,27 @@
 }
 
 .home-page__main {
-  background-color: yellow;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#main-image {
+  width: 100%;
+  height: 100%;
+}
+
+.home-main__title {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.home-main__items {
+  color: #484a4d;
+  max-width: 780px;
+  margin: auto;
 }
 
 .home-page__sub {

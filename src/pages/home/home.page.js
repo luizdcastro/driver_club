@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
+import DriverImage from '../../assets/images/driver.png';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import DiscontCalculator from '../../components/disconts-calculator/disconts-calculator.component';
 import './home.styles.css';
@@ -21,11 +21,39 @@ const Home = () => {
             <CustomButton id="custom-button" name="Tenho um Negócio" />
           </div>
         </div>
-        <div>
-          <DiscontCalculator />
+        <DiscontCalculator />
+      </div>
+      <div className="home-page__main">
+        <div className="home-main__image">
+          <img id="main-image" src={DriverImage} alt="driver" />
+        </div>
+        <div className="home-main__items">
+          <h3 className="home-main__title">Why chose Rocketcab</h3>
+          <ul>
+            <li>
+              <h2>Your safety is our priority</h2>
+              <p>
+                With geo-tracked journeys and identified drivers. And of course,
+                we put in place measures to protect you from COVID-19.
+              </p>
+            </li>
+            <li>
+              <h2>Your safety is our priority</h2>
+              <p>
+                With geo-tracked journeys and identified drivers. And of course,
+                we put in place measures to protect you from COVID-19.
+              </p>
+            </li>
+            <li>
+              <h2>Your safety is our priority</h2>
+              <p>
+                With geo-tracked journeys and identified drivers. And of course,
+                we put in place measures to protect you from COVID-19.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="home-page__main"></div>
       <div className="home-page__sub"></div>
       <div className="home-page__footer"></div>
     </div>
