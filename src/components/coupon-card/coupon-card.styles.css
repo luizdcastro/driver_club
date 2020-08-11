@@ -43,8 +43,8 @@
   position: absolute;
   right: 3%;
   top: 64%;
-  background-color: #484a4d;
-  border: solid 1px #484a4d;
+  background-color: rgb(115, 80, 255);
+  border: solid 1px rgb(115, 80, 255);
   border-radius: 5px;
   color: #f4f4f4;
   font-size: 13px;
@@ -65,7 +65,7 @@
   top: 80%;
   left: 3%;
   position: absolute;
-  color: #484a4d;
+  color: rgb(115, 80, 255);
   font-weight: 600;
   font-size: 13px;
   height: 40px;

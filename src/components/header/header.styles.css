@@ -1,5 +1,5 @@
 .header {
-  background-color: #24292e;
+  background-color: rgb(115, 80, 255);
 }
 
 .nav-container {
@@ -14,7 +14,7 @@
 }
 
 .nav-logo {
-  color: #f4f4f4;
+  color: rgb(255, 255, 255);
   font-size: 21px;
   font-weight: 700;
 }
@@ -37,13 +37,13 @@
 }
 
 .nav-link__true {
-  color: #f4f4f4;
+  color: rgb(255, 255, 255);
   font-size: 14px;
   font-weight: 600;
   width: 22px;
   height: 22px;
-  background-color: #484a4d;
-  border: solid 1px #484a4d;
+  background-color: rgb(33, 34, 64);
+  border: solid 1px rgb(33, 34, 64);
   border-radius: 50px;
   padding: 8px;
   margin-left: 8px;
@@ -54,12 +54,12 @@
 }
 
 .nav-link__null {
-  color: #f4f4f4;
+  color: rgb(255, 255, 255);
   font-size: 14px;
   font-weight: 600;
   width: 70px;
-  background-color: #484a4d;
-  border: solid 1px #484a4d;
+  background-color: rgb(33, 34, 64);
+  border: solid 1px rgb(33, 34, 64);
   border-radius: 5px;
   padding: 8px;
   margin-left: 8px;
@@ -76,12 +76,12 @@
   position: absolute;
   top: 59px;
   width: 250px;
-  color: #f4f4f4;
+  color: rgb(255, 255, 255);
   font-size: 13px;
   font-weight: 600;
   transform: translateX(-30%);
-  background-color: #24292e;
-  border: 1px solid #474a4d;
+  background-color: rgb(33, 34, 64);
+  border: 1px solid rgb(33, 34, 64);
   border-radius: 5px;
   padding: 1rem;
   overflow: hidden;
@@ -99,5 +99,6 @@
 }
 
 .menu-item:hover {
-  background-color: #525357;
+  background-color: rgb(33, 34, 64);
+  filter: brightness(1.5);
 }

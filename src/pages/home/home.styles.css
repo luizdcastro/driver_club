@@ -100,8 +100,8 @@
 }
 
 .home-page__footer {
-  background-color: #24292e;
-  color: #f4f4f4;
+  background-color: rgb(115, 80, 255);
+  color: rgb(255, 255, 255);
 }
 
 .home-footer {
@@ -139,7 +139,7 @@
 #footer-box__button {
   height: 68px;
   font-size: 16px;
-  background-color: #2ea44f;
+  background-color: rgb(33, 34, 64);
   border-radius: 15px;
 }
 
