@@ -2,16 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .home-calculator__title {
   font-size: 1.6rem;
   text-align: center;
+  color: #484a4d;
 }
 
 .home-calculator__container {
   display: block;
-  padding: 18px;
+  padding: 30px;
   max-width: 400px;
   background: #fff;
   border: solid 1px #dadce1;

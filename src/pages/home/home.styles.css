@@ -1,22 +1,22 @@
-.home-page__container {
-  width: 80vw;
-  margin: auto;
+.home-hero__container {
+  background-color: #fff;
 }
 
 .home-page__hero {
   display: flex;
+  width: 80vw;
+  margin: auto;
   flex-wrap: wrap;
   min-height: 650px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
-  margin-bottom: 20px;
 }
 
 .hero-main {
-  max-width: 780px;
+  max-width: 660px;
   color: #484a4d;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .hero-main__title {
@@ -40,11 +40,23 @@
   margin: 5px;
 }
 
+.home-main__container {
+  background-color: #f8fafb;
+}
+
 .home-page__main {
   display: flex;
+  width: 80vw;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   padding: 10px;
-  margin-bottom: 20px;
+}
+
+.home-main__image {
+  max-width: 485px;
+  margin-top: 50px;
 }
 
 #main-image {
@@ -60,14 +72,77 @@
 
 .home-main__items {
   color: #484a4d;
-  max-width: 780px;
-  margin: auto;
+  max-width: 550px;
+  margin-bottom: 30px;
 }
 
 .home-page__sub {
-  background-color: green;
+  color: #484a4d;
+  margin: auto;
+  width: 80vw;
+  padding-bottom: 50px;
+}
+
+.home-sub__title {
+  max-width: 1420px;
+  margin: auto;
+  text-align: left;
+}
+
+.home-sub__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.home-sub__item {
+  max-width: 400px;
 }
 
 .home-page__footer {
-  background-color: purple;
+  background-color: #24292e;
+  color: #f4f4f4;
+}
+
+.home-footer {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: auto;
+  padding: 10px;
+}
+
+.home-footer__box {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-box__text {
+  font-size: 14px;
+  font-weight: 700px;
+  text-transform: uppercase;
+}
+
+.footer-box__title {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+#footer-box__button {
+  height: 68px;
+  font-size: 16px;
+  background-color: #2ea44f;
+  border-radius: 15px;
+}
+
+.footer-box__copy {
+  font-size: 14px;
 }
