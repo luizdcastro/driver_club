@@ -29,6 +29,8 @@ const Category = ({ category, getme, dispatchGetMeAction }) => {
               <CategoryCard
                 to={`/categories/${item.title.toLowerCase()}`}
                 name={item.title}
+                partners={item.id.length}
+                image={item.imageUrl}
               />
             </React.Fragment>
           ))}

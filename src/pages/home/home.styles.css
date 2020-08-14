@@ -19,8 +19,8 @@
   justify-content: center;
   max-width: 650px;
   width: 100%;
-  color: #484a4d;
-  margin-bottom: 35px;
+  color: #212240;
+  margin-bottom: 10px;
 }
 
 .hero-main__title {
@@ -86,10 +86,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #484a4d;
+  color: #212240;
   width: 570px;
   margin-left: 0px;
-  margin-bottom: 10px;
 }
 
 .main-items__icon {
@@ -135,7 +134,7 @@
   flex-direction: column;
   justify-content: center;
   width: 600px;
-  color: #484a4d;
+  color: #212240;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -188,12 +187,12 @@
 }
 
 .home-page__sub {
-  color: #484a4d;
+  color: #212240;
   margin: auto;
   width: 90vw;
   max-width: 1200px;
-  padding-bottom: 70px;
-  padding-top: 70px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .page-sub__content {

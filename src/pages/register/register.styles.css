@@ -5,22 +5,21 @@
   margin: auto;
   max-width: 90vw;
   height: 93vh;
-  background-color: #f4f4f4;
 }
 
 .register {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  border: solid 1px #dadce1;
   margin-bottom: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .register-title {
   margin-left: 14px;
   font-size: 20px;
   font-weight: 700;
-  color: #484a4d;
+  color: #212240;
 }
 
 .register-error {
@@ -34,7 +33,7 @@
   font-size: 13px;
   font-weight: 600;
   margin: 15px;
-  color: #484a4d;
+  color: #212240;
 }
 
 .register-password:hover {

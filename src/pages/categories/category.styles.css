@@ -3,7 +3,7 @@
   max-width: 80%;
   height: auto;
   margin: auto;
-  background-color: #f7f6f4;
+  color: #212240;
 }
 
 .category-title {
@@ -18,13 +18,11 @@
 }
 
 .category-title__greeting {
-  color: #484a4d;
   font-size: 21px;
   font-weight: 700;
 }
 
 .category-title__text {
-  color: #484a4d;
   font-size: 18px;
   font-weight: 600;
 }

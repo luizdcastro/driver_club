@@ -2,6 +2,7 @@
   margin-bottom: 50px;
   margin-top: 45px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  color: #212240;
 }
 
 .home-page__calculator:hover {
@@ -11,7 +12,6 @@
 .home-calculator__title {
   font-size: 1.6rem;
   text-align: center;
-  color: #484a4d;
 }
 
 .home-calculator__container {

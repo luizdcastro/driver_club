@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 
 import './catedory-card.styles.css';
 
-const CategoryCard = ({ name, to }) => {
+const CategoryCard = ({ name, image, partners, to }) => {
   return (
     <Link className="card-container" to={to}>
       <p className="card-title">{name}</p>
+      <img src={image} alt={name} />
     </Link>
   );
 };

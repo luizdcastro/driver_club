@@ -1,44 +1,48 @@
+import IconOne from '../../../assets/images/icon_one.svg';
+import IconTwo from '../../../assets/images/icon_two.svg';
+import IconThree from '../../../assets/images/icon_three.svg';
+
 const INITIAL_STATE = {
   categories: [
     {
       title: 'Postos',
-      imageUrl: '',
+      imageUrl: `${IconOne}`,
       id: 1,
       linkUrl: 'category/postos',
     },
     {
       title: 'Locadoras',
-      imageUrl: '',
+      imageUrl: `${IconTwo}`,
       id: 2,
       linkUrl: 'category/locadoras',
     },
     {
       title: 'Seguros',
-      imageUrl: '',
+      imageUrl: `${IconThree}`,
       id: 3,
       linkUrl: 'category/seguros',
     },
     {
       title: 'Alimentação',
-      imageUrl: '',
+      imageUrl: `${IconOne}`,
       id: 4,
       linkUrl: 'category/alimentacao',
     },
     {
       title: 'Manutenção',
-      imageUrl: '',
+      imageUrl: `${IconTwo}`,
       id: 5,
       linkUrl: 'category/manutencao',
     },
     {
       title: 'Lava-car',
-      imageUrl: '',
+      imageUrl: `${IconThree}`,
       id: 6,
       linkUrl: 'category/lava-car',
     },
     {
       title: 'Lazer',
-      imageUrl: '',
+      imageUrl: `${IconOne}`,
       id: 7,
       linkUrl: 'category/lava-car',
     },
