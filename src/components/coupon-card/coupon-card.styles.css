@@ -2,51 +2,55 @@
   position: relative;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
-  border: solid 1px #dadce1;
   max-width: 700px;
   height: 160px;
   margin: auto;
   margin-bottom: 15px;
-  color: #484a4d;
+  color: #212240;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.coupon-card__container:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .coupon-card__title {
   position: absolute;
-  font-size: 16px;
+  font-size: 1.2rem;
   font-weight: 700;
-  left: 3%;
+  left: 4%;
 }
 
 .coupon-card__name {
   position: absolute;
-  font-size: 13px;
-  left: 3%;
-  top: 15%;
+  font-size: 14px;
+  left: 4%;
+  top: 20%;
 }
 
 .coupon-card__percentage {
   position: absolute;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 700;
-  left: 3%;
+  left: 4%;
   top: 37%;
 }
 
 .coupon-card__delete {
   position: absolute;
-  right: 3%;
+  right: 4%;
   top: 12%;
   cursor: pointer;
 }
 
 .coupon-card__button {
   position: absolute;
-  right: 3%;
+  right: 4%;
   top: 64%;
   background-color: rgb(115, 80, 255);
   border: solid 1px rgb(115, 80, 255);
-  border-radius: 5px;
-  color: #f4f4f4;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
   font-size: 13px;
   font-weight: 700;
   height: 40px;
@@ -63,12 +67,12 @@
 
 .coupon-card__link {
   top: 80%;
-  left: 3%;
+  left: 4%;
   position: absolute;
   color: rgb(115, 80, 255);
   font-weight: 600;
-  font-size: 13px;
-  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .coupon-card__link:hover {

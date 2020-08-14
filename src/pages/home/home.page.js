@@ -45,12 +45,12 @@ const Home = () => {
                 />
                 <div>
                   <h2 className="main-items__title">
-                    Your safety is our priority
+                    Lorem ipsum dolor sit amet.
                   </h2>
                   <p className="main-items__text">
-                    With geo-tracked journeys and identified drivers. And of
-                    course, we put in place measures to protect you from
-                    COVID-19.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    sodales ex a mi ultricies dictum. Proin fringilla ac metus
+                    a.
                   </p>
                 </div>
               </li>
@@ -61,12 +61,12 @@ const Home = () => {
                 />
                 <div>
                   <h2 className="main-items__title">
-                    Your safety is our priority
+                    Lorem ipsum dolor sit amet.
                   </h2>
                   <p className="main-items__text">
-                    With geo-tracked journeys and identified drivers. And of
-                    course, we put in place measures to protect you from
-                    COVID-19.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    sodales ex a mi ultricies dictum. Proin fringilla ac metus
+                    a.
                   </p>
                 </div>
               </li>
@@ -77,12 +77,12 @@ const Home = () => {
                 />
                 <div>
                   <h2 className="main-items__title">
-                    Your safety is our priority
+                    Lorem ipsum dolor sit amet.
                   </h2>
                   <p className="main-items__text">
-                    With geo-tracked journeys and identified drivers. And of
-                    course, we put in place measures to protect you from
-                    COVID-19.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    sodales ex a mi ultricies dictum. Proin fringilla ac metus
+                    a.
                   </p>
                 </div>
               </li>
@@ -92,13 +92,13 @@ const Home = () => {
             <div className="home-card__text">
               <p className="card-text__call">Rocketcab Business</p>
               <h3 className="card-text__title">
-                A new concept of corporate transport
+                Lorem ipsum dolor sit amet, consectetur.
               </h3>
               <p className="card-text__content">
-                Your employees or clients will travel in the safest, quickest
-                way there is. From one simple platform, control all your costs,
-                follow all journeys in real-time and set price, time and zone
-                limits.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent mollis ipsum diam, id eleifend libero maximus ut.
+                Vivamus imperdiet eros iaculis est blandit bibendum. Phasellus
+                tempus congue lorem eu bibendum.
               </p>
               <Link className="card-text__link">
                 Seja um parceiro Rocketcab
@@ -116,17 +116,19 @@ const Home = () => {
         <div className="home-sub__container">
           <div className="home-page__sub">
             <div className="page-sub__content">
-              <h2 className="page-sub__title">Your safety, our commitment</h2>
+              <h2 className="page-sub__title">
+                Lorem ipsum dolor sit consectetur.
+              </h2>
               <p className="page-sub__text">
-                We’ve created our service with safety in mind, down to every
-                last detail
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                pretium dolor in.
               </p>
             </div>
             <div>
               <ul className="home-sub__items">
                 <li className="home-sub__item">
                   <img src={IconOne} alt="icon" />
-                  <h3>Protection against COVID-19</h3>
+                  <h3>Lorem ipsum dolor amet.</h3>
                   <p>
                     Extra safety and hygiene measures so that you can ride
                     around the city as safely as ever.
@@ -134,7 +136,7 @@ const Home = () => {
                 </li>
                 <li className="home-sub__item">
                   <img src={IconTwo} alt="icon" />
-                  <h3>Protection against COVID-19</h3>
+                  <h3>Lorem ipsum dolor amet.</h3>
                   <p>
                     Extra safety and hygiene measures so that you can ride
                     around the city as safely as ever.
@@ -142,10 +144,10 @@ const Home = () => {
                 </li>
                 <li className="home-sub__item">
                   <img src={IconThree} alt="icon" />
-                  <h3>Protection against COVID-19</h3>
+                  <h3>Lorem ipsum dolor amet.</h3>
                   <p>
-                    Extra safety and hygiene measures so that you can ride
-                    around the city as safely as ever.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Integer ornare faucibus sollicitudin. Nam viverra felis.
                   </p>
                 </li>
               </ul>
@@ -158,8 +160,8 @@ const Home = () => {
           <div className="home-footer__box">
             <h3 className="footer-box__text">Rocketcab está em sua cidade</h3>
             <h2 className="footer-box__title">
-              We’re available in 11 countries and more than 90 cities around
-              theworld
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              non odio porta.
             </h2>
             <CustomButton
               id="footer-box__button"

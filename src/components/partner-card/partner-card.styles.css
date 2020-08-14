@@ -2,17 +2,17 @@
   position: relative;
   background-color: #fff;
   min-height: 110px;
-  border: solid 1px #dadce1;
   border-radius: 10px 0 10px 0;
   padding-left: 15px;
   transition: 300ms;
   text-decoration: none;
-  color: #484a4d;
+  color: #212240;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .partner-container:hover {
   filter: brightness(1.1);
-  background-color: #f4f4f4;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .partner-title {

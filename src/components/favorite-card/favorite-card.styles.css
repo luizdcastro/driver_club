@@ -2,31 +2,35 @@
   position: relative;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
-  border: solid 1px #dadce1;
   max-width: 700px;
   margin: auto;
   margin-bottom: 15px;
-  color: #484a4d;
+  color: #212240;
   height: 160px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.favorite-card__container:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .favorite-card__title {
   position: absolute;
-  font-size: 16px;
+  font-size: 1.2rem;
   font-weight: 700;
-  left: 3%;
+  left: 4%;
 }
 
 .favorite-card__subtitle {
   position: absolute;
-  font-size: 13px;
-  left: 3%;
-  top: 15%;
+  font-size: 14px;
+  left: 4%;
+  top: 21%;
 }
 
 .favorite-card__delete {
   position: absolute;
-  right: 3%;
+  right: 4%;
   top: 12%;
   cursor: pointer;
 }
@@ -36,11 +40,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 3%;
+  left: 4%;
   top: 60%;
   background-color: rgb(115, 80, 255);
   border: solid 1px rgb(115, 80, 255);
-  border-radius: 5px;
+  border-radius: 3px;
   color: #f4f4f4;
   font-size: 13px;
   font-weight: 600;

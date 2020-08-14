@@ -54,6 +54,7 @@
 
 .nav-link__true:hover {
   filter: brightness(1.2);
+  padding: 10px;
 }
 
 .nav-link__null {

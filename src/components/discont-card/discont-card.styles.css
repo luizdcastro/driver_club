@@ -3,9 +3,9 @@
   position: relative;
   min-height: 100px;
   background-color: #fff;
-  border: solid 1px #dadce1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px 10px 0 0;
-  color: #484a4d;
+  color: #212240;
 }
 
 .discont-title {
@@ -17,18 +17,22 @@
 
 .discont-percentage {
   position: absolute;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   left: 2%;
-  top: 30%;
+  top: 35%;
   margin-bottom: 150px;
 }
 
 .discont-details {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   right: 50%;
   top: 55%;
   cursor: pointer;
+  border-radius: 100%;
 }
 
 .discont-button__dark {
@@ -38,12 +42,13 @@
   top: 29%;
   background-color: rgb(115, 80, 255);
   border: solid 1px rgb(115, 80, 255);
-  border-radius: 5px;
-  color: #f4f4f4;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
   font-size: 13px;
   font-weight: 700;
   height: 40px;
   transition: 300ms;
+  width: 115px;
 }
 
 .discont-button__dark:focus,

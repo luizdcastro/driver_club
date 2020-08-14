@@ -17,7 +17,7 @@
 .home-calculator__container {
   display: block;
   padding: 35px;
-  max-width: 400px;
+  max-width: 440px;
   background: #fff;
   border-radius: 10px;
 }
@@ -34,8 +34,10 @@
   margin-right: 0;
   margin-left: 0;
   margin-top: 20px;
-  color: rgb(115, 80, 255);
   background-color: rgb(255, 255, 255);
+  color: rgb(115, 80, 255);
+  border: none;
+  box-shadow: 0 3px 6px 0 rgba(115, 80, 255, 0.3);
 }
 
 #calculator-input {

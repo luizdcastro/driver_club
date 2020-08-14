@@ -1,10 +1,11 @@
 .coupon-page__container {
   width: 100%;
-  max-width: 80%;
+  max-width: 90%;
+  width: 1200px;
   margin: auto;
 }
 .coupon-page__title {
   font-size: 21px;
-  color: #484a4d;
+  color: #212240;
   font-weight: 700;
 }
