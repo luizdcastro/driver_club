@@ -54,22 +54,22 @@
 }
 
 .nav-link__null {
-  color: rgb(255, 255, 255);
+  color: rgb(115, 80, 255);
   font-size: 14px;
   font-weight: 600;
   width: 70px;
-  background-color: rgb(33, 34, 64);
-  border: solid 1px rgb(33, 34, 64);
-  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 3px;
   padding: 8px;
-  margin-left: 8px;
+  margin-left: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 300ms;
 }
 
-.nav-link:hover {
+.nav-link__null:hover {
   filter: brightness(1.2);
 }
 .menu-dropdown {

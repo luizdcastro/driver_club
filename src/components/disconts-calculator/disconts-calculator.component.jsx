@@ -32,7 +32,6 @@ const DiscontCalculator = () => {
             <p>Combustível</p>
             <FormInput
               id="calculator-input"
-              type="number"
               placeholder="R$ 0,00"
               handleChange={(e) => setCombustivel((e.target.value / 100) * 7)}
             />
@@ -41,7 +40,6 @@ const DiscontCalculator = () => {
             <p>Alimentação</p>
             <FormInput
               id="calculator-input"
-              type="number"
               placeholder="R$ 0,00"
               handleChange={(e) => setAlimentacao((e.target.value / 100) * 15)}
             />
@@ -50,7 +48,6 @@ const DiscontCalculator = () => {
             <p>Seguro</p>
             <FormInput
               id="calculator-input"
-              type="number"
               placeholder="R$ 0,00"
               handleChange={(e) => setSeguro((e.target.value / 100) * 10)}
             />
@@ -59,7 +56,6 @@ const DiscontCalculator = () => {
             <p>Manutenção</p>
             <FormInput
               id="calculator-input"
-              type="number"
               placeholder="R$ 0,00"
               handleChange={(e) => setManutencao((e.target.value / 100) * 10)}
             />
@@ -68,7 +64,6 @@ const DiscontCalculator = () => {
             <p>Aluguel de Carro</p>
             <FormInput
               id="calculator-input"
-              type="number"
               placeholder="R$ 0,00"
               handleChange={(e) => setLocacao((e.target.value / 100) * 10)}
             />
