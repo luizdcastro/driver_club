@@ -178,6 +178,7 @@
 
 .image-card__business {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   transform: none;
 }
