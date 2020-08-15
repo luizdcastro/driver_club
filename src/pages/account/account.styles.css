@@ -1,49 +1,52 @@
 .account-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 80%;
+  max-width: 90%;
+  width: 1200px;
   margin: auto;
-  position: relative;
-  color: #484a4d;
+  color: #212240;
 }
 
 .account-title {
-  position: absolute;
   font-size: 21px;
   font-weight: 700;
   left: 0;
 }
 
+.account-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
 .account-data__subtitle {
-  font-size: 16px;
-  color: #484a4d;
+  font-size: 1.1rem;
+  color: #212240;
   margin-left: 14px;
 }
 
 .account-data__pessoal {
-  position: absolute;
   display: flex;
   justify-content: center;
-  top: 80px;
   background-color: #fff;
   padding: 35px;
-  border-radius: 10px;
-  border: solid 1px #dadce1;
-  max-width: 320px;
+  border-radius: 5px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px;
+  margin-top: 20px;
 }
 
 .account-data__password {
-  position: absolute;
   display: flex;
   justify-content: center;
   background-color: #fff;
   padding: 35px;
-  border-radius: 10px;
-  border: solid 1px #dadce1;
-  top: 400px;
-  max-width: 320px;
-  margin-bottom: 8%;
+  border-radius: 5px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .account-data__error {

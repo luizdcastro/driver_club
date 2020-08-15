@@ -27,46 +27,52 @@ const Account = ({ getme, dispatchGetMeAction, dispatchUpdateUser }) => {
 
   return (
     <div className="account-container">
-      <h2 className="account-title">Configurações da Conta</h2>
-      <div className="account-data__pessoal ">
-        <form onSubmit={handleSubmit}>
-          <h3 className="account-data__subtitle">Dados Pessoais</h3>
-          <FormInput
-            type="text"
-            name="name"
-            placeholder={getme[0].name}
-            value={name}
-            handleChange={(e) => setName(e.target.value)}
-          />
-          <FormInput
-            type="email"
-            name="email"
-            placeholder={getme[0].email}
-            value={email}
-            handleChange={(e) => setEmail(e.target.value)}
-          />
-          <CustomButton name="Save Changes" onClick={handleSubmit} />
-          {serverError ? (
-            <p className="account-data__error">{serverError}</p>
-          ) : null}
-        </form>
-      </div>
-      <div className="account-data__password">
-        <form>
-          <h3 className="account-data__subtitle">Alterar Senha</h3>
-          <FormInput
-            type="password"
-            name="password"
-            placeholder="Senha atual"
-          />
-          <FormInput type="password" name="password" placeholder="Nova senha" />
-          <FormInput
-            type="password"
-            name="password"
-            placeholder="Confirmar senha"
-          />
-          <CustomButton name="Change Password" />
-        </form>
+      <h2 className="account-title">Configurações do Perfil</h2>
+      <div className="account-content">
+        <div className="account-data__pessoal ">
+          <form onSubmit={handleSubmit}>
+            <h3 className="account-data__subtitle">Dados Pessoais</h3>
+            <FormInput
+              type="text"
+              name="name"
+              placeholder={getme[0].name}
+              value={name}
+              handleChange={(e) => setName(e.target.value)}
+            />
+            <FormInput
+              type="email"
+              name="email"
+              placeholder={getme[0].email}
+              value={email}
+              handleChange={(e) => setEmail(e.target.value)}
+            />
+            <CustomButton name="Salvar Alteração" onClick={handleSubmit} />
+            {serverError ? (
+              <p className="account-data__error">{serverError}</p>
+            ) : null}
+          </form>
+        </div>
+        <div className="account-data__password">
+          <form>
+            <h3 className="account-data__subtitle">Alterar Senha</h3>
+            <FormInput
+              type="password"
+              name="password"
+              placeholder="Senha atual"
+            />
+            <FormInput
+              type="password"
+              name="password"
+              placeholder="Nova senha"
+            />
+            <FormInput
+              type="password"
+              name="password"
+              placeholder="Confirmar senha"
+            />
+            <CustomButton name="Salvar Senha" />
+          </form>
+        </div>
       </div>
     </div>
   );

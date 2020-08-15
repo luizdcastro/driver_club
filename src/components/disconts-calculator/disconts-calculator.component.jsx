@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import CustomButton from '../../components/custom-button/custom-button.component';
+import { Link } from 'react-router-dom';
 import FormInput from '../../components/form-input/form-input.component';
 import './disconts-calculator.styles.css';
 
@@ -69,10 +69,9 @@ const DiscontCalculator = () => {
             />
           </li>
           <li className="home-calculator__items">
-            <CustomButton
-              id="home-calculator__button"
-              name={`Quero Economizar R$ ${total ? total : '200,00'}`}
-            />
+            <Link id="home-calculator__button" to="/register">
+              {`Quero Economizar R$ ${total ? total.toFixed(2) : '200,00'}`}
+            </Link>
           </li>
         </ul>
       </form>

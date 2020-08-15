@@ -2,19 +2,20 @@
   position: relative;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
-  border: solid 1px #dadce1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   max-width: 700px;
   height: 300px;
   margin: auto;
-  color: #484a4d;
+  color: #212240;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
+  padding-top: 5px;
 }
 
 .subscription-plan__title {
   position: relative;
   font-size: 16px;
-  color: #484a4d;
+  color: #212240;
   top: 4%;
   text-align: center;
 }
@@ -25,7 +26,7 @@
   max-width: 700px;
   margin: auto;
   text-align: left;
-  color: #484a4d;
+  color: #212240;
   font-size: 14px;
   font-weight: 600;
 }
@@ -65,12 +66,6 @@
   top: 8%;
 }
 
-#cancel-subscription__button {
-  position: relative;
-  margin: auto;
-  top: 15%;
-}
-
 .subscription-plan__active {
   position: relative;
   text-align: center;
@@ -82,7 +77,7 @@
 
 .subscription-page__subtitle {
   font-size: 16px;
-  color: #484a4d;
+  color: #212240;
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -92,22 +87,23 @@
   position: relative;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
-  border: solid 1px #dadce1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   max-width: 700px;
   height: 80px;
   margin: auto;
   margin-bottom: 15px;
-  color: #484a4d;
+  color: #212240;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
   max-width: 700px;
 }
 
 .subscription-active__content {
-  font-size: 13px;
+  position: relative;
+  font-size: 14px;
   line-height: 4px;
   margin-left: 15px;
-  margin-top: 16px;
+  top: 20px;
 }
 
 .subscription-active__cancel {
@@ -116,7 +112,9 @@
   text-decoration: none;
   font-weight: 600;
   color: #f08080;
-  top: 45%;
+  padding: 8px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  top: 30%;
   right: 3%;
 }
 
@@ -127,12 +125,12 @@
   align-items: center;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
-  border: solid 1px #dadce1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   max-width: 700px;
   height: 80px;
   margin: auto;
   margin-bottom: 8%;
-  color: #484a4d;
+  color: #212240;
   background-color: #fff;
   border-radius: 10px 0 10px 0;
   max-width: 700px;
