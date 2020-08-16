@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { getMe } from '../../redux/actions/getme.action';
 import { registerUser } from '../../redux/actions/auth.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import './register.styles.css';
 
-const Register = ({ dispatchRegisterAction }) => {
+const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [serverError, setServerError] = useState('');
+
+  useEffect(() => dispatchGetme, [dispatchGetme]);
 
   const handleOnSubmmit = (event) => {
     event.preventDefault();
@@ -24,6 +27,7 @@ const Register = ({ dispatchRegisterAction }) => {
       () => console.log('Account created'),
       (message) => setServerError(message)
     );
+    dispatchGetme();
   };
 
   return (
@@ -84,6 +88,7 @@ const mapDispathToProps = (dispatch) => ({
         onError
       )
     ),
+  dispatchGetme: () => dispatch(getMe()),
 });
 
 export default connect(null, mapDispathToProps)(Register);

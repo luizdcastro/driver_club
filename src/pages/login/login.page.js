@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { getMe } from '../../redux/actions/getme.action';
 import { loginUser } from '../../redux/actions/auth.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import './login.styles.css';
 
-const Login = ({ dispatchLoginAciton }) => {
+const Login = ({ dispatchLoginAction, dispatchGetme }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [serverError, setServerError] = useState('');
 
+  useEffect(() => dispatchGetme, [dispatchGetme]);
+
   const handleOnSubmmit = (event) => {
     event.preventDefault();
-    dispatchLoginAciton(
+    dispatchLoginAction(
       email,
       password,
-      () => console.log('Logedd In'),
+      () => console.log('Logged In'),
       (message) => setServerError(message)
     );
+    dispatchGetme();
   };
-
   return (
     <div className="login-container">
       <form className="login" onSubmit={handleOnSubmmit}>
@@ -56,8 +59,9 @@ const Login = ({ dispatchLoginAciton }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchLoginAciton: (email, password, onSuccess, onError) =>
+  dispatchLoginAction: (email, password, onSuccess, onError) =>
     dispatch(loginUser({ email, password }, onSuccess, onError)),
+  dispatchGetme: () => dispatch(getMe()),
 });
 
 export default connect(null, mapDispatchToProps)(Login);

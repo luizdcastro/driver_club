@@ -24,6 +24,7 @@ const PaymentForm = ({
   const [year, setYear] = useState('');
   const [ccvCode, setCcvCode] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
+  const [cardError, setCardError] = useState('');
 
   useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
 
@@ -42,6 +43,7 @@ const PaymentForm = ({
     );
     window.Iugu.createPaymentToken(data, async function (response) {
       if (response.errors) {
+        setCardError('Erro ao salvar o cartão, verifique os dados inseridos.');
         console.log('Erro salvando cartão:' + JSON.stringify(response.errors));
       } else {
         const data = await response;
@@ -79,7 +81,10 @@ const PaymentForm = ({
               <CloseIcon
                 className="modal-payment__icon"
                 style={{ fontSize: 25 }}
-                onClick={() => setModalVisible(false)}
+                onClick={() => {
+                  setModalVisible(false);
+                  setCardError('');
+                }}
               />
               <h4 className="modal-payment__title">
                 Adicionar Médodo de Pagamento
@@ -137,9 +142,13 @@ const PaymentForm = ({
                 <CustomButton
                   id="modal-payment__cancel"
                   name="Cancelar"
-                  onClick={() => setModalVisible(false)}
+                  onClick={() => {
+                    setModalVisible(false);
+                    setCardError('');
+                  }}
                 />
               </div>
+              {cardError ? <p className="card-error">{cardError}</p> : null}
             </div>
           </form>
         </div>

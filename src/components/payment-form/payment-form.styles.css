@@ -108,3 +108,13 @@
   width: 312px;
   margin: 3px;
 }
+
+.card-error {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #f08080;
+  border-radius: 5px;
+  width: 312px;
+  margin: 10px;
+}
