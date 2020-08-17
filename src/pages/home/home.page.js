@@ -23,7 +23,7 @@ const Home = () => {
             <h3 className="hero-main__subtitle">
               Reduza seus gastos mensais utilizando descontos exclusivos
             </h3>
-            <CustomButton id="custom-button" name="Sou Motorista" />
+            <Link id="custom-button">Sou Motorista</Link>
           </div>
           <div>
             <DiscontCalculator />
@@ -163,10 +163,9 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               non odio porta.
             </h2>
-            <CustomButton
-              id="footer-box__button"
-              name="Saiba mais sobre nossos serviços"
-            />
+            <Link id="footer-box__button">
+              Saiba mais sobre nossos serviços
+            </Link>
           </div>
           <div className="footer-box__copy">
             <p>@2020 Rocketcab Internet Ltda.</p>

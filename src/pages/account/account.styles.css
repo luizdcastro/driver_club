@@ -47,6 +47,7 @@
   max-width: 700px;
   width: 100%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px;
 }
 
 .account-data__error {
