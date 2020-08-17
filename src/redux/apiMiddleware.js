@@ -7,7 +7,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
   if (action.type !== constants.API) return next(action);
 
   dispatch({ type: constants.TOGGLE_LOADER });
-  const BASE_URL = 'http://127.0.0.1:8000/api/v1';
+  const BASE_URL = 'https://rocketcab-server.herokuapp.com/api/v1';
   const AUTH_TOKEN = getState().user.token;
   if (AUTH_TOKEN)
     axios.defaults.headers.common['Authorization'] = `Bearer ${AUTH_TOKEN}`;
