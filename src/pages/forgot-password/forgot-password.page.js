@@ -41,7 +41,7 @@ const ForgotPassword = ({ dispatchForgotPassword }) => {
               </Link>
             </div>
             {serverError ? (
-              <p className="forgotPassword-error">{serverError}</p>
+              <p className="forgot-password__error">{serverError}</p>
             ) : null}
           </div>
         ) : (
