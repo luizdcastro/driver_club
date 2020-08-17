@@ -14,6 +14,7 @@ import Favorites from '../pages/favorites/favorites.page';
 import Account from '../pages/account/account.page';
 import Subscription from '../pages/subscription/subscription.page';
 import ForgotPassword from '../pages/forgot-password/forgot-password.page';
+import ResetPassword from '../pages/reset-password/reset-password.page';
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -31,6 +32,11 @@ const App = ({ user, dispatchLogoutAction }) => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
+            <Route
+              exact
+              path="/reset-password/:token"
+              component={ResetPassword}
+            />
             <Route exact path="/" component={Home} />
             <Redirect to="/" />
           </Switch>

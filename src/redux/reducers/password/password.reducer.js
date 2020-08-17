@@ -1,11 +1,12 @@
 import * as constants from '../../constants';
 
-export default function accountSettings(state = [], action) {
+export default function addfavorite(state = {}, action) {
   switch (action.type) {
-    case constants.UPDATE_USER_INFO:
+    case constants.FORGOT_PASSWORD:
       return { ...action.payload };
-    case constants.UPDATE_PASSWORD:
+    case constants.RESET_PASSWORD:
       return { ...action.payload };
+
     default:
       return state;
   }
