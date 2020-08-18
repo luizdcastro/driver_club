@@ -1,0 +1,183 @@
+.partner-datails__container {
+  max-width: 90%;
+  width: 1200px;
+  margin: auto;
+  height: auto;
+}
+
+.partner-details__hero {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: 15px;
+  border-radius: 15px 15px 0 0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.details_favicon {
+  position: absolute;
+  right: 2%;
+  top: 10%;
+}
+
+.details-hero__title {
+  position: absolute;
+  left: 2%;
+  bottom: 15%;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.details-hero__subtitle {
+  position: absolute;
+  left: 2%;
+  bottom: 7%;
+  font-size: 14px;
+}
+
+.partner-details__info {
+  position: flex;
+  position: relative;
+  width: 100%;
+  height: 115px;
+  margin-top: 15px;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.expanded-details {
+  width: 100%;
+  height: 250px;
+  background-color: #f8fafb;
+  border-top: none;
+  font-size: 13px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.expanded-payment {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  left: 2%;
+}
+
+.payment-list {
+  position: absolute;
+  display: flex;
+  left: 2%;
+  top: 18%;
+}
+
+.payment-item {
+  margin-right: 10px;
+}
+
+.expanded-contact {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  left: 2%;
+  top: 23%;
+}
+
+#links {
+  color: rgb(115, 80, 255);
+  font-weight: 550;
+}
+
+.expanded-phone {
+  position: absolute;
+  left: 2%;
+  top: 36%;
+}
+
+.expanded-site {
+  position: absolute;
+  left: 2%;
+  top: 45%;
+  text-decoration: none;
+}
+
+.expanded-map {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  left: 2%;
+  top: 55%;
+}
+
+.expanded-button__map {
+  position: absolute;
+  left: 2%;
+  top: 78%;
+  height: 40px;
+  background-color: rgb(115, 80, 255);
+  border: solid 1px rgb(115, 80, 255);
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  font-weight: 700;
+  height: 40px;
+}
+
+.expanded-button__map:focus,
+.expanded-button__map:active {
+  outline: none;
+}
+
+.expanded-button__map:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.info-title {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  left: 2%;
+}
+
+.info-address {
+  position: absolute;
+  font-size: 14px;
+  left: 2%;
+  bottom: 22%;
+}
+
+.info-time {
+  position: absolute;
+  font-size: 14px;
+  left: 2%;
+  bottom: 5%;
+}
+
+.info-dropicon {
+  position: absolute;
+  text-decoration: none;
+  right: 2%;
+  top: 33%;
+  cursor: pointer;
+}
+
+.partner-details__disconts {
+  position: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border: solid 1px #dadce1;
+  border-radius: 0 15px 0 15px;
+}
+
+.disconts-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 2%;
+}
+
+.discont-cards {
+  margin: 0 2% 2% 2%;
+}

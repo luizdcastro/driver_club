@@ -1,0 +1,139 @@
+.subscription-plan__container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  height: 300px;
+  margin: auto;
+  color: #212240;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  padding-top: 5px;
+}
+
+.subscription-plan__title {
+  position: relative;
+  font-size: 16px;
+  color: #212240;
+  top: 4%;
+  text-align: center;
+}
+
+.subscription-subtitle__container {
+  display: flex;
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+  color: #212240;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subsctiption-plan__price {
+  position: relative;
+  top: 4%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2ea44f;
+}
+
+.subscription-plan__description {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 5px;
+  top: 3%;
+}
+
+.description-item {
+  display: flex;
+}
+
+.check-icon {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#create-subscription__button {
+  position: relative;
+  width: 230px;
+  margin: auto;
+  top: 8%;
+}
+
+.subscription-plan__active {
+  position: relative;
+  text-align: center;
+  top: 6%;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2ea44f;
+}
+
+.subscription-page__subtitle {
+  font-size: 16px;
+  color: #212240;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+.subscription-page__active {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  height: 80px;
+  margin-bottom: 35px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #212240;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  max-width: 700px;
+}
+
+.subscription-active__content {
+  position: relative;
+  font-size: 14px;
+  line-height: 4px;
+  margin-left: 15px;
+  top: 20px;
+}
+
+.subscription-active__cancel {
+  position: absolute;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #f08080;
+  padding: 8px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  top: 30%;
+  right: 3%;
+}
+
+.subscription-container__inative {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 35px;
+  color: #212240;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  max-width: 700px;
+  font-size: 13px;
+}

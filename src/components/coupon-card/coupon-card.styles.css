@@ -1,0 +1,168 @@
+.coupon-card__container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0 10px 0;
+  max-width: 700px;
+  height: 160px;
+  margin: auto;
+  margin-bottom: 15px;
+  color: #212240;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.coupon-card__container:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.coupon-card__title {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 700;
+  left: 4%;
+}
+
+.coupon-card__name {
+  position: absolute;
+  font-size: 14px;
+  left: 4%;
+  top: 22%;
+}
+
+.coupon-card__percentage {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 700;
+  left: 4%;
+  top: 37%;
+}
+
+.coupon-card__delete {
+  position: absolute;
+  right: 4%;
+  top: 12%;
+  cursor: pointer;
+}
+
+.coupon-card__button {
+  position: absolute;
+  right: 4%;
+  top: 64%;
+  background-color: rgb(115, 80, 255);
+  border: solid 1px rgb(115, 80, 255);
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  font-weight: 700;
+  height: 40px;
+}
+
+.coupon-card__button:focus {
+  outline: none;
+}
+
+.coupon-card__button:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+.coupon-card__link {
+  top: 80%;
+  left: 4%;
+  position: absolute;
+  color: rgb(115, 80, 255);
+  font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.coupon-card__link:hover {
+  text-decoration: none;
+  filter: brightness(1.2);
+}
+
+.modal-coupon__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  background-color: rgba(43, 59, 74, 0.6);
+  z-index: 2;
+}
+
+.modal-coupon__close {
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  cursor: pointer;
+}
+
+.modal-coupon__content {
+  background-color: #f8fafb;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  max-width: 90%;
+  height: 500px;
+  color: #212240;
+}
+.modal-coupon__name {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.modal-coupon__title {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  top: 14%;
+  left: 5%;
+}
+
+.modal-coupon__percentage {
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 700;
+  top: 18%;
+  left: 5%;
+}
+
+.modal-coupon__qrcode {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 180px;
+  max-width: 180px;
+  top: 34%;
+}
+
+.modal-coupon__validate {
+  position: absolute;
+  left: 5%;
+  top: 73%;
+  font-size: 14px;
+}
+
+.modal-coupon__date {
+  position: absolute;
+  font-size: 13px;
+  left: 5%;
+  top: 78%;
+}
+
+.modal-coupon__time {
+  position: absolute;
+  font-size: 13px;
+  left: 5%;
+  top: 82%;
+}

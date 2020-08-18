@@ -1,0 +1,41 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 90vw;
+  height: 93vh;
+}
+
+.register {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.register-title {
+  margin-left: 14px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #212240;
+}
+
+.register-error {
+  font-size: 12px;
+  color: #f08080;
+  border-radius: 5px;
+  width: 312px;
+  margin: 10px;
+}
+.register-link {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 15px;
+  color: #212240;
+}
+
+.register-password:hover {
+  filter: brightness(1.1);
+}

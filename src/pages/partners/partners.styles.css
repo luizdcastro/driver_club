@@ -1,0 +1,17 @@
+.partners-container {
+  width: 100%;
+  max-width: 90%;
+  width: 1200px;
+  margin: auto;
+  padding: 10px;
+}
+
+.partners-grid {
+  display: grid;
+  max-width: 100%;
+  height: 100%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(110px, 110px));
+  gap: 20px;
+}
