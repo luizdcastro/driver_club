@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import FormInput from '../../components/form-input/form-input.component';
 import './disconts-calculator.styles.css';
 
-const DiscontCalculator = () => {
+const DiscontCalculator = ({ to }) => {
   const [total, setTotal] = useState('');
   const [combustivel, setCombustivel] = useState('');
   const [alimentacao, setAlimentacao] = useState('');
@@ -25,7 +25,7 @@ const DiscontCalculator = () => {
     <div className="home-page__calculator">
       <form className="home-calculator__container">
         <h2 className="home-calculator__title">
-          Calcule quanto você pode economizar
+          Calcule quanto você pode economizar mensalmente
         </h2>
         <ul>
           <li className="home-calculator__items">
@@ -69,7 +69,7 @@ const DiscontCalculator = () => {
             />
           </li>
           <li className="home-calculator__items">
-            <Link id="home-calculator__button" to="/register">
+            <Link id="home-calculator__button" to={to}>
               {`Quero Economizar R$ ${total ? total.toFixed(2) : '200,00'}`}
             </Link>
           </li>

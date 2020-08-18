@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import './header.styles.css';
 
@@ -45,9 +49,22 @@ const Header = ({ isLoggedIn, onLogout }) => {
     }
     return (
       <div className="menu-dropdown">
-        <DropdownItem to="/account">Perfil</DropdownItem>
-        <DropdownItem to="/subscription">Assinatura</DropdownItem>
-        <DropdownItem onClick={onLogout}>Sair</DropdownItem>
+        <DropdownItem to="/account">
+          <AccountBoxIcon className="menu-dropdown__icon" />
+          Perfil
+        </DropdownItem>
+        <DropdownItem to="/subscription">
+          <SubscriptionsIcon className="menu-dropdown__icon" />
+          Assinatura
+        </DropdownItem>
+        <DropdownItem to="/calculator">
+          <AssessmentIcon className="menu-dropdown__icon" />
+          Calculator
+        </DropdownItem>
+        <DropdownItem onClick={onLogout}>
+          <ExitToAppIcon className="menu-dropdown__icon" />
+          Sair
+        </DropdownItem>
       </div>
     );
   }

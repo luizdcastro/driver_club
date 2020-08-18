@@ -91,6 +91,9 @@
   overflow: hidden;
   z-index: 1;
 }
+.menu-dropdown__icon {
+  padding-right: 8px;
+}
 
 .menu-item {
   height: 50px;

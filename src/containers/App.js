@@ -15,6 +15,7 @@ import Account from '../pages/account/account.page';
 import Subscription from '../pages/subscription/subscription.page';
 import ForgotPassword from '../pages/forgot-password/forgot-password.page';
 import ResetPassword from '../pages/reset-password/reset-password.page';
+import Calculator from '../pages/calculator/calculator.page';
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -53,6 +54,8 @@ const App = ({ user, dispatchLogoutAction }) => {
             <Route exact path="/favorites" component={Favorites} />
             <Route exact path="/account" component={Account} />
             <Route exact path="/subscription" component={Subscription} />
+            <Route exact path="/calculator" component={Calculator} />
+
             <Redirect to="/categories" />
           </Switch>
         )}

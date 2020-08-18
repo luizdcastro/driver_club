@@ -7,7 +7,6 @@ import IconTwo from '../../assets/images/icon_two.svg';
 import IconThree from '../../assets/images/icon_three.svg';
 import DriverImage from '../../assets/images/driver.png';
 import BusinessImage from '../../assets/images/business.jpg';
-import CustomButton from '../../components/custom-button/custom-button.component';
 import DiscontCalculator from '../../components/disconts-calculator/disconts-calculator.component';
 import './home.styles.css';
 
@@ -26,7 +25,7 @@ const Home = () => {
             <Link id="custom-button">Sou Motorista</Link>
           </div>
           <div>
-            <DiscontCalculator />
+            <DiscontCalculator to="registration" />
           </div>
         </div>
       </div>
