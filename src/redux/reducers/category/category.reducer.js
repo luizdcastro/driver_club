@@ -1,48 +1,52 @@
-import IconOne from '../../../assets/images/icon_one.svg';
-import IconTwo from '../../../assets/images/icon_two.svg';
-import IconThree from '../../../assets/images/icon_three.svg';
+import IconRental from '../../../assets/icons/icon-rental.png';
+import IconRestaurant from '../../../assets/icons/icon_restaurant.png';
+import IconMaintence from '../../../assets/icons/icon_maintence.png';
+import IconInsurance from '../../../assets/icons/icon_insurance.png';
+import IconGas from '../../../assets/icons/icon_gas.png';
+import IconLazer from '../../../assets/icons/icon_lazer.png';
+import IconLavacar from '../../../assets/icons/icon_lavacar.png';
 
 const INITIAL_STATE = {
   categories: [
     {
       title: 'Postos',
-      imageUrl: `${IconOne}`,
+      imageUrl: `${IconGas}`,
       id: 1,
       linkUrl: 'category/postos',
     },
     {
       title: 'Locadoras',
-      imageUrl: `${IconTwo}`,
+      imageUrl: `${IconRental}`,
       id: 2,
       linkUrl: 'category/locadoras',
     },
     {
       title: 'Seguros',
-      imageUrl: `${IconThree}`,
+      imageUrl: `${IconInsurance}`,
       id: 3,
       linkUrl: 'category/seguros',
     },
     {
       title: 'Alimentação',
-      imageUrl: `${IconOne}`,
+      imageUrl: `${IconRestaurant}`,
       id: 4,
       linkUrl: 'category/alimentacao',
     },
     {
       title: 'Manutenção',
-      imageUrl: `${IconTwo}`,
+      imageUrl: `${IconMaintence}`,
       id: 5,
       linkUrl: 'category/manutencao',
     },
     {
       title: 'Lava-car',
-      imageUrl: `${IconThree}`,
+      imageUrl: `${IconLavacar}`,
       id: 6,
       linkUrl: 'category/lava-car',
     },
     {
       title: 'Lazer',
-      imageUrl: `${IconOne}`,
+      imageUrl: `${IconLazer}`,
       id: 7,
       linkUrl: 'category/lava-car',
     },

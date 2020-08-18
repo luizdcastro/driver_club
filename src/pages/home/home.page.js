@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import IconOne from '../../assets/images/icon_one.svg';
-import IconTwo from '../../assets/images/icon_two.svg';
-import IconThree from '../../assets/images/icon_three.svg';
-import DriverImage from '../../assets/images/driver.png';
-import BusinessImage from '../../assets/images/business.jpg';
+import IconChecked from '../../assets/icons/icon_checked.svg';
+import IconOne from '../../assets/icons/icon_gas.png';
+import IconTwo from '../../assets/icons/icon_calenar.png';
+import IconThree from '../../assets/icons/icon_address.png';
+import DriverImage from '../../assets/images/driver_03.jpg';
+import BusinessImage from '../../assets/images/passager_01.jpg';
 import DiscontCalculator from '../../components/disconts-calculator/disconts-calculator.component';
 import './home.styles.css';
 
@@ -38,10 +38,7 @@ const Home = () => {
             <h3 className="home-main__title">Why chose Rocketcab</h3>
             <ul>
               <li className="home-main__list">
-                <VerifiedUserIcon
-                  className="main-items__icon"
-                  style={{ fontSize: 30 }}
-                />
+                <img className="main-items__icon" src={IconChecked} alt="" />
                 <div>
                   <h2 className="main-items__title">
                     Lorem ipsum dolor sit amet.
@@ -54,10 +51,7 @@ const Home = () => {
                 </div>
               </li>
               <li className="home-main__list">
-                <VerifiedUserIcon
-                  className="main-items__icon"
-                  style={{ fontSize: 30 }}
-                />
+                <img className="main-items__icon" src={IconChecked} alt="" />
                 <div>
                   <h2 className="main-items__title">
                     Lorem ipsum dolor sit amet.
@@ -70,10 +64,7 @@ const Home = () => {
                 </div>
               </li>
               <li className="home-main__list">
-                <VerifiedUserIcon
-                  className="main-items__icon"
-                  style={{ fontSize: 30 }}
-                />
+                <img className="main-items__icon" src={IconChecked} alt="" />
                 <div>
                   <h2 className="main-items__title">
                     Lorem ipsum dolor sit amet.
