@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import IconChecked from '../../assets/icons/icon_checked.svg';
-import IconOne from '../../assets/icons/icon_gas.png';
-import IconTwo from '../../assets/icons/icon_calenar.png';
-import IconThree from '../../assets/icons/icon_address.png';
-import DriverImage from '../../assets/images/driver_03.jpg';
-import BusinessImage from '../../assets/images/passager_01.jpg';
+import IconCheckedOne from '../../assets/icons/done.svg';
+import IconCheckedTwo from '../../assets/icons/done.svg';
+import IconCheckedThree from '../../assets/icons/done.svg';
+import IconOne from '../../assets/icons/space.svg';
+import IconTwo from '../../assets/icons/taxi.svg';
+import IconThree from '../../assets/icons/report.svg';
+import DriverImage from '../../assets/images/driver_09.jpg';
+import BusinessImage from '../../assets/images/business_07.jpg';
 import DiscontCalculator from '../../components/disconts-calculator/disconts-calculator.component';
 import './home.styles.css';
 
@@ -31,52 +33,68 @@ const Home = () => {
       </div>
       <div className="home-main__container">
         <div className="home-page__main">
-          <div className="home-main__image">
-            <img id="main-image" src={DriverImage} alt="driver" />
-          </div>
-          <div className="home-main__items">
-            <h3 className="home-main__title">Why chose Rocketcab</h3>
-            <ul>
-              <li className="home-main__list">
-                <img className="main-items__icon" src={IconChecked} alt="" />
-                <div>
-                  <h2 className="main-items__title">
-                    Lorem ipsum dolor sit amet.
-                  </h2>
-                  <p className="main-items__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    sodales ex a mi ultricies dictum. Proin fringilla ac metus
-                    a.
-                  </p>
-                </div>
-              </li>
-              <li className="home-main__list">
-                <img className="main-items__icon" src={IconChecked} alt="" />
-                <div>
-                  <h2 className="main-items__title">
-                    Lorem ipsum dolor sit amet.
-                  </h2>
-                  <p className="main-items__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    sodales ex a mi ultricies dictum. Proin fringilla ac metus
-                    a.
-                  </p>
-                </div>
-              </li>
-              <li className="home-main__list">
-                <img className="main-items__icon" src={IconChecked} alt="" />
-                <div>
-                  <h2 className="main-items__title">
-                    Lorem ipsum dolor sit amet.
-                  </h2>
-                  <p className="main-items__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    sodales ex a mi ultricies dictum. Proin fringilla ac metus
-                    a.
-                  </p>
-                </div>
-              </li>
-            </ul>
+          <div className="home-main__content">
+            <div className="home-main__image">
+              <img id="main-image" src={DriverImage} alt="driver" />
+            </div>
+            <div className="home-main__items">
+              <div className="home-main__card">
+                <h3 className="home-main__title">Why chose Rocketcab</h3>
+                <ul>
+                  <li className="home-main__list">
+                    <img
+                      className="main-items__icon"
+                      src={IconCheckedOne}
+                      alt=""
+                    />
+                    <div>
+                      <h2 className="main-items__title">
+                        Lorem ipsum dolor sit amet.
+                      </h2>
+                      <p className="main-items__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut sodales ex a mi ultricies dictum. Proin fringilla ac
+                        metus a.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="home-main__list">
+                    <img
+                      className="main-items__icon"
+                      src={IconCheckedTwo}
+                      alt=""
+                    />
+                    <div>
+                      <h2 className="main-items__title">
+                        Lorem ipsum dolor sit amet.
+                      </h2>
+                      <p className="main-items__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut sodales ex a mi ultricies dictum. Proin fringilla ac
+                        metus a.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="home-main__list">
+                    <img
+                      className="main-items__icon"
+                      src={IconCheckedThree}
+                      alt=""
+                    />
+                    <div>
+                      <h2 className="main-items__title">
+                        Lorem ipsum dolor sit amet.
+                      </h2>
+                      <p className="main-items__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut sodales ex a mi ultricies dictum. Proin fringilla ac
+                        metus a.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="home-card">
             <div className="home-card__text">
@@ -117,7 +135,7 @@ const Home = () => {
             <div>
               <ul className="home-sub__items">
                 <li className="home-sub__item">
-                  <img src={IconOne} alt="icon" />
+                  <img className="home-sub__icons" src={IconOne} alt="icon" />
                   <h3>Lorem ipsum dolor amet.</h3>
                   <p>
                     Extra safety and hygiene measures so that you can ride
@@ -125,7 +143,7 @@ const Home = () => {
                   </p>
                 </li>
                 <li className="home-sub__item">
-                  <img src={IconTwo} alt="icon" />
+                  <img className="home-sub__icons" src={IconTwo} alt="icon" />
                   <h3>Lorem ipsum dolor amet.</h3>
                   <p>
                     Extra safety and hygiene measures so that you can ride
@@ -133,7 +151,7 @@ const Home = () => {
                   </p>
                 </li>
                 <li className="home-sub__item">
-                  <img src={IconThree} alt="icon" />
+                  <img className="home-sub__icons" src={IconThree} alt="icon" />
                   <h3>Lorem ipsum dolor amet.</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

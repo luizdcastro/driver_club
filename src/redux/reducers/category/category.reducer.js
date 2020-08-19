@@ -1,10 +1,10 @@
-import IconRental from '../../../assets/icons/icon-rental.png';
-import IconRestaurant from '../../../assets/icons/icon_restaurant.png';
-import IconMaintence from '../../../assets/icons/icon_maintence.png';
-import IconInsurance from '../../../assets/icons/icon_insurance.png';
-import IconGas from '../../../assets/icons/icon_gas.png';
-import IconLazer from '../../../assets/icons/icon_lazer.png';
-import IconLavacar from '../../../assets/icons/icon_lavacar.png';
+import IconRental from '../../../assets/icons/bicycle-parking.svg';
+import IconRestaurant from '../../../assets/icons/groceries.svg';
+import IconMaintence from '../../../assets/icons/crane.svg';
+import IconInsurance from '../../../assets/icons/test.svg';
+import IconGas from '../../../assets/icons/gas-station.svg';
+import IconLazer from '../../../assets/icons/validating-ticket.svg';
+import IconLavacar from '../../../assets/icons/clean.svg';
 
 const INITIAL_STATE = {
   categories: [

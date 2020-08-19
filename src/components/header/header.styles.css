@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(115, 80, 255);
+  background-color: rgb(82, 59, 228);
 }
 
 .nav-container {
@@ -37,7 +37,7 @@
 }
 
 .nav-link__true {
-  color: rgb(115, 80, 255);
+  color: rgb(82, 59, 228);
   font-size: 14px;
   font-weight: 600;
   width: 22px;
@@ -58,7 +58,7 @@
 }
 
 .nav-link__null {
-  color: rgb(115, 80, 255);
+  color: rgb(82, 59, 228);
   font-size: 14px;
   font-weight: 600;
   width: 70px;
@@ -84,7 +84,7 @@
   font-size: 13px;
   font-weight: 600;
   transform: translateX(-30%);
-  background-color: rgb(115, 80, 255);
+  background-color: rgb(82, 59, 228);
   border-top: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 5px;
   padding: 1rem;
@@ -106,6 +106,6 @@
 }
 
 .menu-item:hover {
-  background-color: rgb(88, 47, 252);
-  filter: brightness(1.3);
+  background-color: rgb(92, 72, 228);
+  filter: brightness(1.2);
 }

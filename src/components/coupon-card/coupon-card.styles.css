@@ -47,8 +47,8 @@
   position: absolute;
   right: 4%;
   top: 64%;
-  background-color: rgb(115, 80, 255);
-  border: solid 1px rgb(115, 80, 255);
+  background-color: rgb(82, 59, 228);
+  border: solid 1px rgb(82, 59, 228);
   border-radius: 3px;
   color: rgb(255, 255, 255);
   font-size: 13px;
@@ -69,7 +69,7 @@
   top: 80%;
   left: 4%;
   position: absolute;
-  color: rgb(115, 80, 255);
+  color: rgb(82, 59, 228);
   font-weight: 600;
   font-size: 14px;
   font-weight: 600;

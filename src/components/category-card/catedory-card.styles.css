@@ -28,3 +28,9 @@
   font-weight: 700;
   color: #484a4d;
 }
+
+.category-card__icon {
+  height: 75px;
+  width: 75px;
+  opacity: 0.8;
+}

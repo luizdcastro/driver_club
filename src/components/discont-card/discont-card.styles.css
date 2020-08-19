@@ -40,15 +40,15 @@
   height: 40px;
   right: 2%;
   top: 29%;
-  background-color: rgb(115, 80, 255);
-  border: solid 1px rgb(115, 80, 255);
+  background-color: rgb(82, 59, 228);
+  border: solid 1px rgb(82, 59, 228);
   border-radius: 3px;
   color: rgb(255, 255, 255);
   font-size: 13px;
   font-weight: 700;
   height: 40px;
   transition: 300ms;
-  width: 120px;
+  width: 125px;
 }
 
 .discont-button__dark:focus,

@@ -59,7 +59,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
         </DropdownItem>
         <DropdownItem to="/calculator">
           <AssessmentIcon className="menu-dropdown__icon" />
-          Calculator
+          Calculadora
         </DropdownItem>
         <DropdownItem onClick={onLogout}>
           <ExitToAppIcon className="menu-dropdown__icon" />

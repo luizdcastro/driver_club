@@ -7,7 +7,7 @@ const CategoryCard = ({ name, image, partners, to }) => {
   return (
     <Link className="card-container" to={to}>
       <p className="card-title">{name}</p>
-      <img src={image} alt={name} />
+      <img className="category-card__icon" src={image} alt={name} />
     </Link>
   );
 };
