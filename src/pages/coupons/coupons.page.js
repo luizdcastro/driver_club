@@ -10,7 +10,7 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
   const [getMeData, setGetMeData] = useState('');
   const [coupon, setCoupon] = useState([]);
 
-  useEffect(() => dispatchGetMeAction(), [dispatchGetMeAction]);
+  useEffect(() => dispatchGetMeAction, [dispatchGetMeAction, coupon]);
 
   useEffect(() => {
     if (getme.length > 0) {

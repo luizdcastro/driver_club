@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import FavoriteCounter from '../favorite-counter/favorite-counter.component';
+import CouponCounter from '../../components/coupon-counter/coupon-counter.component';
 import MenuIcon from '@material-ui/icons/Menu';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
@@ -22,7 +25,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
     );
   }
 
-  function NavItem({ name, children, to }) {
+  function NavItem({ name, favoriteCounter, couponCounter, children, to }) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -34,6 +37,10 @@ const Header = ({ isLoggedIn, onLogout }) => {
         >
           {name}
         </Link>
+        <div className="nav-fav__counter">
+          {favoriteCounter}
+          {couponCounter}
+        </div>
         {open && children}
       </li>
     );
@@ -74,9 +81,17 @@ const Header = ({ isLoggedIn, onLogout }) => {
       <Navbar>
         {isLoggedIn ? (
           <React.Fragment>
-            <NavItem name={<FavoriteIcon />} to="/favorites" />
-            <NavItem name={<LoyaltyIcon />} to="/coupons" />
-            <NavItem name={<MenuIcon />}>
+            <NavItem
+              name={<FavoriteIcon style={{ fontSize: 20 }} />}
+              favoriteCounter={<FavoriteCounter />}
+              to="/favorites"
+            />
+            <NavItem
+              name={<LoyaltyIcon style={{ fontSize: 20 }} />}
+              couponCounter={<CouponCounter />}
+              to="/coupons"
+            />
+            <NavItem name={<MenuIcon style={{ fontSize: 20 }} />}>
               <DropdownMenu />
             </NavItem>
           </React.Fragment>

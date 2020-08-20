@@ -20,6 +20,8 @@ const Favorite = ({
   const [favorite, setFavorite] = useState('');
   const { partnerId } = useParams();
 
+  useEffect(() => dispatchGetMeAction, [dispatchGetMeAction, favorite]);
+
   const userFavorites = getme[0] && getme[0].favorite.map((item) => item._id);
 
   useEffect(() => {

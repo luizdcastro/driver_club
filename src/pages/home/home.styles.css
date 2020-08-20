@@ -80,13 +80,12 @@
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 8px;
 }
 
 .home-main__image {
-  max-width: 100%;
-  width: 600px;
+  width: 590px;
 }
 
 #main-image {
@@ -109,9 +108,7 @@
   flex-direction: column;
   justify-content: center;
   color: #212240;
-  width: 575px;
-  max-width: 100%;
-  padding-left: 25px;
+  width: 590px;
 }
 
 .main-items__icon {

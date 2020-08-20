@@ -30,18 +30,25 @@
 }
 
 .nav-item {
+  position: relative;
   width: calc((var(60px)) * 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.nav-fav__counter {
+  position: absolute;
+  top: 0%;
+  right: -12%;
+}
+
 .nav-link__true {
   color: rgb(82, 59, 228);
   font-size: 14px;
   font-weight: 600;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   background-color: rgb(255, 255, 255);
   border-radius: 50px;
   padding: 8px;

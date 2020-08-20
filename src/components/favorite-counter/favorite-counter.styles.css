@@ -1,0 +1,18 @@
+.favorite-counter__container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30%;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #f02849;
+  height: 18px;
+}
+
+.favorite-counter__number {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 0 5px 0 5px;
+}

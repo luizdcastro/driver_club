@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import { getMe } from '../../redux/actions/getme.action.js';
 import { addCoupon } from '../../redux/actions/coupon.actions';
 import './discont-card.styles.css';
 
 const DiscontCard = ({
   getme,
+  getMe,
   title,
   percentage,
   days,
@@ -14,16 +16,21 @@ const DiscontCard = ({
   rules,
   couponId,
   dispatchAddCoupon,
+  dispatchGetMeAction,
 }) => {
   const [coupon, setCoupon] = useState([]);
   const [details, setDetails] = useState([]);
+
+  useEffect(() => dispatchGetMeAction, [dispatchGetMeAction, coupon]);
 
   const values = [0] && getme[0].coupon.map((item) => item._id);
 
   const handleAddCoupon = (itemId) => {
     dispatchAddCoupon(itemId);
     setCoupon((coupon) => [...coupon, itemId]);
+    dispatchGetMeAction();
   };
+
   const toggleShow = (id) => {
     const showState = details.slice();
     const index = showState.indexOf(id);
@@ -52,7 +59,7 @@ const DiscontCard = ({
             className="discont-button__dark"
             onClick={() => handleAddCoupon(couponId)}
           >
-            Gerar Desconto
+            Gerar Cupom
           </button>
         ) : (
           <button
@@ -90,6 +97,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  dispatchGetMeAction: () => dispatch(getMe()),
   dispatchAddCoupon: (discontId) => dispatch(addCoupon(discontId)),
 });
 
