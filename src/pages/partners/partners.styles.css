@@ -15,3 +15,36 @@
   grid-template-rows: repeat(auto-fill, minmax(110px, 110px));
   gap: 20px;
 }
+
+.no-partner__container {
+  max-width: 90%;
+  width: 1200px;
+  margin: auto;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-partner__text {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.no-partner__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: rgb(82, 59, 228);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.no-pertner__link:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}

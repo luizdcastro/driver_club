@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { deleteFavorite } from '../../redux/actions/favorite.actions';
 import { getMe } from '../../redux/actions/getme.action.js';
@@ -24,25 +25,46 @@ const Favorites = ({ getme, dispatchGetMeAction, dispatchDeleteFavorite }) => {
     dispatchGetMeAction();
   };
 
+  function NoFavorite() {
+    return (
+      <div className="no-favorite__container">
+        <div>
+          <p className="no-favorite__text">
+            Você não tem estabelecimentos favoritos.
+          </p>
+          <Link className="no-favorite__link" to="/categories">
+            Voltar para categorias
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  function YesFavorite() {
+    return (
+      <div className="favorite-page__container">
+        <h2 className="favorite-page__title">Meus Favoritos</h2>
+        {getMeData
+          ? getMeData.favorite.map((item) => (
+              <React.Fragment key={item._id}>
+                {!favorite.includes(item._id) ? (
+                  <FavoriteCard
+                    name={item.name}
+                    category={item.category}
+                    address={item.address}
+                    deleteFavorite={() => handleDeleteFavorite(item._id)}
+                    to={`/partner/${item._id}`}
+                  />
+                ) : null}
+              </React.Fragment>
+            ))
+          : null}
+      </div>
+    );
+  }
+
   return (
-    <div className="favorite-page__container">
-      <h2 className="favorite-page__title">Meus Favoritos</h2>
-      {getMeData
-        ? getMeData.favorite.map((item) => (
-            <React.Fragment key={item._id}>
-              {!favorite.includes(item._id) ? (
-                <FavoriteCard
-                  name={item.name}
-                  category={item.category}
-                  address={item.address}
-                  deleteFavorite={() => handleDeleteFavorite(item._id)}
-                  to={`/partner/${item._id}`}
-                />
-              ) : null}
-            </React.Fragment>
-          ))
-        : null}
-    </div>
+    <div>{getme[0].favorite.length > 0 ? <YesFavorite /> : <NoFavorite />}</div>
   );
 };
 

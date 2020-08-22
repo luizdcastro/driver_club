@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { fetchPartnersByCategory } from '../../redux/actions/partner.actions';
 import SearchBar from '../../components/search/search.component';
@@ -30,9 +31,21 @@ const Partners = ({ partner, dispatchGetPartners }) => {
     );
   }, [partner, search]);
 
-  return (
-    <div>
-      <SearchBar onChange={(e) => setSearch(e.target.value)} />
+  function NoPartners() {
+    return (
+      <div className="no-partner__container">
+        <div>
+          <p className="no-partner__text">Nenhum estabelecimento encontrado.</p>
+          <Link className="no-partner__link" to="/categories">
+            Voltar para categorias
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  function YesPartners() {
+    return (
       <div className="partners-container">
         <div className="partners-grid">
           {filteredPartners
@@ -49,6 +62,13 @@ const Partners = ({ partner, dispatchGetPartners }) => {
             : null}
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div>
+      <SearchBar onChange={(e) => setSearch(e.target.value)} />
+      <div>{partner.length > 0 ? <YesPartners /> : <NoPartners />}</div>
     </div>
   );
 };

@@ -19,10 +19,10 @@ const Home = () => {
         <div className="home-page__hero">
           <div className="hero-main">
             <h1 className="hero-main__title">
-              O melhor clube de beneficios para motoristas Uber e 99.
+              Lorem ipsum dolor amet consectetur adipiscing elit.
             </h1>
             <h3 className="hero-main__subtitle">
-              Reduza seus gastos mensais utilizando descontos exclusivos
+              Ut sodales ex a mi ultricies dictum. Proin fringilla
             </h3>
             <Link id="custom-button">Sou Motorista</Link>
           </div>

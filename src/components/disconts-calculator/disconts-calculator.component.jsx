@@ -14,11 +14,11 @@ const DiscontCalculator = ({ to }) => {
 
   useEffect(() => {
     setTotal(
-      Number(combustivel) +
-        Number(alimentacao) +
-        Number(seguro) +
-        Number(manutencao) +
-        Number(locacao)
+      Number((combustivel / 100) * 7) +
+        Number((alimentacao / 100) * 15) +
+        Number((seguro / 100) * 10) +
+        Number((manutencao / 100) * 10) +
+        Number((locacao / 100) * 10)
     );
   }, [combustivel, alimentacao, seguro, manutencao, locacao]);
   return (
@@ -33,7 +33,7 @@ const DiscontCalculator = ({ to }) => {
             <FormInput
               id="calculator-input"
               placeholder="R$ 0,00"
-              handleChange={(e) => setCombustivel((e.target.value / 100) * 7)}
+              handleChange={(e) => setCombustivel(e.target.value)}
             />
           </li>
           <li className="home-calculator__items">
@@ -41,7 +41,7 @@ const DiscontCalculator = ({ to }) => {
             <FormInput
               id="calculator-input"
               placeholder="R$ 0,00"
-              handleChange={(e) => setAlimentacao((e.target.value / 100) * 15)}
+              handleChange={(e) => setAlimentacao(e.target.value)}
             />
           </li>
           <li className="home-calculator__items">
@@ -49,7 +49,7 @@ const DiscontCalculator = ({ to }) => {
             <FormInput
               id="calculator-input"
               placeholder="R$ 0,00"
-              handleChange={(e) => setSeguro((e.target.value / 100) * 10)}
+              handleChange={(e) => setSeguro(e.target.value)}
             />
           </li>
           <li className="home-calculator__items">
@@ -57,7 +57,7 @@ const DiscontCalculator = ({ to }) => {
             <FormInput
               id="calculator-input"
               placeholder="R$ 0,00"
-              handleChange={(e) => setManutencao((e.target.value / 100) * 10)}
+              handleChange={(e) => setManutencao(e.target.value)}
             />
           </li>
           <li className="home-calculator__items">
@@ -65,9 +65,10 @@ const DiscontCalculator = ({ to }) => {
             <FormInput
               id="calculator-input"
               placeholder="R$ 0,00"
-              handleChange={(e) => setLocacao((e.target.value / 100) * 10)}
+              handleChange={(e) => setLocacao(e.target.value)}
             />
           </li>
+          <li></li>
           <li className="home-calculator__items">
             <Link id="home-calculator__button" to={to}>
               {`Quero Economizar R$ ${total ? total.toFixed(2) : '200,00'}`}
