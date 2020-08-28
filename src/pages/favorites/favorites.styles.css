@@ -23,6 +23,7 @@
 .no-favorite__text {
   font-size: 1.3rem;
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .no-favorite__link {
