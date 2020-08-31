@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import FormInput from '../../components/form-input/form-input.component';
 import './disconts-calculator.styles.css';
 
 const DiscontCalculator = ({ to }) => {
@@ -11,6 +10,8 @@ const DiscontCalculator = ({ to }) => {
   const [seguro, setSeguro] = useState('');
   const [manutencao, setManutencao] = useState('');
   const [locacao, setLocacao] = useState('');
+
+  console.log(combustivel);
 
   useEffect(() => {
     setTotal(
@@ -23,59 +24,76 @@ const DiscontCalculator = ({ to }) => {
   }, [combustivel, alimentacao, seguro, manutencao, locacao]);
   return (
     <div className="home-page__calculator">
-      <form className="home-calculator__container">
-        <h2 className="home-calculator__title">
-          Calcule quanto você pode economizar mensalmente
-        </h2>
-        <ul>
-          <li className="home-calculator__items">
-            <p>Combustível</p>
-            <FormInput
-              id="calculator-input"
-              placeholder="R$ 0,00"
-              handleChange={(e) => setCombustivel(e.target.value)}
-            />
-          </li>
-          <li className="home-calculator__items">
-            <p>Alimentação</p>
-            <FormInput
-              id="calculator-input"
-              placeholder="R$ 0,00"
-              handleChange={(e) => setAlimentacao(e.target.value)}
-            />
-          </li>
-          <li className="home-calculator__items">
-            <p>Seguro</p>
-            <FormInput
-              id="calculator-input"
-              placeholder="R$ 0,00"
-              handleChange={(e) => setSeguro(e.target.value)}
-            />
-          </li>
-          <li className="home-calculator__items">
-            <p>Manutenção</p>
-            <FormInput
-              id="calculator-input"
-              placeholder="R$ 0,00"
-              handleChange={(e) => setManutencao(e.target.value)}
-            />
-          </li>
-          <li className="home-calculator__items">
-            <p>Aluguel de Carro</p>
-            <FormInput
-              id="calculator-input"
-              placeholder="R$ 0,00"
-              handleChange={(e) => setLocacao(e.target.value)}
-            />
-          </li>
-          <li></li>
-          <li className="home-calculator__items">
-            <Link id="home-calculator__button" to={to}>
-              {`Quero Economizar R$ ${total ? total.toFixed(2) : ''}`}
-            </Link>
-          </li>
-        </ul>
-      </form>
+      <h2 className="home-calculator__title">
+        Calcule quanto você pode economizar
+      </h2>
+      <table className="home-calculator__container">
+        <thead>
+          <tr className="home-calculator__subtitles">
+            <td>Categoria</td>
+            <td>Gasto Mensal</td>
+            <td>Economia</td>
+          </tr>
+          <tr>
+            <td className="home-calculator__text">Combustível</td>
+            <td>
+              <input
+                className="calculator-input"
+                placeholder="R$ 0,00"
+                onChange={(e) => setCombustivel(e.target.value)}
+              />
+            </td>
+            <td>R$ {((combustivel / 100) * 7).toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td className="home-calculator__text">Alimentação</td>
+            <td>
+              <input
+                className="calculator-input"
+                placeholder="R$ 0,00"
+                onChange={(e) => setAlimentacao(e.target.value)}
+              />
+            </td>
+            <td>R$ {((alimentacao / 100) * 10).toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td className="home-calculator__text">Seguro</td>
+            <td>
+              <input
+                className="calculator-input"
+                placeholder="R$ 0,00"
+                onChange={(e) => setSeguro(e.target.value)}
+              />
+            </td>
+            <td>R$ {((seguro / 100) * 10).toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td className="home-calculator__text">Manutenção</td>
+            <td>
+              <input
+                className="calculator-input"
+                placeholder="R$ 0,00"
+                onChange={(e) => setManutencao(e.target.value)}
+              />
+            </td>
+            <td>R$ {((manutencao / 100) * 10).toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td className="home-calculator__text">Locação</td>
+            <td>
+              <input
+                className="calculator-input"
+                placeholder="R$ 0,00"
+                onChange={(e) => setLocacao(e.target.value)}
+              />
+            </td>
+            <td>R$ {((locacao / 100) * 15).toFixed(2)}</td>
+          </tr>
+        </thead>
+        <Link id="home-calculator__button" to={to}>
+          {`Quero Economizar R$ ${total ? total.toFixed(2) : '0,00'}`}
+        </Link>
+      </table>
     </div>
   );
 };

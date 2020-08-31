@@ -1,48 +1,54 @@
 .home-page__calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 50px;
   margin-top: 50px;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.25);
   color: #212240;
   max-width: 500px;
+  padding: 30px;
 }
 
 .home-calculator__title {
   font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
-  margin-top: 0;
   position: relative;
+  box-sizing: border-box;
+  margin-top: 0;
 }
 
 .home-calculator__container {
   display: block;
   position: relative;
-  padding: 35px;
   border-radius: 10px;
   max-width: 100%;
 }
 
-.home-calculator__container::before {
-  content: '';
-  background: '';
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: 300px;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
+.home-calculator__subtitles {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 3rem;
 }
 
-.home-calculator__items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  font-size: 1rem;
+.home-calculator__text {
+  padding-right: 15px;
+}
+
+.calculator-input {
+  border: solid 0.5px #2122402f;
+  height: 25px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 105px;
+}
+.calculator-input:focus {
+  outline: none;
+  opacity: 0.8;
 }
 
 #home-calculator__button {
@@ -51,26 +57,15 @@
   align-items: center;
   font-size: 0.95rem;
   font-weight: 600;
+  margin-top: 20px;
   width: 100%;
   height: 50px;
-  margin-right: 0;
-  margin-left: 0;
-  margin-top: 20px;
   background-color: rgb(255, 255, 255);
   color: rgb(82, 59, 228);
   border: none;
-  box-shadow: 0 1.5px 3px 0 rgba(82, 59, 228, 0.2);
+  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 #home-calculator__button:hover {
-  box-shadow: 0 3px 6px 0 rgba(82, 59, 228, 0.2);
-}
-
-#calculator-input {
-  width: 92px;
-  margin-right: 0;
-  margin-bottom: 5px;
-  border: solid 1px rgba(33, 34, 64, 0.3);
-  color: rgb(33, 34, 64);
-  text-align: center;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
 }
