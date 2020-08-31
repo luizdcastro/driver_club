@@ -39,11 +39,11 @@ const Login = ({ dispatchLoginAction, dispatchGetme }) => {
         <FormInput
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Senha"
           value={password}
           handleChange={(e) => setPassword(e.target.value)}
         />
-        <CustomButton name="Login" onClick={() => handleOnSubmmit} />
+        <CustomButton name="Entrar" onClick={() => handleOnSubmmit} />
         <div className="login-link__container">
           <Link className="login-link" to="/forgot-password">
             Esqueceu sua senha?

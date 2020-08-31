@@ -31,13 +31,13 @@ const ForgotPassword = ({ dispatchForgotPassword }) => {
               id="forgot-password__input"
               name="email"
               type="email"
-              placeholder="Email"
+              placeholder="Email Cadastrado"
               handleChange={(e) => setEmail(e.target.value)}
             />
             <CustomButton name="Enviar Link" onClick={handleOnSubmmit} />
             <div className="forgotPassword-link__container">
               <Link className="forgotPassword-link" to="/login">
-                Lembrei minha senha.
+                Lembrou da senha?
               </Link>
             </div>
             {serverError ? (

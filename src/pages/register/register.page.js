@@ -33,11 +33,11 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
   return (
     <div className="register-container">
       <form className="register" onSubmit={handleOnSubmmit}>
-        <h2 className="register-title">Cadastre uma nova conta</h2>
+        <h2 className="register-title">Crie sua conta</h2>
         <FormInput
           type="name"
           name="name"
-          placeholder="Name"
+          placeholder="Nome"
           value={name}
           handleChange={(e) => setName(e.target.value)}
         />
@@ -51,21 +51,21 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
         <FormInput
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Senha"
           value={password}
           handleChange={(e) => setPassword(e.target.value)}
         />
         <FormInput
           type="password"
           name="passwordConfirm"
-          placeholder="Confirm Password"
+          placeholder="Confirmação de Senha"
           value={passwordConfirm}
           handleChange={(e) => setPasswordConfirm(e.target.value)}
         />
         <CustomButton name="Registrar" onClick={handleOnSubmmit} />
         {serverError ? <p className="register-error">{serverError}</p> : null}
         <Link className="register-link" to="/login">
-          Já possui uma conta?
+          Já tem uma conta?
         </Link>
       </form>
     </div>

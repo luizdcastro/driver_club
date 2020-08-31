@@ -71,7 +71,7 @@ const DiscontCalculator = ({ to }) => {
           <li></li>
           <li className="home-calculator__items">
             <Link id="home-calculator__button" to={to}>
-              {`Quero Economizar R$ ${total ? total.toFixed(2) : '200,00'}`}
+              {`Quero Economizar R$ ${total ? total.toFixed(2) : ''}`}
             </Link>
           </li>
         </ul>
