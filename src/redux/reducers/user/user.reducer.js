@@ -7,7 +7,7 @@ const defaultState = {
   isLoggedIn: null,
 };
 
-const userInfo = localStorage.getItem('USER_INFO');
+const userInfo = localStorage.getItem('user');
 const INITIAL_STATE = userInfo ? JSON.parse(userInfo) : defaultState;
 
 export default function userReducer(state = INITIAL_STATE, action) {
