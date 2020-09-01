@@ -80,7 +80,7 @@ const PaymentForm = ({
             <div className="credit-card__group">
               <CloseIcon
                 className="modal-payment__icon"
-                style={{ fontSize: 25 }}
+                style={{ fontSize: 30 }}
                 onClick={() => {
                   setModalVisible(false);
                   setCardError('');

@@ -11,15 +11,13 @@ const DiscontCalculator = ({ to }) => {
   const [manutencao, setManutencao] = useState('');
   const [locacao, setLocacao] = useState('');
 
-  console.log(combustivel);
-
   useEffect(() => {
     setTotal(
       Number((combustivel / 100) * 7) +
-        Number((alimentacao / 100) * 15) +
+        Number((alimentacao / 100) * 10) +
         Number((seguro / 100) * 10) +
         Number((manutencao / 100) * 10) +
-        Number((locacao / 100) * 10)
+        Number((locacao / 100) * 15)
     );
   }, [combustivel, alimentacao, seguro, manutencao, locacao]);
   return (
@@ -93,6 +91,12 @@ const DiscontCalculator = ({ to }) => {
         <Link id="home-calculator__button" to={to}>
           {`Quero Economizar R$ ${total ? total.toFixed(2) : '0,00'}`}
         </Link>
+        <div className="home-calculator__disclamer">
+          <p>
+            O cálculo é baseado na média de descontos oferecidos pelos
+            estabelecimentos parceiros do clube.
+          </p>
+        </div>
       </table>
     </div>
   );

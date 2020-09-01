@@ -19,8 +19,6 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
     }
   }, [getme]);
 
-  console.log(getme[0].coupon.length);
-
   const handleDeleteCoupon = (itemId) => {
     dispatchDeleteCoupon(itemId);
     setCoupon((coupon) => [...coupon, itemId]);

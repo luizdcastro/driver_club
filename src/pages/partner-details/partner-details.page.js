@@ -40,8 +40,6 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
     }
   };
 
-  console.log(partnerDetail.discont);
-
   const openGoogleMap = () => {
     window.open(
       `https://www.google.com/maps/dir/?api=1&destination=${partnerDetail.address}&travelmode=driving`
