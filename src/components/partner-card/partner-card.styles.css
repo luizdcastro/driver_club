@@ -1,9 +1,9 @@
 .partner-container {
+  display: flex;
   position: relative;
   background-color: #fff;
   min-height: 110px;
-  border-radius: 10px 0 10px 0;
-  padding-left: 15px;
+  border-radius: 10px 0 0 0;
   transition: 300ms;
   text-decoration: none;
   color: #212240;
@@ -15,20 +15,38 @@
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+.partner-text__box {
+  flex: 3;
+  padding-left: 10px;
+}
+
+.partner-image__box {
+  flex: 2;
+  padding: 10px;
+  border: none;
+}
+
+.partner-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
 .partner-title {
   position: absolute;
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
 .partner-subtitle {
   position: absolute;
-  font-size: 12px;
+  font-size: 0.9rem;
   top: 24%;
 }
 
 .partner-address {
   position: absolute;
-  font-size: 12px;
-  top: 60%;
+  font-size: 0.75rem;
+  top: 65%;
 }

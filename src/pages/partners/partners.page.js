@@ -56,6 +56,7 @@ const Partners = ({ partner, dispatchGetPartners }) => {
                     name={item.name}
                     category={item.category}
                     address={item.address}
+                    image={item.image}
                   />
                 </React.Fragment>
               ))
