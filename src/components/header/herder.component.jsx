@@ -11,7 +11,8 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import CloseIcon from '@material-ui/icons/Close';
-
+import DevicesIcon from '@material-ui/icons/Devices';
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import './header.styles.css';
 
 const Header = ({ isLoggedIn, onLogout }) => {
@@ -86,6 +87,23 @@ const Header = ({ isLoggedIn, onLogout }) => {
                   <AssessmentIcon className="menu-dropdown__icon" />
                   Calculadora
                 </Link>
+                <Link
+                  className="menu-item"
+                  to=""
+                  onClick={() => setOpen(!open)}
+                >
+                  <DevicesIcon className="menu-dropdown__icon" />
+                  Descontos Online
+                </Link>
+                <Link
+                  className="menu-item"
+                  to=""
+                  onClick={() => setOpen(!open)}
+                >
+                  <LocalOfferIcon className="menu-dropdown__icon" />
+                  Sorteios
+                </Link>
+
                 <Link className="menu-item" to="" onClick={onLogout}>
                   <ExitToAppIcon className="menu-dropdown__icon" />
                   Sair

@@ -17,6 +17,8 @@ import ForgotPassword from '../pages/forgot-password/forgot-password.page';
 import ResetPassword from '../pages/reset-password/reset-password.page';
 import Calculator from '../pages/calculator/calculator.page';
 
+import RegisterPartner from '../pages/register-partner/register-partner.page';
+
 import { logoutUser } from '../redux/actions/auth.actions';
 
 const App = ({ user, dispatchLogoutAction }) => {
@@ -38,10 +40,11 @@ const App = ({ user, dispatchLogoutAction }) => {
               path="/reset-password/:token"
               component={ResetPassword}
             />
+            <Route exact path="/register-partner" component={RegisterPartner} />
             <Route exact path="/" component={Home} />
             <Redirect to="/" />
           </Switch>
-        ) : (
+        ) : !user.isPartner ? (
           <Switch>
             <Route exact path="/categories" component={Categories} />
             <Route exact path="/categories/:categoryId" component={Partners} />
@@ -55,10 +58,9 @@ const App = ({ user, dispatchLogoutAction }) => {
             <Route exact path="/account" component={Account} />
             <Route exact path="/subscription" component={Subscription} />
             <Route exact path="/calculator" component={Calculator} />
-
             <Redirect to="/categories" />
           </Switch>
-        )}
+        ) : null}
       </div>
     </React.Fragment>
   );

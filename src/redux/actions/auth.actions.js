@@ -35,6 +35,7 @@ const setUserInfo = (data) => {
     userId: parsedToken.id,
     token: data.token,
     isLoggedIn: true,
+    isPartner: data.data.user.isPartner,
   };
   localStorage.setItem('user', JSON.stringify(userInfo));
   return { type: constants.SET_USER_INFO, payload: userInfo };

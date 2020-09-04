@@ -36,6 +36,7 @@ const DiscontCalculator = ({ to }) => {
             <td className="home-calculator__text">Combustível</td>
             <td>
               <input
+                type="number"
                 className="calculator-input"
                 placeholder="R$ 0,00"
                 onChange={(e) => setCombustivel(e.target.value)}
@@ -47,6 +48,7 @@ const DiscontCalculator = ({ to }) => {
             <td className="home-calculator__text">Alimentação</td>
             <td>
               <input
+                type="number"
                 className="calculator-input"
                 placeholder="R$ 0,00"
                 onChange={(e) => setAlimentacao(e.target.value)}
@@ -58,6 +60,7 @@ const DiscontCalculator = ({ to }) => {
             <td className="home-calculator__text">Seguro</td>
             <td>
               <input
+                type="number"
                 className="calculator-input"
                 placeholder="R$ 0,00"
                 onChange={(e) => setSeguro(e.target.value)}
@@ -69,6 +72,7 @@ const DiscontCalculator = ({ to }) => {
             <td className="home-calculator__text">Manutenção</td>
             <td>
               <input
+                type="number"
                 className="calculator-input"
                 placeholder="R$ 0,00"
                 onChange={(e) => setManutencao(e.target.value)}
@@ -80,6 +84,7 @@ const DiscontCalculator = ({ to }) => {
             <td className="home-calculator__text">Locação</td>
             <td>
               <input
+                type="number"
                 className="calculator-input"
                 placeholder="R$ 0,00"
                 onChange={(e) => setLocacao(e.target.value)}

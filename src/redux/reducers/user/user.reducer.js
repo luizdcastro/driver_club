@@ -2,9 +2,9 @@ import * as constants from '../../constants';
 
 const defaultState = {
   userId: null,
-  name: null,
   token: null,
   isLoggedIn: null,
+  isPartner: null,
 };
 
 const userInfo = localStorage.getItem('user');
