@@ -15,7 +15,7 @@ import DevicesIcon from '@material-ui/icons/Devices';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import './header.styles.css';
 
-const Header = ({ isLoggedIn, onLogout }) => {
+const Header = ({ isLoggedIn, onLogout, isPartner }) => {
   function Navbar({ children }) {
     return (
       <nav className="nav-container">
@@ -116,10 +116,51 @@ const Header = ({ isLoggedIn, onLogout }) => {
     );
   }
 
+  function NavItemMenuPartner({ name }) {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <li className="nav-item">
+        <Link
+          className={`nav-link__${isLoggedIn}`}
+          onClick={() => setOpen(!open)}
+        >
+          {name}
+        </Link>
+        <React.Fragment>
+          {open && isLoggedIn ? (
+            <div className="dropdown-container">
+              <div className="dropdown-menu">
+                <Link
+                  className="close-menu__icon"
+                  onClick={() => setOpen(!open)}
+                >
+                  <CloseIcon style={{ fontSize: 40 }} />
+                </Link>
+                <Link
+                  className="menu-item"
+                  to="/account"
+                  onClick={() => setOpen(!open)}
+                >
+                  <AccountBoxIcon className="menu-dropdown__icon" />
+                  Perfil
+                </Link>
+                <Link className="menu-item" to="" onClick={onLogout}>
+                  <ExitToAppIcon className="menu-dropdown__icon" />
+                  Sair
+                </Link>
+              </div>
+            </div>
+          ) : null}
+        </React.Fragment>
+      </li>
+    );
+  }
+
   return (
     <div className="header">
       <Navbar>
-        {isLoggedIn ? (
+        {isLoggedIn & !isPartner ? (
           <React.Fragment>
             <NavItem
               name={<FavoriteIcon style={{ fontSize: 20 }} />}
@@ -133,6 +174,8 @@ const Header = ({ isLoggedIn, onLogout }) => {
             />
             <NavItemMenu name={<MenuIcon style={{ fontSize: 20 }} />} />
           </React.Fragment>
+        ) : isLoggedIn & isPartner ? (
+          <NavItemMenuPartner name={<MenuIcon style={{ fontSize: 20 }} />} />
         ) : (
           <React.Fragment>
             <NavItem name="Login" to="/login" />

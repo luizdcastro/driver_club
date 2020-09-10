@@ -7,6 +7,9 @@ import { registerUser } from '../../redux/actions/auth.actions';
 import RegisterImage from '../../assets/images/register_image.jpg';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import IconOne from '../../assets/icons/space.svg';
+import IconTwo from '../../assets/icons/taxi.svg';
+import IconThree from '../../assets/icons/report.svg';
 import './register-partner.styles.css';
 
 const RegisterPartner = ({ dispatchRegisterAction, dispatchGetme }) => {
@@ -97,6 +100,61 @@ const RegisterPartner = ({ dispatchRegisterAction, dispatchGetme }) => {
               Já tem cadastro?
             </Link>
           </form>
+        </div>
+      </div>
+      <div className="register-partner__items-container">
+        <h2 className="register-partner__items-title">
+          Lorem ipsum dolor sit amet
+        </h2>
+        <div>
+          <ul className="register-partner__items ">
+            <li className="register-partner__items-sub">
+              <img
+                className="register-partner__items-icons"
+                src={IconOne}
+                alt="icon"
+              />
+              <h3>Lorem ipsum dolor amet.</h3>
+              <p>
+                Extra safety and hygiene measures so that you can ride around
+                the city as safely as ever.
+              </p>
+            </li>
+            <li className="register-partner__items-sub">
+              <img
+                className="register-partner__items-icons"
+                src={IconTwo}
+                alt="icon"
+              />
+              <h3>Lorem ipsum dolor amet.</h3>
+              <p>
+                Extra safety and hygiene measures so that you can ride around
+                the city as safely as ever.
+              </p>
+            </li>
+            <li className="register-partner__items-sub">
+              <img
+                className="register-partner__items-icons"
+                src={IconThree}
+                alt="icon"
+              />
+              <h3>Lorem ipsum dolor amet.</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                ornare faucibus sollicitudin. Nam viverra felis.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="register-partner__footer">
+          <h2 className="register-partner__footer-title">
+            Pronto para aumentar suas vendas?
+          </h2>
+          <h3 className="register-partner__footer-subtitle">
+            Cadastre seu estabelecimento gratuitamente e aumente o movimento do
+            seu negócio.
+          </h3>
+          <Link className="register-partner__button">Quero me cadastrar</Link>
         </div>
       </div>
     </div>

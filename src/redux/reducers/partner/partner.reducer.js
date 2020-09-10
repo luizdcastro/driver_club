@@ -6,7 +6,10 @@ export default function partnerReducer(state = [], action) {
       return action.payload;
     case constants.FETCH_PARTNER_DETAIL:
       return action.payload;
-    case constants.RESET_USER_INFO:
+    case constants.CREATE_PARTNER:
+      return action.payload;
+    case constants.GET_PARTNER_BY_USER:
+      return action.payload;
     default:
       return state;
   }

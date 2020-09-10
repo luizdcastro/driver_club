@@ -18,6 +18,7 @@ import ResetPassword from '../pages/reset-password/reset-password.page';
 import Calculator from '../pages/calculator/calculator.page';
 
 import RegisterPartner from '../pages/register-partner/register-partner.page';
+import PartnerHome from '../pages/partner-home/partner-home.page';
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -26,7 +27,7 @@ const App = ({ user, dispatchLogoutAction }) => {
     <React.Fragment>
       <Header
         isLoggedIn={user.isLoggedIn}
-        userName={user.name}
+        isPartner={user.isPartner}
         onLogout={dispatchLogoutAction}
       />
       <div className="App">
@@ -60,7 +61,13 @@ const App = ({ user, dispatchLogoutAction }) => {
             <Route exact path="/calculator" component={Calculator} />
             <Redirect to="/categories" />
           </Switch>
-        ) : null}
+        ) : (
+          <Switch>
+            <Route exact path="/partner-home" component={PartnerHome} />
+            <Route exact path="/account" component={Account} />
+            <Redirect to="/partner-home" />
+          </Switch>
+        )}
       </div>
     </React.Fragment>
   );

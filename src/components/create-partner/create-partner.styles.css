@@ -1,0 +1,27 @@
+.create-partner__select-category {
+  display: block;
+  height: 42px;
+  width: 312px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #484a4d;
+  padding: 5px;
+  border: solid 1px #dadce1;
+  margin: 15px;
+}
+
+.create-partner__select-category:focus {
+  outline: none;
+  opacity: 0.8;
+}
+
+.create-partner__time-container {
+  display: flex;
+  align-items: center;
+}
+
+#create-partner__input-time {
+  width: 120px;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+}
