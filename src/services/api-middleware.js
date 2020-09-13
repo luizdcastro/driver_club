@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import * as constants from './constants';
-import { logoutUser } from './actions/auth.actions';
+import * as constants from '../redux/constants';
+import { logoutUser } from '../redux/actions/auth.actions';
 
 export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
   if (action.type !== constants.API) return next(action);
@@ -17,6 +17,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
     method,
     success,
     data,
+    uploadProgress,
     postProccessSuccess,
     postProccessError,
   } = action.payload;
@@ -25,6 +26,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
     method,
     url: BASE_URL + url,
     data: data ? data : null,
+    onUploadProgress: uploadProgress,
   })
     .then((response) => {
       dispatch({ type: constants.TOGGLE_LOADER });

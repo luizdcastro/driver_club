@@ -22,11 +22,17 @@
   border-color: #78e5d5;
 }
 
+.image-dropzone:focus {
+  outline: none;
+  opacity: 0.8;
+}
+
 .image-upload__message {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px 0;
+  font-size: 13px;
 }
 
 .file-list {
@@ -49,6 +55,10 @@
 .file-info__data {
   display: flex;
   flex-direction: column;
+}
+
+.file-info__name {
+  font-size: 13px;
 }
 
 .file-info__span {

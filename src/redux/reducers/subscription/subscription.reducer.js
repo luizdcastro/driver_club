@@ -1,6 +1,6 @@
 import * as constants from '../../constants';
 
-export default function addfavorite(state = {}, action) {
+export default function subscriptionReducer(state = {}, action) {
   switch (action.type) {
     case constants.IUGU_CARD_DATA:
       return { ...action.payload };

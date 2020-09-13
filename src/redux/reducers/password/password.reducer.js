@@ -1,6 +1,6 @@
 import * as constants from '../../constants';
 
-export default function addfavorite(state = {}, action) {
+export default function passwordReducer(state = {}, action) {
   switch (action.type) {
     case constants.FORGOT_PASSWORD:
       return { ...action.payload };

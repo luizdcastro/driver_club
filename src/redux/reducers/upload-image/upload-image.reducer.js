@@ -1,10 +1,10 @@
 import * as constants from '../../constants';
 
-export default function accountReducer(state = [], action) {
+export default function uploadReducer(state = {}, action) {
   switch (action.type) {
-    case constants.UPDATE_USER_INFO:
+    case constants.UPLOAD_IMAGE:
       return { ...action.payload };
-    case constants.UPDATE_PASSWORD:
+    case constants.DELETE_IMAGE:
       return { ...action.payload };
     default:
       return state;

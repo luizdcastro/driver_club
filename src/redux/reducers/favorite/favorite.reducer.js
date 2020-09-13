@@ -1,6 +1,6 @@
 import * as constants from '../../constants';
 
-export default function addfavorite(state = [], action) {
+export default function favoriteReducer(state = [], action) {
   switch (action.type) {
     case constants.ADD_FAVORITE:
       return { ...action.payload };

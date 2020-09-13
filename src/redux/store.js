@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { apiMiddleware } from './apiMiddleware';
+import { apiMiddleware } from '../services/api-middleware';
 
 import rootReducer from './reducers';
 
