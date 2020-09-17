@@ -4,13 +4,13 @@ import MaskedInput from 'react-text-mask';
 
 import { createPartner } from '../../redux/actions/partner.actions';
 import { getPartnerByUser } from '../../redux/actions/partner.actions';
-import FormInput from '../../components/form-input/form-input.component';
-import CustomButton from '../../components/custom-button/custom-button.component';
-import UploadImage from '../../components/upload-image/upload-image.component';
-import './create-partner.styles.css';
-
-const CreatePartner = ({
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
+import UploadImage from '../upload-image/upload-image.component';
+import './create-store.component';
+const CreateStoreComponent = ({
   user,
+  uploadImage,
   dispatchCreatePartner,
   dispatchGetPartnerByUser,
 }) => {
@@ -18,18 +18,34 @@ const CreatePartner = ({
   const [phone, setPhone] = useState('');
   const [website, setWebsite] = useState('');
   const [category, setCategory] = useState('');
+  const [street, setStreet] = useState('');
+  const [number, setNumber] = useState('');
+  const [neighborhood, setNeighborhood] = useState('');
+  const [city, setCity] = useState('');
   const [open_at, setOpen_at] = useState('');
   const [close_at, setClose_at] = useState('');
-  const [created, setCreated] = useState('');
-  const [serverError, setServerError] = useState('');
   const [cash, setCash] = useState('');
   const [master, setMaster] = useState('');
   const [visa, setVisa] = useState('');
   const [checkedCash, setCheckedCash] = useState(true);
   const [checkedMaster, setCheckedMaster] = useState(true);
   const [checkedVisa, setCheckedVisa] = useState(true);
-  const paymentMethods = [cash, master, visa];
+  const [created, setCreated] = useState('');
+  const [serverError, setServerError] = useState('');
   const userId = user.userId;
+  const image = uploadImage.url;
+
+  const paymentMethods = [cash, master, visa];
+  const address = {
+    street: street,
+    number: number,
+    neighborhood: neighborhood,
+    city: city,
+  };
+  const hours = {
+    open_at: open_at,
+    close_at: close_at,
+  };
 
   const handleOnSubmmit = (event) => {
     event.preventDefault();
@@ -37,6 +53,12 @@ const CreatePartner = ({
       user.userId,
       name,
       category,
+      address,
+      phone,
+      website,
+      hours,
+      paymentMethods,
+      image,
       () => setCreated(true),
       (message) => setServerError(message)
     );
@@ -51,8 +73,7 @@ const CreatePartner = ({
   }, [dispatchGetPartnerByUser, userId, created]);
 
   return (
-    <div>
-      <h2>Adicione seu estabelecimento</h2>
+    <div className="create-partner__container">
       <form onSubmit={handleOnSubmmit}>
         <label>Informações Básicas</label>
         <FormInput
@@ -126,72 +147,74 @@ const CreatePartner = ({
             type="time"
             value={close_at}
             onChange={(e) => setClose_at(e.target.value)}
-            min="00:00"
-            max="23:00"
           />
         </div>
         <label>Métodos de Pagamento</label>
-        <br />
-        <input
-          type="checkbox"
-          value="Dinheiro"
-          onChange={(e) => {
-            setCheckedCash(!checkedCash);
-            checkedCash ? setCash(e.target.value) : setCash('');
-          }}
-        />
-        <label>Dinheiro</label>
-        <br />
-        <input
-          type="checkbox"
-          value="Mastercard"
-          onChange={(e) => {
-            setCheckedMaster(!checkedMaster);
-            checkedMaster ? setMaster(e.target.value) : setMaster('');
-          }}
-        />
-        <label>Mastercard</label>
-        <br />
-        <input
-          type="checkbox"
-          value="Visa"
-          onChange={(e) => {
-            setCheckedVisa(!checkedVisa);
-            checkedVisa ? setVisa(e.target.value) : setVisa('');
-          }}
-        />
-        <label>Visa</label>
-        <br />
+        <div className="create-paertner__payment">
+          <div>
+            <input
+              type="checkbox"
+              value="Dinheiro"
+              onChange={(e) => {
+                setCheckedCash(!checkedCash);
+                checkedCash ? setCash(e.target.value) : setCash('');
+              }}
+            />
+            <label>Dinheiro</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="Mastercard"
+              onChange={(e) => {
+                setCheckedMaster(!checkedMaster);
+                checkedMaster ? setMaster(e.target.value) : setMaster('');
+              }}
+            />
+            <label>Mastercard</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="Visa"
+              onChange={(e) => {
+                setCheckedVisa(!checkedVisa);
+                checkedVisa ? setVisa(e.target.value) : setVisa('');
+              }}
+            />
+            <label>Visa</label>
+          </div>
+        </div>
         <label>Imagem</label>
-        <UploadImage />
+        <UploadImage imageUrl />
         <label>Endereço</label>
         <FormInput
           type="text"
           name="rua"
           placeholder="Rua"
-          value={category}
-          handleChange={(e) => setCategory(e.target.value)}
+          value={street}
+          handleChange={(e) => setStreet(e.target.value)}
         />
         <FormInput
           type="text"
           name="numero"
           placeholder="Número"
-          value={category}
-          handleChange={(e) => setCategory(e.target.value)}
+          value={number}
+          handleChange={(e) => setNumber(e.target.value)}
         />
         <FormInput
           type="text"
-          name="numero"
+          name="bairro"
           placeholder="Bairro"
-          value={category}
-          handleChange={(e) => setCategory(e.target.value)}
+          value={neighborhood}
+          handleChange={(e) => setNeighborhood(e.target.value)}
         />
         <FormInput
           type="text"
-          name="numero"
+          name="cidade"
           placeholder="Cidade"
-          value={category}
-          handleChange={(e) => setCategory(e.target.value)}
+          value={city}
+          handleChange={(e) => setCity(e.target.value)}
         />
         <CustomButton name="Cadastrar" onClick={() => handleOnSubmmit} />
         {serverError ? <p className="login-error">{serverError}</p> : null}
@@ -201,14 +224,43 @@ const CreatePartner = ({
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchCreatePartner: (user, name, category, onSuccess, onError) =>
-    dispatch(createPartner({ user, name, category }, onSuccess, onError)),
+  dispatchCreatePartner: (
+    user,
+    name,
+    category,
+    address,
+    phone,
+    website,
+    hours,
+    payment_methods,
+    image,
+    onSuccess,
+    onError
+  ) =>
+    dispatch(
+      createPartner({
+        user,
+        name,
+        category,
+        address,
+        phone,
+        website,
+        hours,
+        payment_methods,
+        image,
+        onSuccess,
+        onError,
+      })
+    ),
   dispatchGetPartnerByUser: (userId) => dispatch(getPartnerByUser(userId)),
 });
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  partner: state.partner,
+  uploadImage: state.uploadImage,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreatePartner);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CreateStoreComponent);

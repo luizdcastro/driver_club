@@ -7,7 +7,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
   if (action.type !== constants.API) return next(action);
 
   dispatch({ type: constants.TOGGLE_LOADER });
-  const BASE_URL = 'http://127.0.0.1:8000/api/v1';
+  const BASE_URL = 'https://rocketcab-server.herokuapp.com/api/v1';
   const AUTH_TOKEN = getState().user.token;
   if (AUTH_TOKEN)
     axios.defaults.headers.common['Authorization'] = `Bearer ${AUTH_TOKEN}`;
@@ -17,7 +17,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
     method,
     success,
     data,
-    uploadProgress,
+    onUploadProgress,
     postProccessSuccess,
     postProccessError,
   } = action.payload;
@@ -26,7 +26,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
     method,
     url: BASE_URL + url,
     data: data ? data : null,
-    onUploadProgress: uploadProgress,
+    onUploadProgress: onUploadProgress,
   })
     .then((response) => {
       dispatch({ type: constants.TOGGLE_LOADER });

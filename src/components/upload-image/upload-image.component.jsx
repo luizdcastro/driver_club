@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { uniqueId } from 'loadsh';
 import filesize from 'filesize';
 import Dropzone from 'react-dropzone';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { MdCheckCircle, MdError, MdLink } from 'react-icons/md';
-import api from '../../services/api-axios';
 
+import {
+  uploadImage,
+  deleteImage,
+} from '../../redux/actions/upload-image.actions';
 import './upload-image.styles.css';
 import 'react-circular-progressbar/dist/styles.css';
 
-const UploadImage = () => {
+const UploadImage = ({ dispatchUploadImage, dispatchDeleteImage }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [droppedFile, setDroppedFile] = useState(false);
 
@@ -43,31 +47,31 @@ const UploadImage = () => {
   const handleRequest = () => {
     const data = new FormData();
     data.append('file', uploadedFiles[0].file);
-    api
-      .post('files', data, {
-        onUploadProgress: (e) => {
-          const progress = parseInt(Math.round((e.loaded * 100) / e.total));
-          updateFile(uploadedFiles[0].id, {
-            progress: progress,
-          });
-        },
-      })
-      .then((response) => {
+    dispatchUploadImage(
+      data,
+      (e) => {
+        const progress = parseInt(Math.round((e.loaded * 100) / e.total));
+        updateFile(uploadedFiles[0].id, {
+          progress: progress,
+        });
+      },
+      (response) => {
         updateFile(uploadedFiles[0].id, {
           uploaded: true,
-          id: response.data._id,
-          url: response.data.url,
+          id: response._id,
+          url: response.url,
         });
-      })
-      .catch(() => {
+      },
+      () => {
         updateFile(uploadedFiles[0].id, {
           error: true,
         });
-      });
+      }
+    );
   };
 
-  const handleDelete = async (id) => {
-    await api.delete(`files/${id}`);
+  const handleDelete = async (imageKey) => {
+    dispatchDeleteImage(imageKey);
     setUploadedFiles([]);
   };
 
@@ -195,4 +199,10 @@ const UploadImage = () => {
   );
 };
 
-export default UploadImage;
+const mapDispatchToProps = (dispatch) => ({
+  dispatchUploadImage: (file, onUploadProgress, onSuccess, onError) =>
+    dispatch(uploadImage(file, onUploadProgress, onSuccess, onError)),
+  dispatchDeleteImage: (imageKey) => dispatch(deleteImage(imageKey)),
+});
+
+export default connect(null, mapDispatchToProps)(UploadImage);

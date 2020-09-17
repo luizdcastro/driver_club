@@ -42,7 +42,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
 
   const openGoogleMap = () => {
     window.open(
-      `https://www.google.com/maps/dir/?api=1&destination=${partnerDetail.address}&travelmode=driving`
+      `https://www.google.com/maps/dir/?api=1&destination=${partner[0].address.street},${partner[0].address.number}&travelmode=driving`
     );
   };
 
@@ -62,10 +62,12 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
           className="info-dropicon"
           style={{ fontSize: 40 }}
         />
-        <p className="info-address">Endereço: {partnerDetail.address}</p>
+        <p className="info-address">
+          Endereço: {partner[0].address.street}, {partner[0].address.number}
+        </p>
         <p className="info-time">
-          Horário de atendimento: {partnerDetail.open_at} às{' '}
-          {partnerDetail.close_at}
+          Horário de atendimento: {partner[0].hours.open_at} às{' '}
+          {partner[0].hours.close_at}
         </p>
       </div>
       {details.includes(partnerId) && (
@@ -80,7 +82,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
           </ul>
           <h3 className="expanded-contact">Contato</h3>
           <p className="expanded-phone">
-            Telefone:{' '}
+            Telefone:
             <span>
               <a id="links" href={`tel:${partnerDetail.phone}`}>
                 {partnerDetail.phone}

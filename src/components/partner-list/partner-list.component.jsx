@@ -29,8 +29,8 @@ const PartnerList = ({ user, partner, dispatchGetPartnerByUser }) => {
                 <PartnerCard
                   to={`/partner/${item._id}`}
                   name={item.name}
-                  category={item.category}
                   address={item.address}
+                  category={item.category}
                   image={item.image}
                 />
               </React.Fragment>
