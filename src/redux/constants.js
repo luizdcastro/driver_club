@@ -27,3 +27,4 @@ export const DELETE_IMAGE = 'DELETE_IMAGE';
 export const CREATE_COUPON = 'CREATE_COUPON ';
 export const EDIT_COUPON = 'EDIT_COUPON';
 export const GET_COUPON = 'GET_COUPON';
+export const REMOVE_COUPON = 'REMOVE_COUPON';

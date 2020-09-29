@@ -35,28 +35,55 @@
   border-radius: 100%;
 }
 
-.partner-discont__button__dark {
+.partner-discont__button-container {
   position: absolute;
-  height: 40px;
   right: 2%;
-  top: 29%;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-discont__button__edit {
   background-color: rgb(82, 59, 228);
   border: solid 1px rgb(82, 59, 228);
-  border-radius: 3px;
   color: rgb(255, 255, 255);
   font-size: 13px;
   font-weight: 700;
-  height: 40px;
   transition: 300ms;
-  width: 125px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 25px;
 }
 
-.partner-discont__button__dark:focus,
-.partner-discont__button__dark:active {
+.partner-discont__button__delete {
+  background-color: #f08080;
+  border: solid 1px #f08080;
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  font-weight: 700;
+  transition: 300ms;
+  border-radius: 3px;
+  width: 100px;
+  height: 25px;
+}
+
+.partner-discont__button__edit:focus,
+.partner-discont__button__edit:active {
   outline: none;
 }
 
-.partner-discont__button__dark:hover {
+.partner-discont__button__edit:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.partner-discont__button__delete:focus,
+.partner-discont__button__delete:active {
+  outline: none;
+}
+
+.partner-discont__button__delete:hover {
   cursor: pointer;
   filter: brightness(1.1);
 }

@@ -56,7 +56,7 @@ const DiscontDetails = ({ partner, dispatchPartnerDetails }) => {
       </div>
       <div className="discont-details__discont-list ">
         <h3 className="discont-details__title-list ">Descontos adicionados</h3>
-        {partnerDetail.discont ? (
+        {partnerDetail.discont && !!partnerDetail.discont.length ? (
           partnerDetail.discont.map((item) => (
             <React.Fragment key={item._id}>
               <div className="discont-cards">

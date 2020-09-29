@@ -25,7 +25,7 @@ const EditCoupon = ({
   const [untilTime, setUntilTime] = useState('');
   const [days, setDays] = useState([]);
   const [description, setDescription] = useState('');
-  const time = `${fromTime} às ${untilTime}`;
+  const time = { fromTime: fromTime, untilTime: untilTime };
 
   useEffect(() => dispatchPartnerDetails(partnerId), [
     dispatchPartnerDetails,
@@ -42,12 +42,16 @@ const EditCoupon = ({
     if (couponData[0]) {
       setName(couponData[0].name);
       setPercentage(couponData[0].percentage);
+      setFromTime(couponData[0].time.fromTime);
+      setUntilTime(couponData[0].time.untilTime);
       setDays(couponData[0].days);
       setDescription(couponData[0].description);
     }
     if (couponData.data) {
       setName(couponData.data.name);
       setPercentage(couponData.data.percentage);
+      setFromTime(couponData.data.time.fromTime);
+      setUntilTime(couponData.data.time.untilTime);
       setDays(couponData.data.days);
       setDescription(couponData.data.description);
     }
@@ -180,7 +184,7 @@ const EditCoupon = ({
         </div>
         <CustomButton
           id="create-coupon__button"
-          name="Criar desconto"
+          name="Salvar alteraçao"
           onClick={() => handleEditCoupon}
         />
       </form>

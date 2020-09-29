@@ -83,7 +83,9 @@ const DiscontCard = ({
               </React.Fragment>
             ))}
           </div>
-          <p className="discont-card-expanded__time">Horários: {time}</p>
+          <p className="discont-card-expanded__time">
+            Horários: {time.fromTime} às {time.untilTime}
+          </p>
           <h3 className="discont-card-expanded__regras-title">
             Regras de utilização
           </h3>

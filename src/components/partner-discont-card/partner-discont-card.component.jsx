@@ -5,6 +5,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import EditCoupon from '../../components/edit-coupon/edit-coupon.component';
 import { getMe } from '../../redux/actions/getme.action.js';
+import { deleteCoupon } from '../../redux/actions/discont.actions.js';
+import { fetchPartnerDetails } from '../../redux/actions/partner.actions';
 import './partner-discont-card.styles.css';
 
 const PartnerDiscontCard = ({
@@ -15,6 +17,8 @@ const PartnerDiscontCard = ({
   description,
   couponId,
   dispatchGetMeAction,
+  dispatchDeleteCoupon,
+  dispatchPartnerDetails,
   discont,
 }) => {
   const [details, setDetails] = useState([]);
@@ -22,6 +26,11 @@ const PartnerDiscontCard = ({
   const { partnerId } = useParams();
 
   useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
+
+  useEffect(() => dispatchPartnerDetails(partnerId), [
+    dispatchPartnerDetails,
+    partnerId,
+  ]);
 
   const toggleShow = (id) => {
     const showState = details.slice();
@@ -35,6 +44,17 @@ const PartnerDiscontCard = ({
     }
   };
 
+  const handleDeleteoupon = (event) => {
+    event.preventDefault();
+    dispatchDeleteCoupon(
+      couponId,
+      () => {
+        dispatchPartnerDetails(partnerId);
+      },
+      () => console.log('Erro ao deletar disconto')
+    );
+  };
+
   return (
     <div>
       <div className="discont-container">
@@ -46,14 +66,20 @@ const PartnerDiscontCard = ({
             onClick={() => toggleShow(couponId)}
           />
         </div>
-        <button
-          className="discont-button__dark"
-          onClick={() => {
-            setModalEditCoupon(!modalEditCoupon);
-          }}
-        >
-          Editar
-        </button>
+        <div className="partner-discont__button-container">
+          <button
+            className="partner-discont__button__edit"
+            onClick={() => setModalEditCoupon(!modalEditCoupon)}
+          >
+            Editar
+          </button>
+          <button
+            className="partner-discont__button__delete"
+            onClick={handleDeleteoupon}
+          >
+            Deletar
+          </button>
+        </div>
         {modalEditCoupon ? (
           <div className="discont-modal__container">
             <EditCoupon
@@ -81,7 +107,9 @@ const PartnerDiscontCard = ({
               </React.Fragment>
             ))}
           </div>
-          <p className="partner-discont__expanded__time">Horários: {time}</p>
+          <p className="partner-discont__expanded__time">
+            Horários: {time.fromTime} às {time.untilTime}
+          </p>
           <h3 className="partner-discont__expanded__regras-title">
             Regras de utilização
           </h3>
@@ -99,6 +127,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
+  dispatchDeleteCoupon: (couponId, onSucess, onError) =>
+    dispatch(deleteCoupon(couponId, onSucess, onError)),
+  dispatchPartnerDetails: (partnerId) =>
+    dispatch(fetchPartnerDetails(partnerId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartnerDiscontCard);

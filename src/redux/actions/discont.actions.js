@@ -24,6 +24,17 @@ export const editCoupon = (data, couponId, onSuccess, onError) => ({
   },
 });
 
+export const deleteCoupon = (couponId, onSuccess, onError) => ({
+  type: constants.API,
+  payload: {
+    method: 'DELETE',
+    url: `/disconts/${couponId}`,
+    success: (response) => deletedCoupon(response),
+    postProccessSuccess: onSuccess,
+    postProccessError: onError,
+  },
+});
+
 export const getCoupon = (couponId) => ({
   type: constants.API,
   payload: {
@@ -38,12 +49,17 @@ const createdCoupon = (data) => ({
   payload: data,
 });
 
+const fetchCoupon = (data) => ({
+  type: constants.GET_COUPON,
+  payload: data,
+});
+
 const editedCoupon = (data) => ({
   type: constants.EDIT_COUPON,
   payload: data,
 });
 
-const fetchCoupon = (data) => ({
-  type: constants.GET_COUPON,
+const deletedCoupon = (data) => ({
+  type: constants.REMOVE_COUPON,
   payload: data,
 });

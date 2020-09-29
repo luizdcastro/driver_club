@@ -22,7 +22,7 @@ const CreateCoupon = ({
   const [untilTime, setUntilTime] = useState('');
   const [days, setDays] = useState([]);
   const [description, setDescription] = useState('');
-  const time = `${fromTime} às ${untilTime}`;
+  const time = { fromTime: fromTime, untilTime: untilTime };
   const partner = partnerId;
 
   const handleCreateCoupon = (event) => {
