@@ -23,7 +23,7 @@ const CounponCard = ({
           <div className="modal-coupon__content">
             <h1 className="modal-coupon__name">{partnerName}</h1>
             <h3 className="modal-coupon__title">{discontTitle}</h3>
-            <h3 className="modal-coupon__percentage">{percentage}%</h3>
+            <h3 className="modal-coupon__percentage">{percentage}</h3>
             <CloseIcon
               className="modal-coupon__close"
               onClick={() => setModalVisible(false)}
@@ -31,7 +31,14 @@ const CounponCard = ({
             />
             <img className="modal-coupon__qrcode" src={Qrcode} alt="qrcode" />
             <h3 className="modal-coupon__validate">Período para utilizar</h3>
-            <p className="modal-coupon__date">Dias: {days}</p>
+            <div className="modal-coupon__day-box">
+              <p>Dias:</p>
+              {days.map((item) => (
+                <React.Fragment key={item.days}>
+                  <p className="modal-coupon__day-text">{item.days}</p>
+                </React.Fragment>
+              ))}
+            </div>
             <p className="modal-coupon__time">Horários: {time}</p>
           </div>
         </div>
@@ -39,7 +46,7 @@ const CounponCard = ({
       <div className="coupon-card__container">
         <p className="coupon-card__title">{discontTitle}</p>
         <p className="coupon-card__name">{partnerName}</p>
-        <p className="coupon-card__percentage">{percentage}%</p>
+        <p className="coupon-card__percentage">{percentage}</p>
         <DeleteIcon
           className="coupon-card__delete"
           color="action"

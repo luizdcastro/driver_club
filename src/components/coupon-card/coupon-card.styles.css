@@ -153,6 +153,18 @@
   font-size: 14px;
 }
 
+.modal-coupon__day-box {
+  display: flex;
+  position: absolute;
+  left: 5%;
+  top: 78%;
+  font-size: 13px;
+}
+
+.modal-coupon__day-text {
+  margin-left: 5px;
+}
+
 .modal-coupon__date {
   position: absolute;
   font-size: 13px;

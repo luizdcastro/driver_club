@@ -11,6 +11,7 @@ import account from './account/account.reducer';
 import subscription from './subscription/subscription.reducer';
 import password from './password/password.reducer';
 import uploadImage from './upload-image/upload-image.reducer';
+import discont from './discont/discont.reducer';
 
 const rootReducer = combineReducers({
   user,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   subscription,
   password,
   uploadImage,
+  discont,
 });
 
 export default rootReducer;

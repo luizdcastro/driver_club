@@ -1,0 +1,145 @@
+.edit-coupon__container {
+  display: flex;
+  position: absolute;
+  top: 12%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  padding: 30px 40px 30px 40px;
+  border-radius: 10px;
+}
+
+.edit-coupon__close-icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  cursor: pointer;
+}
+
+.edit-coupon__form {
+  margin-top: 15px;
+}
+
+#edit-coupun__input {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#edit-coupon__time-input {
+  margin: 0;
+  width: 120px;
+  text-align: center;
+}
+
+.edit-coupon__select {
+  display: block;
+  height: 42px;
+  max-width: 312px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  color: #484a4d;
+  opacity: 0.8;
+  padding: 5px;
+  border: solid 1px #dadce1;
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.edit-coupon__selected-box {
+  display: flex;
+  margin-top: 0;
+  flex-wrap: wrap;
+  width: 312px;
+}
+
+.edit-coupon__select::-ms-expand {
+  display: none;
+}
+.edit-coupon__select:focus {
+  outline: none;
+  opacity: 0.8;
+  border: solid 1px #dadce1;
+  color: #484a4d;
+}
+
+.daySelected-box {
+  text-decoration: none;
+}
+
+.daySelected-box:hover {
+  filter: brightness(1.1);
+}
+
+.daySelected-text {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-top: 0;
+  border: solid 1px rgba(82, 59, 228, 0.4);
+  color: rgba(82, 59, 228, 0.9);
+}
+
+.daySelected-text:hover {
+  border: solid 1px rgba(82, 59, 228, 0.5);
+}
+
+.daySelected-icon {
+  position: relative;
+  top: 3px;
+  margin-left: 3px;
+  box-sizing: border-box;
+}
+
+.edit-coupon__time-container {
+  display: flex;
+  width: 312px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit_coupon-textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-coupon__description-input {
+  display: flex;
+  resize: none;
+  height: 80px;
+  width: 300px;
+  padding: 5px;
+  border: solid 1px #dadce1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #484a4d;
+  transition: 300ms;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.edit-coupon__description-input:focus {
+  outline: none;
+  opacity: 0.8;
+}
+
+.edit-coupon__description-input:hover {
+  border: solid 1px rgba(0, 0, 0, 0.4);
+}
+
+#edit-coupon__button {
+  margin: 0;
+  margin-top: 10px;
+}

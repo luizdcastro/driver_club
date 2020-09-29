@@ -1,34 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import EditCoupon from '../../components/edit-coupon/edit-coupon.component';
 import { getMe } from '../../redux/actions/getme.action.js';
-import { addCoupon } from '../../redux/actions/coupon.actions';
-import './discont-card.styles.css';
+import './partner-discont-card.styles.css';
 
-const DiscontCard = ({
-  getme,
+const PartnerDiscontCard = ({
   title,
   percentage,
   days,
   time,
   description,
   couponId,
-  dispatchAddCoupon,
   dispatchGetMeAction,
+  discont,
 }) => {
-  const [coupon, setCoupon] = useState([]);
   const [details, setDetails] = useState([]);
+  const [modalEditCoupon, setModalEditCoupon] = useState(false);
+  const { partnerId } = useParams();
 
-  useEffect(() => dispatchGetMeAction, [dispatchGetMeAction, coupon]);
-
-  const values = [0] && getme[0].coupon.map((item) => item._id);
-
-  const handleAddCoupon = (itemId) => {
-    dispatchAddCoupon(itemId);
-    setCoupon((coupon) => [...coupon, itemId]);
-    dispatchGetMeAction();
-  };
+  useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
 
   const toggleShow = (id) => {
     const showState = details.slice();
@@ -53,38 +46,43 @@ const DiscontCard = ({
             onClick={() => toggleShow(couponId)}
           />
         </div>
-        {values && !values.includes(couponId) & !coupon.includes(couponId) ? (
-          <button
-            className="discont-button__dark"
-            onClick={() => handleAddCoupon(couponId)}
-          >
-            Gerar Cupom
-          </button>
-        ) : (
-          <button
-            className="discont-button__dark"
-            id="discont-button__disabled"
-            disabled
-          >
-            Cupom Criado
-          </button>
-        )}
+        <button
+          className="discont-button__dark"
+          onClick={() => {
+            setModalEditCoupon(!modalEditCoupon);
+          }}
+        >
+          Editar
+        </button>
+        {modalEditCoupon ? (
+          <div className="discont-modal__container">
+            <EditCoupon
+              couponId={couponId}
+              discont={discont}
+              partnerId={partnerId}
+              modalEditCoupon={modalEditCoupon}
+              setModalEditCoupon={setModalEditCoupon}
+            />
+          </div>
+        ) : null}
       </div>
       {details.includes(couponId) && (
-        <div className="discont-card__expanded-details">
-          <h3 className="discont-card-expanded__title">
+        <div className="partner-discont__expanded-details">
+          <h3 className="partner-discont__expanded__title">
             Desconto válido para o período abaixo
           </h3>
-          <div className="discont-card-expanded__days-box">
+          <div className="partner-discont__expanded__days-box">
             <p>Dias:</p>
             {days.map((item) => (
               <React.Fragment key={item.days}>
-                <p className="discont-card-expanded__days-text">{item.days}</p>
+                <p className="partner-discont__expanded__days-text">
+                  {item.days}
+                </p>
               </React.Fragment>
             ))}
           </div>
-          <p className="discont-card-expanded__time">Horários: {time}</p>
-          <h3 className="discont-card-expanded__regras-title">
+          <p className="partner-discont__expanded__time">Horários: {time}</p>
+          <h3 className="partner-discont__expanded__regras-title">
             Regras de utilização
           </h3>
           <p className="">{description}</p>
@@ -96,11 +94,11 @@ const DiscontCard = ({
 
 const mapStateToProps = (state) => ({
   getme: state.getme,
+  discont: state.discont,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
-  dispatchAddCoupon: (discontId) => dispatch(addCoupon(discontId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DiscontCard);
+export default connect(mapStateToProps, mapDispatchToProps)(PartnerDiscontCard);

@@ -17,7 +17,8 @@ import ForgotPassword from '../pages/forgot-password/forgot-password.page';
 import ResetPassword from '../pages/reset-password/reset-password.page';
 import Calculator from '../pages/calculator/calculator.page';
 import CreateStore from '../pages/create-store/create-store.page';
-
+import CreateDiscont from '../pages/create-discont/create-discont.page';
+import DiscontDetails from '../pages/discont-details/discont-details.page';
 import RegisterPartner from '../pages/register-partner/register-partner.page';
 import PartnerHome from '../pages/partner-home/partner-home.page';
 
@@ -67,6 +68,12 @@ const App = ({ user, dispatchLogoutAction }) => {
             <Route exact path="/partner-home" component={PartnerHome} />
             <Route exact path="/account" component={Account} />
             <Route exact path="/create-store" component={CreateStore} />
+            <Route exact path="/create-discont" component={CreateDiscont} />
+            <Route
+              exact
+              path="/discont-details/:partnerId"
+              component={DiscontDetails}
+            />
             <Redirect to="/partner-home" />
           </Switch>
         )}

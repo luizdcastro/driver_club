@@ -1,4 +1,4 @@
-.discont-container {
+.partner-discont__container {
   display: flex;
   position: relative;
   min-height: 100px;
@@ -8,14 +8,14 @@
   color: #212240;
 }
 
-.discont-title {
+.partner-discont__title {
   position: absolute;
   font-size: 16px;
   font-weight: 600;
   left: 2%;
 }
 
-.discont-percentage {
+.partner-discont__percentage {
   position: absolute;
   font-size: 17px;
   font-weight: 700;
@@ -24,7 +24,7 @@
   margin-bottom: 150px;
 }
 
-.discont-details {
+.partner-discont__details {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@
   border-radius: 100%;
 }
 
-.discont-button__dark {
+.partner-discont__button__dark {
   position: absolute;
   height: 40px;
   right: 2%;
@@ -51,32 +51,32 @@
   width: 125px;
 }
 
-.discont-button__dark:focus,
-.discont-button__dark:active {
+.partner-discont__button__dark:focus,
+.partner-discont__button__dark:active {
   outline: none;
 }
 
-.discont-button__dark:hover {
+.partner-discont__button__dark:hover {
   cursor: pointer;
   filter: brightness(1.1);
 }
 
-#discont-button__disabled {
+#partner-discont__button__disabled {
   opacity: 0.6;
 }
-#discont-button__disabled:hover {
+#partner-discont__button__disabled:hover {
   cursor: default;
   filter: brightness(1);
 }
 
-.discont-button__light {
+.partner-discont__button__light {
   position: absolute;
   height: 45px;
   right: 1%;
   top: 27%;
 }
 
-.discont-card__expanded-details {
+.partner-discont__expanded-details {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -90,26 +90,26 @@
   box-sizing: border-box;
 }
 
-.discont-card-expanded__title {
+.partner-discont__expanded__title {
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.discont-card-expanded__days-box {
+.partner-discont__expanded__days-box {
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.discont-card-expanded__days-text {
+.partner-discont__expanded__days-text {
   margin-left: 5px;
 }
 
-.discont-card-expanded__time {
+.partner-discont__expanded__time {
   margin-top: 0;
 }
 
-.discont-card-expanded__regras-title {
+.partner-discont__expanded__regras-title {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 0;

@@ -171,7 +171,7 @@ const UploadImage = ({ dispatchUploadImage, dispatchDeleteImage }) => {
 
   const renderDragMessage = (isDragActive, isDragReject) => {
     if (!isDragActive) {
-      return <UploadMessage message="Arraste sua imagem aqui" />;
+      return <UploadMessage message="Arraste e solte sua imagem" />;
     }
     if (isDragReject) {
       return <UploadMessage message="Arquivo não suportado" />;

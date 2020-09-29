@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MaskedInput from 'react-text-mask';
 
-import { createPartner } from '../../redux/actions/partner.actions';
 import { getPartnerByUser } from '../../redux/actions/partner.actions';
+import { createPartner } from '../../redux/actions/partner.actions';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import UploadImage from '../upload-image/upload-image.component';
-import './create-store.component';
+import './create-store.component.styles.css';
 const CreateStoreComponent = ({
   user,
   uploadImage,
@@ -31,6 +32,7 @@ const CreateStoreComponent = ({
   const [checkedMaster, setCheckedMaster] = useState(true);
   const [checkedVisa, setCheckedVisa] = useState(true);
   const [created, setCreated] = useState('');
+  const [modal, setModal] = useState(false);
   const [serverError, setServerError] = useState('');
   const userId = user.userId;
   const image = uploadImage.url;
@@ -59,7 +61,10 @@ const CreateStoreComponent = ({
       hours,
       paymentMethods,
       image,
-      () => setCreated(true),
+      () => {
+        setCreated(true);
+        setModal(true);
+      },
       (message) => setServerError(message)
     );
     if (created) {
@@ -72,18 +77,50 @@ const CreateStoreComponent = ({
     dispatchGetPartnerByUser(userId);
   }, [dispatchGetPartnerByUser, userId, created]);
 
+  const modalCreated = () => {
+    return (
+      <div className="modal-partner__created">
+        <div className="modal-partner__content">
+          <h3 className="modal-partner__title">
+            Estabelecimento criado com sucesso!
+          </h3>
+          <Link
+            className="modal-partner__button"
+            to="/partner-home"
+            onClick={() => setCreated(false)}
+          >
+            Visualizar
+          </Link>
+          <Link
+            className="modal-partner__button"
+            onClick={() => setCreated(false)}
+            to="/create-store"
+          >
+            Adicionar novo
+          </Link>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="create-partner__container">
-      <form onSubmit={handleOnSubmmit}>
-        <label>Informações Básicas</label>
+      {modal && modalCreated()}
+      <form className="create-partner__form" onSubmit={handleOnSubmmit}>
+        <h2 className="create-partner__title">
+          Adicionar novo estabelecimento
+        </h2>
+        <label className="create-partner__label">Nome do negócio</label>
         <FormInput
+          id="create-partner__input-form"
           type="text"
           name="name"
-          placeholder="Nome do negócio"
           value={name}
           handleChange={(e) => setName(e.target.value)}
         />
+        <label className="create-partner__label">Telefone comercial</label>
         <MaskedInput
+          id="create-partner__input-form"
           className="form-input"
           mask={[
             '(',
@@ -102,18 +139,23 @@ const CreateStoreComponent = ({
             /\d/,
             /\d/,
           ]}
-          placeholder="Telefone"
           placeholderChar={'\u2000'}
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+        <label className="create-partner__label">Website </label>
+
         <FormInput
+          id="create-partner__input-form"
           type="text"
           name="site"
-          placeholder="Website"
           value={website}
           handleChange={(e) => setWebsite(e.target.value)}
         />
+        <label className="create-partner__label">
+          Categoria do estabelecimento
+        </label>
+
         <select
           className="create-partner__select-category"
           onChange={(e) => setCategory(e.target.value)}
@@ -121,9 +163,7 @@ const CreateStoreComponent = ({
           <option value="" disabled selected hidden>
             Selecione uma categoria
           </option>
-          <option className="create-partner__select-category" value="postos">
-            Postos
-          </option>
+          <option value="postos">Postos</option>
           <option value="locadoras">Locadoras</option>
           <option value="seguros">Seguros</option>
           <option value="alimentação">Alimentação</option>
@@ -131,25 +171,30 @@ const CreateStoreComponent = ({
           <option value="lava-car">Lava-car</option>
           <option value="lazer">Lazer</option>
         </select>
-        <label>Hoarário de atendimento</label>
+        <label className="create-partner__label">Horário de atendimento</label>
+
         <div className="create-partner__time-container">
-          <FormInput
+          <MaskedInput
+            className="form-input"
             id="create-partner__input-time"
-            type="time"
+            placeholder="00:00"
+            mask={[/\d/, /\d/, ':', /\d/, /\d/]}
+            placeholderChar={'\u2000'}
             value={open_at}
             onChange={(e) => setOpen_at(e.target.value)}
-            min="00:00"
-            max="23:00"
           />
-          <span>às</span>
-          <FormInput
+          <span style={{ fontSize: 14 }}>às</span>
+          <MaskedInput
+            placeholder="00:00"
+            className="form-input"
             id="create-partner__input-time"
-            type="time"
+            mask={[/\d/, /\d/, ':', /\d/, /\d/]}
+            placeholderChar={'\u2000'}
             value={close_at}
             onChange={(e) => setClose_at(e.target.value)}
           />
         </div>
-        <label>Métodos de Pagamento</label>
+        <label className="create-partner__label">Métodos de pagamento </label>
         <div className="create-paertner__payment">
           <div>
             <input
@@ -185,10 +230,16 @@ const CreateStoreComponent = ({
             <label>Visa</label>
           </div>
         </div>
-        <label>Imagem</label>
-        <UploadImage imageUrl />
-        <label>Endereço</label>
+        <label className="create-partner__label">
+          Imagem do estabelecimento
+        </label>
+        <div className="create-partner__image">
+          <UploadImage imageUrl />
+        </div>
+        <label className="create-partner__label">Endereço comercial</label>
+
         <FormInput
+          id="create-partner__input-form"
           type="text"
           name="rua"
           placeholder="Rua"
@@ -196,6 +247,7 @@ const CreateStoreComponent = ({
           handleChange={(e) => setStreet(e.target.value)}
         />
         <FormInput
+          id="create-partner__input-form"
           type="text"
           name="numero"
           placeholder="Número"
@@ -203,6 +255,7 @@ const CreateStoreComponent = ({
           handleChange={(e) => setNumber(e.target.value)}
         />
         <FormInput
+          id="create-partner__input-form"
           type="text"
           name="bairro"
           placeholder="Bairro"
@@ -210,13 +263,19 @@ const CreateStoreComponent = ({
           handleChange={(e) => setNeighborhood(e.target.value)}
         />
         <FormInput
+          id="create-partner__input-form"
           type="text"
           name="cidade"
           placeholder="Cidade"
           value={city}
           handleChange={(e) => setCity(e.target.value)}
         />
-        <CustomButton name="Cadastrar" onClick={() => handleOnSubmmit} />
+        <CustomButton
+          id="create-partner__button"
+          name="Cadastrar"
+          onClick={() => handleOnSubmmit}
+        />
+
         {serverError ? <p className="login-error">{serverError}</p> : null}
       </form>
     </div>
@@ -238,19 +297,21 @@ const mapDispatchToProps = (dispatch) => ({
     onError
   ) =>
     dispatch(
-      createPartner({
-        user,
-        name,
-        category,
-        address,
-        phone,
-        website,
-        hours,
-        payment_methods,
-        image,
+      createPartner(
+        {
+          user,
+          name,
+          category,
+          address,
+          phone,
+          website,
+          hours,
+          payment_methods,
+          image,
+        },
         onSuccess,
-        onError,
-      })
+        onError
+      )
     ),
   dispatchGetPartnerByUser: (userId) => dispatch(getPartnerByUser(userId)),
 });

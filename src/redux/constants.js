@@ -24,3 +24,6 @@ export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
 export const RESET_PASSWORD = 'RESET_PASSWORD';
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 export const DELETE_IMAGE = 'DELETE_IMAGE';
+export const CREATE_COUPON = 'CREATE_COUPON ';
+export const EDIT_COUPON = 'EDIT_COUPON';
+export const GET_COUPON = 'GET_COUPON';

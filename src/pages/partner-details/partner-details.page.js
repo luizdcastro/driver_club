@@ -115,7 +115,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
                     percentage={item.percentage}
                     days={item.days}
                     time={item.time}
-                    rules={item.rules}
+                    description={item.description}
                   />
                 </div>
               </React.Fragment>
