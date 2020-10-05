@@ -29,10 +29,17 @@ const SubscriptionPlan = ({
   const createSubscription = (event) => {
     event.preventDefault();
     if (!getme[0].iugu_card_data) {
-      console.log('Adicione um método de pagamento');
+      alert('Adicione um método de pagamento');
     } else {
-      dispatchCreateSubscription(getme[0].id);
-      setSubscription(true);
+      dispatchCreateSubscription(
+        getme[0].id,
+        () => {
+          console.log('Assinatura criada com sucesso');
+          setSubscription(true);
+        },
+        () => console.log('Erro ao processar o pedido, tente novamente.')
+      );
+
       dispatchGetme();
     }
   };
@@ -122,7 +129,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetme: () => dispatch(getMe()),
-  dispatchCancelSubscription: (id) => dispatch(cancelSubscription({ id })),
+  dispatchCancelSubscription: (id, onSuccess, onError) =>
+    dispatch(cancelSubscription({ id }, onSuccess, onError)),
   dispatchCreateSubscription: (id) => dispatch(createSubscription({ id })),
 });
 

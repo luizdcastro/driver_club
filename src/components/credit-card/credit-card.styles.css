@@ -20,10 +20,26 @@
   cursor: pointer;
 }
 
-.credit-card__brand {
+.credit-card__brand-VISA {
+  display: block;
+  width: 62px;
+  height: 42px;
   position: absolute;
-  top: 20%;
+  top: 24%;
   left: 3%;
+  background-image: url('../../assets/icons/visa.svg');
+  background-size: 62px 42px;
+}
+
+.credit-card__brand-MASTERCARD {
+  display: block;
+  width: 62px;
+  height: 42px;
+  position: absolute;
+  top: 24%;
+  left: 3%;
+  background-image: url('../../assets/icons/mastercard.svg');
+  background-size: 62px 42px;
 }
 
 .credit-card__number {

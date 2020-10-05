@@ -20,13 +20,15 @@ export const removeCard = (data) => ({
   },
 });
 
-export const createPaymentMethod = (data) => ({
+export const createPaymentMethod = (data, onSuccess, onError) => ({
   type: constants.API,
   payload: {
     method: 'POST',
     url: '/users/createPaymentMethod',
     data,
     success: (response) => paymentMethod(response),
+    postProccessSuccess: onSuccess,
+    postProccessError: onError,
   },
 });
 

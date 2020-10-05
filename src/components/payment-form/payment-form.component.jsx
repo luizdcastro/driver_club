@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CloseIcon from '@material-ui/icons/Close';
+import MaskedInput from 'react-text-mask';
 
 import {
   addCard,
@@ -62,6 +63,7 @@ const PaymentForm = ({
           dispatchGetMeAction();
         }
       }
+      dispatchGetMeAction();
     });
   };
 
@@ -97,47 +99,91 @@ const PaymentForm = ({
               <h4 className="modal-payment__title">
                 Adicionar Médodo de Pagamento
               </h4>
+              <label className="credit-card__label">Número do cartão</label>
+              <MaskedInput
+                id="modal-payment__card"
+                className="form-input"
+                mask={[
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  ' ',
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  ' ',
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  ' ',
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                  /\d/,
+                ]}
+                placeholderChar={'\u2000'}
+                onChange={(e) => setCardNumber(e.target.value)}
+                value={cardNumber}
+              />
               <div className="credit-card__flex">
-                <FormInput
-                  id="modal-payment__card"
-                  placeholder="Número do Cartão"
-                  handleChange={(e) => setCardNumber(e.target.value)}
-                  value={cardNumber}
-                />
+                <div>
+                  <label className="credit-card__label">Nome</label>
+                  <FormInput
+                    id="modal-payment__firstName"
+                    className="form-input"
+                    type="text"
+                    handleChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
+                  />
+                </div>
+                <div>
+                  <label className="credit-card__label">Sobrenome</label>
+                  <FormInput
+                    id="modal-payment__firstName"
+                    className="form-input"
+                    type="text"
+                    handleChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
+                  />
+                </div>
               </div>
               <div className="credit-card__flex">
-                <FormInput
-                  id="modal-payment__firstName"
-                  placeholder="Nome"
-                  handleChange={(e) => setFirstName(e.target.value)}
-                  value={firstName}
-                />
-                <FormInput
-                  id="modal-payment__lastName"
-                  placeholder="Sobrenome"
-                  handleChange={(e) => setLastName(e.target.value)}
-                  value={lastName}
-                />
-              </div>
-              <div className="credit-card__flex">
-                <FormInput
-                  id="modal-payment__month"
-                  placeholder="Mês"
-                  handleChange={(e) => setMonth(e.target.value)}
-                  value={month}
-                />
-                <FormInput
-                  id="modal-payment__year"
-                  placeholder="Ano"
-                  handleChange={(e) => setYear(e.target.value)}
-                  value={year}
-                />
-                <FormInput
-                  id="modal-payment__cvv"
-                  placeholder="CCV"
-                  handleChange={(e) => setCcvCode(e.target.value)}
-                  value={ccvCode}
-                />
+                <div>
+                  <label className="credit-card__label">Mês</label>
+                  <MaskedInput
+                    id="modal-payment__month"
+                    className="form-input"
+                    mask={[/\d/, /\d/]}
+                    placeholderChar={'\u2000'}
+                    onChange={(e) => setMonth(e.target.value)}
+                    value={month}
+                  />
+                </div>
+                <div>
+                  <label className="credit-card__label">Ano</label>{' '}
+                  <MaskedInput
+                    id="modal-payment__year"
+                    className="form-input"
+                    mask={[/\d/, /\d/, /\d/, /\d/]}
+                    placeholderChar={'\u2000'}
+                    onChange={(e) => setYear(e.target.value)}
+                    value={year}
+                  />
+                </div>
+                <div>
+                  <label className="credit-card__label">CCV</label>{' '}
+                  <MaskedInput
+                    id="modal-payment__cvv"
+                    className="form-input"
+                    mask={[/\d/, /\d/, /\d/]}
+                    placeholderChar={'\u2000'}
+                    onChange={(e) => setCcvCode(e.target.value)}
+                    value={ccvCode}
+                  />
+                </div>
               </div>
               <div className="credit-card__flex">
                 <CustomButton

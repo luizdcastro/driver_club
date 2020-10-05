@@ -26,7 +26,9 @@ const CreditCard = ({ getme, dispatchRemovePaymentMethod, dispatchGetme }) => {
             color="action"
             onClick={handleRemoveCard}
           />
-          <p className="credit-card__brand">{getme[0].iugu_card_data.brand}</p>
+          <div
+            className={`credit-card__brand-${getme[0].iugu_card_data.brand}`}
+          ></div>
           <p className="credit-card__number">
             {getme[0].iugu_card_data.number}
           </p>

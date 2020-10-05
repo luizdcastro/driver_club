@@ -49,6 +49,7 @@
 }
 
 .expanded-details {
+  position: relative;
   width: 100%;
   height: 250px;
   background-color: #f8fafb;
