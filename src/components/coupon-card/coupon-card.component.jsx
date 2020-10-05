@@ -39,7 +39,9 @@ const CounponCard = ({
                 </React.Fragment>
               ))}
             </div>
-            <p className="modal-coupon__time">Horários: {time}</p>
+            <p className="modal-coupon__time">
+              Horários: {time.fromTime} às {time.untilTime}
+            </p>
           </div>
         </div>
       ) : null}

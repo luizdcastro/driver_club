@@ -1,0 +1,14 @@
+.partner-stores__page {
+  width: 1200px;
+  max-width: 90%;
+  height: auto;
+  margin: auto;
+  color: #212240;
+  padding-bottom: 8%;
+}
+
+.partner-stores__page-title {
+  font-size: 21px;
+  color: #212240;
+  font-weight: 700;
+}

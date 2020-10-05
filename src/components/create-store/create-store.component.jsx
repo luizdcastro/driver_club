@@ -86,7 +86,7 @@ const CreateStoreComponent = ({
           </h3>
           <Link
             className="modal-partner__button"
-            to="/partner-home"
+            to="/partner-stores"
             onClick={() => setCreated(false)}
           >
             Visualizar

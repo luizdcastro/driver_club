@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import PartnerCard from '../../components/partner-card/partner-card.component';
 import { getPartnerByUser } from '../../redux/actions/partner.actions';
-import './create-discont.css';
+import './partner-stores.styles.css';
 
-const CreateDiscont = ({ dispatchGetPartners, user, partner }) => {
+const PartnerStores = ({ dispatchGetPartners, user, partner }) => {
   const [filteredPartners, setFilteredPartners] = useState([]);
   const userId = user.userId;
 
@@ -20,10 +20,8 @@ const CreateDiscont = ({ dispatchGetPartners, user, partner }) => {
     setFilteredPartners(partner);
   }, [setFilteredPartners, partner]);
   return (
-    <div className="create-discont__page">
-      <h1 className="create-discont__page-title">
-        Selecione o estabelecimento
-      </h1>
+    <div className="partner-stores__page">
+      <h1 className="partner-stores__page-title">Meus estabelecimentos</h1>
       <div className="partners-container">
         <div className="partners-grid">
           {filteredPartners.length >= 1 ? (
@@ -63,4 +61,4 @@ const mapStateToProps = (state) => ({
   partner: state.partner,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateDiscont);
+export default connect(mapStateToProps, mapDispatchToProps)(PartnerStores);

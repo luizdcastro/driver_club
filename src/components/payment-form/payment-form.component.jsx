@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -67,12 +68,19 @@ const PaymentForm = ({
   return (
     <div>
       {!modalVisible ? (
-        <div className="payment-method__container">
-          <CustomButton
+        <div
+          className="payment-method__container"
+          onSubmit={() => setModalVisible(true)}
+        >
+          <Link
+            className="custom-button"
             id="payment-method__addbtn"
-            name="Adicionar Cartão"
-            onClick={() => setModalVisible(true)}
-          />
+            onClick={() => {
+              setModalVisible(true);
+            }}
+          >
+            Adicionar Cartão
+          </Link>
         </div>
       ) : (
         <div className="modal-payment__container">
@@ -139,14 +147,16 @@ const PaymentForm = ({
                 />
               </div>
               <div className="credit-card__flex">
-                <CustomButton
+                <Link
+                  className="custom-button"
                   id="modal-payment__cancel"
-                  name="Cancelar"
                   onClick={() => {
                     setModalVisible(false);
                     setCardError('');
                   }}
-                />
+                >
+                  Cancelar
+                </Link>
               </div>
               {cardError ? <p className="card-error">{cardError}</p> : null}
             </div>

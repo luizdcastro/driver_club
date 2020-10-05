@@ -46,9 +46,9 @@ const PartnerHome = ({ getme, dispatchGetMeAction }) => {
             </div>
             <img className="partner-home__card-icon" src={IconRental} alt="" />
           </Link>
-          <Link className="partner-home__card " to="">
+          <Link className="partner-home__card " to="/partner-stores">
             <div className="partner-home__text-box">
-              <p className="partner-home__card-title ">Meus estabelecimento</p>
+              <p className="partner-home__card-title ">Meus estabelecimentos</p>
               <p className="partner-home__card-subtitle">
                 Vizualize os estabelecimentos criados e mantenha as informações
                 do seu negócio sempre atualizadas

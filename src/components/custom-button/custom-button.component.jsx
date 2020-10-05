@@ -1,13 +1,27 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 
 import './custom-button.styles.css';
 
-const CustomButton = ({ name, isLoading, ...otherProps }) => {
+const CustomButton = ({ name, ...otherProps }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLoading = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  };
+
+  console.log(isLoading);
+
   return (
     <React.Fragment>
       {!isLoading ? (
-        <button className="custom-button" {...otherProps}>
+        <button
+          className="custom-button"
+          {...otherProps}
+          onClick={handleLoading}
+        >
           {name}
         </button>
       ) : (
@@ -23,8 +37,4 @@ const CustomButton = ({ name, isLoading, ...otherProps }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  isLoading: state.loading,
-});
-
-export default connect(mapStateToProps)(CustomButton);
+export default CustomButton;

@@ -29,7 +29,7 @@ const SubscriptionPlan = ({
   const createSubscription = (event) => {
     event.preventDefault();
     if (!getme[0].iugu_card_data) {
-      alert('Adicione um método de pagamento');
+      console.log('Adicione um método de pagamento');
     } else {
       dispatchCreateSubscription(getme[0].id);
       setSubscription(true);
@@ -52,34 +52,46 @@ const SubscriptionPlan = ({
         <h3>Selecione seu Plano</h3>
       </div>
       <div className="subscription-plan__container">
-        <h3 className="subscription-plan__title">Rocketcab Basic Plan</h3>
-        <h4 className="subsctiption-plan__price">R$ 14,90 / Mensal</h4>
-        <div className="subscription-plan__description">
-          <ul>
-            <li className="description-item">
-              <CheckIcon className="check-icon" style={{ color: green[500] }} />{' '}
-              <p>Descontos ilimitados</p>
-            </li>
-            <li className="description-item">
-              <CheckIcon className="check-icon" style={{ color: green[500] }} />
-              <p>Acesso a toda a rede de parceiros</p>
-            </li>
-            <li className="description-item">
-              <CheckIcon className="check-icon" style={{ color: green[500] }} />
-              <p>Média de economia por mês R$ 240,00</p>
-            </li>
-          </ul>
-        </div>
-        {subscription === false ? (
-          <CustomButtom
-            id="create-subscription__button"
-            name="Assinar Plano"
-            onClick={createSubscription}
-          />
-        ) : (
-          <p className="subscription-plan__active">Plano Ativo</p>
-        )}
+        <form onSubmit={createSubscription}>
+          <h3 className="subscription-plan__title">Rocketcab Basic Plan</h3>
+          <h4 className="subsctiption-plan__price">R$ 14,90 / Mensal</h4>
+          <div className="subscription-plan__description">
+            <ul>
+              <li className="description-item">
+                <CheckIcon
+                  className="check-icon"
+                  style={{ color: green[500] }}
+                />{' '}
+                <p>Descontos ilimitados</p>
+              </li>
+              <li className="description-item">
+                <CheckIcon
+                  className="check-icon"
+                  style={{ color: green[500] }}
+                />
+                <p>Acesso a toda a rede de parceiros</p>
+              </li>
+              <li className="description-item">
+                <CheckIcon
+                  className="check-icon"
+                  style={{ color: green[500] }}
+                />
+                <p>Média de economia por mês R$ 240,00</p>
+              </li>
+            </ul>
+          </div>
+          {subscription === false ? (
+            <CustomButtom
+              id="create-subscription__button"
+              name="Assinar Plano"
+              onClick={createSubscription}
+            />
+          ) : (
+            <p className="subscription-plan__active">Plano Ativo</p>
+          )}
+        </form>
       </div>
+
       <div className="subscription-subtitle__container">
         <h3>Gerenciar Assinatura</h3>
       </div>

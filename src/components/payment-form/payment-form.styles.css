@@ -15,6 +15,11 @@
 }
 
 #payment-method__addbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
   width: 230px;
   margin: 0;
 }
@@ -107,6 +112,11 @@
 #modal-payment__cancel {
   width: 312px;
   margin: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .card-error {

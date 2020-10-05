@@ -90,7 +90,7 @@ const Account = ({
           </form>
         </div>
         <div className="account-data__password">
-          <form>
+          <form onSubmit={handleUpdatePassword}>
             <h3 className="account-data__subtitle">Alterar Senha</h3>
             <FormInput
               type="password"

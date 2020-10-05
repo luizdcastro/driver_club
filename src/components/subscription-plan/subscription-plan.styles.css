@@ -63,7 +63,7 @@
   position: relative;
   width: 230px;
   margin: auto;
-  top: 8%;
+  margin-top: 18px;
 }
 
 .subscription-plan__active {
