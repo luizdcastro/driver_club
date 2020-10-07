@@ -58,7 +58,10 @@ const PaymentForm = ({
             data.extra_info.month,
             data.extra_info.year
           );
-          dispatchCreatePaymentMehod(getme[0].id);
+          const id = await getme[0].id;
+          const token = await data.id;
+          console.log(token);
+          dispatchCreatePaymentMehod(id, token);
           setModalVisible(false);
           dispatchGetMeAction();
         }
@@ -215,7 +218,8 @@ const PaymentForm = ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
-  dispatchCreatePaymentMehod: (id) => dispatch(createPaymentMethod({ id })),
+  dispatchCreatePaymentMehod: (id, token) =>
+    dispatch(createPaymentMethod({ id, token })),
   dispatchAddcard: (id, brand, number, name, month, year, onSuccess, onError) =>
     dispatch(
       addCard(

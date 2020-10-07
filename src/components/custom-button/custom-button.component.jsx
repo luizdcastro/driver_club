@@ -12,8 +12,6 @@ const CustomButton = ({ name, ...otherProps }) => {
     }, 2000);
   };
 
-  console.log(isLoading);
-
   return (
     <React.Fragment>
       {!isLoading ? (
