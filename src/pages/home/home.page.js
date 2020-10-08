@@ -24,7 +24,9 @@ const Home = () => {
             <h3 className="hero-main__subtitle">
               Ut sodales ex a mi ultricies dictum. Proin fringilla
             </h3>
-            <Link id="custom-button">Sou Motorista</Link>
+            <Link id="custom-button" to="register">
+              Sou Motorista
+            </Link>
           </div>
           <div>
             <DiscontCalculator to="registration" />
@@ -108,7 +110,7 @@ const Home = () => {
                 Vivamus imperdiet eros iaculis est blandit bibendum. Phasellus
                 tempus congue lorem eu bibendum.
               </p>
-              <Link className="card-text__link">
+              <Link className="card-text__link" to="register-partner">
                 Seja um parceiro Rocketcab
               </Link>
             </div>
@@ -171,7 +173,7 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               non odio porta.
             </h2>
-            <Link id="footer-box__button">
+            <Link id="footer-box__button" to="">
               Saiba mais sobre nossos serviços
             </Link>
           </div>

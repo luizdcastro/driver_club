@@ -75,7 +75,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
           <h3 className="expanded-payment">Formas de pagamento</h3>
           <ul className="payment-list">
             {partnerDetail.payment_methods.map((item) => (
-              <React.Fragment key="1">
+              <React.Fragment key={item}>
                 <li className="payment-item">{item}</li>
               </React.Fragment>
             ))}
@@ -92,7 +92,11 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
           <p className="expanded-site">
             Site:{' '}
             <span>
-              <a id="links" href={partnerDetail.website} target="_blank">
+              <a
+                id="links"
+                href={`http://${partnerDetail.website}`}
+                target="_blank"
+              >
                 {partnerDetail.website}
               </a>
             </span>

@@ -20,6 +20,7 @@ const DiscontCalculator = ({ to }) => {
         Number((locacao / 100) * 15)
     );
   }, [combustivel, alimentacao, seguro, manutencao, locacao]);
+
   return (
     <div className="home-page__calculator">
       <h2 className="home-calculator__title">
@@ -35,73 +36,141 @@ const DiscontCalculator = ({ to }) => {
           <tr>
             <td className="home-calculator__text">Combustível</td>
             <td>
-              <input
-                type="number"
-                className="calculator-input"
-                placeholder="R$ 0,00"
-                onChange={(e) => setCombustivel(e.target.value)}
-              />
+              <div className="calculator-value__content">
+                {!combustivel ? (
+                  <p className="calculator-value">R$ 0.00</p>
+                ) : (
+                  <p className="calculator-value">R$ {`${combustivel}.00`}</p>
+                )}
+                <input
+                  type="range"
+                  min="0"
+                  max="2000"
+                  step="10"
+                  className="calculator-input"
+                  placeholder="R$ 0,00"
+                  onChange={(e) => setCombustivel(e.target.value)}
+                />
+              </div>
             </td>
-            <td>R$ {((combustivel / 100) * 7).toFixed(2)}</td>
+            <td className="calculator-value__discont">
+              R$ {((combustivel / 100) * 7).toFixed(2)}
+            </td>
           </tr>
           <tr>
             <td className="home-calculator__text">Alimentação</td>
             <td>
-              <input
-                type="number"
-                className="calculator-input"
-                placeholder="R$ 0,00"
-                onChange={(e) => setAlimentacao(e.target.value)}
-              />
+              <div className="calculator-value__content">
+                {!alimentacao ? (
+                  <p className="calculator-value">R$ 0.00</p>
+                ) : (
+                  <p className="calculator-value">R$ {`${alimentacao}.00`}</p>
+                )}
+                <input
+                  type="range"
+                  min="0"
+                  max="2000"
+                  step="10"
+                  className="calculator-input"
+                  placeholder="R$ 0,00"
+                  onChange={(e) => setAlimentacao(e.target.value)}
+                />
+              </div>
             </td>
-            <td>R$ {((alimentacao / 100) * 10).toFixed(2)}</td>
+            <td className="calculator-value__discont">
+              R$ {((alimentacao / 100) * 10).toFixed(2)}
+            </td>
           </tr>
           <tr>
             <td className="home-calculator__text">Seguro</td>
             <td>
-              <input
-                type="number"
-                className="calculator-input"
-                placeholder="R$ 0,00"
-                onChange={(e) => setSeguro(e.target.value)}
-              />
+              <div>
+                {!seguro ? (
+                  <p className="calculator-value">R$ 0.00</p>
+                ) : (
+                  <p className="calculator-value">R$ {`${seguro}.00`}</p>
+                )}
+                <input
+                  type="range"
+                  min="0"
+                  max="2000"
+                  step="10"
+                  className="calculator-input"
+                  placeholder="R$ 0,00"
+                  onChange={(e) => setSeguro(e.target.value)}
+                />
+              </div>
             </td>
-            <td>R$ {((seguro / 100) * 10).toFixed(2)}</td>
+            <td className="calculator-value__discont">
+              R$ {((seguro / 100) * 10).toFixed(2)}
+            </td>
           </tr>
           <tr>
             <td className="home-calculator__text">Manutenção</td>
             <td>
-              <input
-                type="number"
-                className="calculator-input"
-                placeholder="R$ 0,00"
-                onChange={(e) => setManutencao(e.target.value)}
-              />
+              <div>
+                {!manutencao ? (
+                  <p className="calculator-value">R$ 0.00</p>
+                ) : (
+                  <p className="calculator-value">R$ {`${manutencao}.00`}</p>
+                )}
+                <input
+                  type="range"
+                  min="0"
+                  max="2000"
+                  step="10"
+                  className="calculator-input"
+                  placeholder="R$ 0,00"
+                  onChange={(e) => setManutencao(e.target.value)}
+                />
+              </div>
             </td>
-            <td>R$ {((manutencao / 100) * 10).toFixed(2)}</td>
+            <td className="calculator-value__discont">
+              R$ {((manutencao / 100) * 10).toFixed(2)}
+            </td>
           </tr>
           <tr>
             <td className="home-calculator__text">Locação</td>
             <td>
-              <input
-                type="number"
-                className="calculator-input"
-                placeholder="R$ 0,00"
-                onChange={(e) => setLocacao(e.target.value)}
-              />
+              <div>
+                {!locacao ? (
+                  <p className="calculator-value">R$ 0.00</p>
+                ) : (
+                  <p className="calculator-value">R$ {`${locacao}.00`}</p>
+                )}
+                <input
+                  type="range"
+                  min="0"
+                  max="2000"
+                  step="10"
+                  className="calculator-input"
+                  placeholder="R$ 0,00"
+                  onChange={(e) => setLocacao(e.target.value)}
+                />
+              </div>
             </td>
-            <td>R$ {((locacao / 100) * 15).toFixed(2)}</td>
+            <td className="calculator-value__discont">
+              R$ {((locacao / 100) * 15).toFixed(2)}
+            </td>
           </tr>
         </thead>
-        <Link id="home-calculator__button" to={to}>
-          {`Quero Economizar R$ ${total ? total.toFixed(2) : '0,00'}`}
-        </Link>
-        <div className="home-calculator__disclamer">
-          <p>
-            O cálculo é baseado na média de descontos oferecidos pelos
-            estabelecimentos parceiros do clube.
-          </p>
-        </div>
+        <thead>
+          <tr>
+            <td>
+              <Link id="home-calculator__button" to={to}>
+                {`Quero Economizar R$ ${total ? total.toFixed(2) : '0,00'}`}
+              </Link>
+            </td>
+          </tr>
+        </thead>
+        <thead className="home-calculator__disclamer">
+          <tr>
+            <td>
+              O cálculo é baseado na média de descontos oferecidos pelos
+              estabelecimentos parceiros do clube.
+            </td>
+          </tr>
+        </thead>
       </table>
     </div>
   );

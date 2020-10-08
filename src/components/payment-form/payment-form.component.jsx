@@ -60,7 +60,6 @@ const PaymentForm = ({
           );
           const id = await getme[0].id;
           const token = await data.id;
-          console.log(token);
           dispatchCreatePaymentMehod(id, token);
           setModalVisible(false);
           dispatchGetMeAction();
@@ -83,6 +82,7 @@ const PaymentForm = ({
             onClick={() => {
               setModalVisible(true);
             }}
+            to=""
           >
             Adicionar Cartão
           </Link>

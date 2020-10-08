@@ -20,11 +20,15 @@ const SubscriptionPlan = ({
   dispatchCreateSubscription,
   dispatchCancelSubscription,
 }) => {
-  const [subscription, setSubscription] = useState({});
+  const [subscription, setSubscription] = useState('');
 
-  useEffect(() => dispatchGetme(), [dispatchGetme, subscription]);
+  useEffect(() => {
+    dispatchGetme();
+  }, [dispatchGetme]);
 
-  useEffect(() => setSubscription(getme[0].subscription), [dispatchGetme]);
+  useEffect(() => {
+    setSubscription(getme[0].subscription);
+  }, [dispatchGetme, getme]);
 
   const createSubscription = (event) => {
     event.preventDefault();
@@ -34,21 +38,26 @@ const SubscriptionPlan = ({
       dispatchCreateSubscription(
         getme[0].id,
         () => {
-          console.log('Assinatura criada com sucesso');
+          console.log('Assinatura criada.');
           setSubscription(true);
         },
-        () => console.log('Erro ao processar o pedido, tente novamente.')
+        () => console.log('Erro ao cancelar a assinatura')
       );
-
-      dispatchGetme();
     }
   };
+
   const cancelSubscription = (event) => {
     event.preventDefault();
-    dispatchCancelSubscription(getme[0].id);
-    setSubscription(false);
-    dispatchGetme();
+    dispatchCancelSubscription(
+      getme[0].id,
+      () => {
+        console.log('Assinatura cancelada.');
+        setSubscription(false);
+      },
+      () => console.log('Erro ao cancelar a assinatura')
+    );
   };
+
   return (
     <div>
       <div className="subscription-subtitle__container">
@@ -68,7 +77,7 @@ const SubscriptionPlan = ({
                 <CheckIcon
                   className="check-icon"
                   style={{ color: green[500] }}
-                />{' '}
+                />
                 <p>Descontos ilimitados</p>
               </li>
               <li className="description-item">
@@ -87,7 +96,7 @@ const SubscriptionPlan = ({
               </li>
             </ul>
           </div>
-          {subscription === false ? (
+          {!subscription ? (
             <CustomButtom
               id="create-subscription__button"
               name="Assinar Plano"
@@ -102,7 +111,7 @@ const SubscriptionPlan = ({
       <div className="subscription-subtitle__container">
         <h3>Gerenciar Assinatura</h3>
       </div>
-      {subscription === false ? (
+      {!subscription ? (
         <div className="subscription-container__inative">
           <p>Você não possui assinaturas ativas</p>
         </div>
@@ -131,7 +140,8 @@ const mapDispatchToProps = (dispatch) => ({
   dispatchGetme: () => dispatch(getMe()),
   dispatchCancelSubscription: (id, onSuccess, onError) =>
     dispatch(cancelSubscription({ id }, onSuccess, onError)),
-  dispatchCreateSubscription: (id) => dispatch(createSubscription({ id })),
+  dispatchCreateSubscription: (id, onSuccess, onError) =>
+    dispatch(createSubscription({ id }, onSuccess, onError)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubscriptionPlan);

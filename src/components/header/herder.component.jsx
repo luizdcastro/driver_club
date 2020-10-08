@@ -51,6 +51,7 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
         <Link
           className={`nav-link__${isLoggedIn}`}
           onClick={() => setOpen(!open)}
+          to=""
         >
           {name}
         </Link>
@@ -61,6 +62,7 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
                 <Link
                   className="close-menu__icon"
                   onClick={() => setOpen(!open)}
+                  to=""
                 >
                   <CloseIcon style={{ fontSize: 40 }} />
                 </Link>

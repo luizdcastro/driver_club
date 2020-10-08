@@ -32,23 +32,27 @@ export const createPaymentMethod = (data, onSuccess, onError) => ({
   },
 });
 
-export const createSubscription = (data) => ({
+export const createSubscription = (data, onSuccess, onError) => ({
   type: constants.API,
   payload: {
     method: 'POST',
     url: '/users/createSubscription',
     data,
     success: (response) => subscription(response),
+    postProccessSuccess: onSuccess,
+    postProccessError: onError,
   },
 });
 
-export const cancelSubscription = (data) => ({
+export const cancelSubscription = (data, onSuccess, onError) => ({
   type: constants.API,
   payload: {
     method: 'POST',
     url: '/users/cancelSubscription',
     data,
     success: (response) => canceledSubscription(response),
+    postProccessSuccess: onSuccess,
+    postProccessError: onError,
   },
 });
 
