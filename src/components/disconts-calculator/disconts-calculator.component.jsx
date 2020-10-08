@@ -33,7 +33,7 @@ const DiscontCalculator = ({ to }) => {
             <td>Gasto Mensal</td>
             <td>Economia</td>
           </tr>
-          <tr>
+          <tr className="calculator-row">
             <td className="home-calculator__text">Combustível</td>
             <td>
               <div className="calculator-value__content">
@@ -57,7 +57,7 @@ const DiscontCalculator = ({ to }) => {
               R$ {((combustivel / 100) * 7).toFixed(2)}
             </td>
           </tr>
-          <tr>
+          <tr className="calculator-row">
             <td className="home-calculator__text">Alimentação</td>
             <td>
               <div className="calculator-value__content">
@@ -81,10 +81,10 @@ const DiscontCalculator = ({ to }) => {
               R$ {((alimentacao / 100) * 10).toFixed(2)}
             </td>
           </tr>
-          <tr>
+          <tr className="calculator-row">
             <td className="home-calculator__text">Seguro</td>
             <td>
-              <div>
+              <div className="calculator-value__content">
                 {!seguro ? (
                   <p className="calculator-value">R$ 0.00</p>
                 ) : (
@@ -105,10 +105,10 @@ const DiscontCalculator = ({ to }) => {
               R$ {((seguro / 100) * 10).toFixed(2)}
             </td>
           </tr>
-          <tr>
+          <tr className="calculator-row">
             <td className="home-calculator__text">Manutenção</td>
             <td>
-              <div>
+              <div className="calculator-value__content">
                 {!manutencao ? (
                   <p className="calculator-value">R$ 0.00</p>
                 ) : (
@@ -129,10 +129,10 @@ const DiscontCalculator = ({ to }) => {
               R$ {((manutencao / 100) * 10).toFixed(2)}
             </td>
           </tr>
-          <tr>
+          <tr className="calculator-row">
             <td className="home-calculator__text">Locação</td>
             <td>
-              <div>
+              <div className="calculator-value__content">
                 {!locacao ? (
                   <p className="calculator-value">R$ 0.00</p>
                 ) : (
