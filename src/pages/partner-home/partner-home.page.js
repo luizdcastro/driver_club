@@ -56,7 +56,7 @@ const PartnerHome = ({ getme, dispatchGetMeAction }) => {
             </div>
             <img className="partner-home__card-icon" src={IconRental} alt="" />
           </Link>
-          <Link className="partner-home__card " to="">
+          <Link className="partner-home__card ">
             <div className="partner-home__text-box">
               <p className="partner-home__card-title ">Meus descontos</p>
               <p className="partner-home__card-subtitle">

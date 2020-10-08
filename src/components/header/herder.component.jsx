@@ -51,7 +51,6 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
         <Link
           className={`nav-link__${isLoggedIn}`}
           onClick={() => setOpen(!open)}
-          to=""
         >
           {name}
         </Link>
@@ -62,7 +61,6 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
                 <Link
                   className="close-menu__icon"
                   onClick={() => setOpen(!open)}
-                  to=""
                 >
                   <CloseIcon style={{ fontSize: 40 }} />
                 </Link>
@@ -90,24 +88,16 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
                   <AssessmentIcon className="menu-dropdown__icon" />
                   Calculadora
                 </Link>
-                <Link
-                  className="menu-item"
-                  to=""
-                  onClick={() => setOpen(!open)}
-                >
+                <Link className="menu-item" to onClick={() => setOpen(!open)}>
                   <DevicesIcon className="menu-dropdown__icon" />
                   Descontos Online
                 </Link>
-                <Link
-                  className="menu-item"
-                  to=""
-                  onClick={() => setOpen(!open)}
-                >
+                <Link className="menu-item" onClick={() => setOpen(!open)}>
                   <LocalOfferIcon className="menu-dropdown__icon" />
                   Sorteios
                 </Link>
 
-                <Link className="menu-item" to="" onClick={onLogout}>
+                <Link className="menu-item" onClick={onLogout}>
                   <ExitToAppIcon className="menu-dropdown__icon" />
                   Sair
                 </Link>

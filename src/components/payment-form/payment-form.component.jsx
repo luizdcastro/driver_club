@@ -82,7 +82,6 @@ const PaymentForm = ({
             onClick={() => {
               setModalVisible(true);
             }}
-            to=""
           >
             Adicionar Cartão
           </Link>
