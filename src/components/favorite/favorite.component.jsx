@@ -32,15 +32,27 @@ const Favorite = ({
   }, [getme, partner, userFavorites, favorite, partnerId]);
 
   const handleAddfavorite = () => {
-    dispatchAddFavorite(partnerId);
-    dispatchGetMeAction();
-    setFavorite(partnerId);
+    dispatchAddFavorite(
+      partnerId,
+      () => {
+        console.log('Favorito adicionado!');
+        dispatchGetMeAction();
+        setFavorite(partnerId);
+      },
+      () => console.log('Erro ao adicionar favorito')
+    );
   };
 
   const handdleDeleteFavorite = () => {
-    dispatchDeleteFavorite(partnerId);
-    dispatchGetMeAction();
-    setFavorite('');
+    dispatchDeleteFavorite(
+      partnerId,
+      () => {
+        console.log('Favorito delatado!');
+        dispatchGetMeAction();
+        setFavorite(partnerId);
+      },
+      () => console.log('Erro ao deletar favorito')
+    );
   };
 
   return (
@@ -68,8 +80,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchAddFavorite: (partnerId) => dispatch(addFavorite(partnerId)),
-  dispatchDeleteFavorite: (partnerId) => dispatch(deleteFavorite(partnerId)),
+  dispatchAddFavorite: (partnerId, onSuccess, onError) =>
+    dispatch(addFavorite(partnerId, onSuccess, onError)),
+  dispatchDeleteFavorite: (partnerId, onSuccess, onError) =>
+    dispatch(deleteFavorite(partnerId, onSuccess, onError)),
   dispatchGetMeAction: () => dispatch(getMe()),
 });
 

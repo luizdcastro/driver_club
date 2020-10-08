@@ -20,9 +20,15 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
   }, [getme]);
 
   const handleDeleteCoupon = (itemId) => {
-    dispatchDeleteCoupon(itemId);
-    setCoupon((coupon) => [...coupon, itemId]);
-    dispatchGetMeAction();
+    dispatchDeleteCoupon(
+      itemId,
+      () => {
+        console.log('Cupom deletado');
+        setCoupon((coupon) => [...coupon, itemId]);
+        dispatchGetMeAction();
+      },
+      () => console.log('Erro ao deletar cupom')
+    );
   };
 
   function NoCoupon() {
@@ -72,7 +78,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
-  dispatchDeleteCoupon: (discontId) => dispatch(deleteCoupon(discontId)),
+  dispatchDeleteCoupon: (discontId, onSuccess, onError) =>
+    dispatch(deleteCoupon(discontId, onSuccess, onError)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Coupons);

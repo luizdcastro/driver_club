@@ -25,9 +25,15 @@ const DiscontCard = ({
   const values = [0] && getme[0].coupon.map((item) => item._id);
 
   const handleAddCoupon = (itemId) => {
-    dispatchAddCoupon(itemId);
-    setCoupon((coupon) => [...coupon, itemId]);
-    dispatchGetMeAction();
+    dispatchAddCoupon(
+      itemId,
+      () => {
+        console.log('Cupom adiconado!');
+        setCoupon((coupon) => [...coupon, itemId]);
+        dispatchGetMeAction();
+      },
+      () => console.log('Erro ao adicionar cupom')
+    );
   };
 
   const toggleShow = (id) => {
@@ -102,7 +108,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
-  dispatchAddCoupon: (discontId) => dispatch(addCoupon(discontId)),
+  dispatchAddCoupon: (discontId, onSuccess, onError) =>
+    dispatch(addCoupon(discontId, onSuccess, onError)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DiscontCard);

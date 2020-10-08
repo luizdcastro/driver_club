@@ -20,9 +20,15 @@ const Favorites = ({ getme, dispatchGetMeAction, dispatchDeleteFavorite }) => {
   }, [getme]);
 
   const handleDeleteFavorite = (itemId) => {
-    dispatchDeleteFavorite(itemId);
-    setFavorite((favorite) => [...favorite, itemId]);
-    dispatchGetMeAction();
+    dispatchDeleteFavorite(
+      itemId,
+      () => {
+        console.log('Favorito delatado!');
+        setFavorite((favorite) => [...favorite, itemId]);
+        dispatchGetMeAction();
+      },
+      () => console.log('Erro ao deletar favorito')
+    );
   };
 
   function NoFavorite() {
@@ -74,7 +80,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchGetMeAction: () => dispatch(getMe()),
-  dispatchDeleteFavorite: (discontId) => dispatch(deleteFavorite(discontId)),
+  dispatchDeleteFavorite: (discontId, onSuccess, onError) =>
+    dispatch(deleteFavorite(discontId, onSuccess, onError)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

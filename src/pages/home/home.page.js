@@ -173,7 +173,7 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               non odio porta.
             </h2>
-            <Link id="footer-box__button" to="">
+            <Link id="footer-box__button">
               Saiba mais sobre nossos serviços
             </Link>
           </div>

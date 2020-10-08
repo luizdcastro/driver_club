@@ -1,20 +1,24 @@
 import * as constants from '../constants';
 
-export const addFavorite = (partnerId) => ({
+export const addFavorite = (partnerId, onSuccess, onError) => ({
   type: constants.API,
   payload: {
     method: 'PATCH',
     url: `/users/addFavorite/${partnerId}`,
     success: (response) => addedFavorite(response),
+    postProccessSuccess: onSuccess,
+    postProccessError: onError,
   },
 });
 
-export const deleteFavorite = (partnerId) => ({
+export const deleteFavorite = (partnerId, onSuccess, onError) => ({
   type: constants.API,
   payload: {
     method: 'PATCH',
     url: `/users/removeFavorite/${partnerId}`,
     success: (response) => deletedFavorite(response),
+    postProccessSuccess: onSuccess,
+    postProccessError: onError,
   },
 });
 

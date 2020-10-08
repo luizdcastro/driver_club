@@ -138,7 +138,7 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
                   <AccountBoxIcon className="menu-dropdown__icon" />
                   Perfil
                 </Link>
-                <Link className="menu-item" to="" onClick={onLogout}>
+                <Link className="menu-item" onClick={onLogout}>
                   <ExitToAppIcon className="menu-dropdown__icon" />
                   Sair
                 </Link>
