@@ -8,7 +8,8 @@
 }
 
 .login {
-  padding: 20px;
+  padding: 25px;
+  padding-top: 40px;
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 60px;
@@ -16,10 +17,31 @@
 }
 
 .login-title {
-  margin-left: 14px;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: #212240;
+  text-align: center;
+}
+
+.login-input__group {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+#login-input {
+  padding-left: 42px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.login-input__icon {
+  position: absolute;
+  top: 20%;
+  left: 6%;
+  margin-right: 10px;
+  padding-right: 10px;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .login-error {

@@ -6,14 +6,19 @@ import { getMe } from '../../redux/actions/getme.action';
 import { registerUser } from '../../redux/actions/auth.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import PersonIcon from '@material-ui/icons/Person';
+import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
 import './register.styles.css';
 
 const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [serverError, setServerError] = useState('');
+  const name = `${firstName} ${lastName}`;
 
   useEffect(() => dispatchGetme, [dispatchGetme]);
 
@@ -32,42 +37,66 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
 
   return (
     <div className="register-container">
-      <form className="register" onSubmit={handleOnSubmmit}>
-        <h2 className="register-title">Crie sua conta</h2>
-        <FormInput
-          type="name"
-          name="name"
-          placeholder="Nome"
-          value={name}
-          handleChange={(e) => setName(e.target.value)}
-        />
-        <FormInput
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          handleChange={(e) => setEmail(e.target.value)}
-        />
-        <FormInput
-          type="password"
-          name="password"
-          placeholder="Senha"
-          value={password}
-          handleChange={(e) => setPassword(e.target.value)}
-        />
-        <FormInput
-          type="password"
-          name="passwordConfirm"
-          placeholder="Confirmação de Senha"
-          value={passwordConfirm}
-          handleChange={(e) => setPasswordConfirm(e.target.value)}
-        />
-        <CustomButton name="Registrar" onClick={handleOnSubmmit} />
-        {serverError ? <p className="register-error">{serverError}</p> : null}
-        <Link className="register-link" to="/login">
-          Já tem uma conta?
-        </Link>
-      </form>
+      <div>
+        <h2 className="register-title">Crie uma conta para obter descontos</h2>
+        <form className="register" onSubmit={handleOnSubmmit}>
+          <div className="register-input__group">
+            <FormInput
+              id="register-input__firstname"
+              type="name"
+              name="fistname"
+              placeholder="Nome"
+              value={firstName}
+              handleChange={(e) => setFirstName(e.target.value)}
+            />
+            <FormInput
+              id="register-input__lastname"
+              type="name"
+              name="lastname"
+              placeholder="Sobrenome"
+              value={lastName}
+              handleChange={(e) => setLastName(e.target.value)}
+            />
+            <PersonIcon className="register-input__icon" />
+          </div>
+          <div className="register-input__group">
+            <FormInput
+              id="register-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              handleChange={(e) => setEmail(e.target.value)}
+            />
+            <EmailIcon className="register-input__icon" />
+          </div>
+          <div className="register-input__group">
+            <FormInput
+              id="register-input__password"
+              type="password"
+              name="password"
+              placeholder="Senha"
+              value={password}
+              handleChange={(e) => setPassword(e.target.value)}
+            />
+            <FormInput
+              id="register-input__confirm-password"
+              type="password"
+              name="passwordConfirm"
+              placeholder="Confirmar senha"
+              value={passwordConfirm}
+              handleChange={(e) => setPasswordConfirm(e.target.value)}
+            />
+            <LockIcon className="register-input__icon" />
+          </div>
+          <CustomButton name="Registrar" onClick={handleOnSubmmit} />
+
+          {serverError ? <p className="register-error">{serverError}</p> : null}
+          <Link className="register-link" to="/login">
+            Já tem uma conta?
+          </Link>
+        </form>
+      </div>
     </div>
   );
 };

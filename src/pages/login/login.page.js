@@ -6,6 +6,8 @@ import { getMe } from '../../redux/actions/getme.action';
 import { loginUser } from '../../redux/actions/auth.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import PersonIcon from '@material-ui/icons/Person';
+import EmailIcon from '@material-ui/icons/Email';
 import './login.styles.css';
 
 const Login = ({ dispatchLoginAction, dispatchGetme }) => {
@@ -27,33 +29,43 @@ const Login = ({ dispatchLoginAction, dispatchGetme }) => {
   };
   return (
     <div className="login-container">
-      <form className="login" onSubmit={handleOnSubmmit}>
+      <div>
         <h2 className="login-title">Entrar na sua conta</h2>
-        <FormInput
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          handleChange={(e) => setEmail(e.target.value)}
-        />
-        <FormInput
-          type="password"
-          name="password"
-          placeholder="Senha"
-          value={password}
-          handleChange={(e) => setPassword(e.target.value)}
-        />
-        <CustomButton name="Entrar" onClick={handleOnSubmmit} />
-        <div className="login-link__container">
-          <Link className="login-link" to="/forgot-password">
-            Esqueceu sua senha?
-          </Link>
-          <Link to="/register" className="login-link">
-            Criar uma conta
-          </Link>
-        </div>
-        {serverError ? <p className="login-error">{serverError}</p> : null}
-      </form>
+        <form className="login" onSubmit={handleOnSubmmit}>
+          <div className="login-input__group">
+            <FormInput
+              id="login-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              handleChange={(e) => setEmail(e.target.value)}
+            />
+            <PersonIcon className="login-input__icon" />
+          </div>
+          <div className="login-input__group">
+            <FormInput
+              id="login-input"
+              type="password"
+              name="password"
+              placeholder="Senha"
+              value={password}
+              handleChange={(e) => setPassword(e.target.value)}
+            />
+            <EmailIcon className="login-input__icon" />
+          </div>
+          <CustomButton name="Entrar" onClick={handleOnSubmmit} />
+          <div className="login-link__container">
+            <Link className="login-link" to="/forgot-password">
+              Esqueceu sua senha?
+            </Link>
+            <Link to="/register" className="login-link">
+              Criar uma conta
+            </Link>
+          </div>
+          {serverError ? <p className="login-error">{serverError}</p> : null}
+        </form>
+      </div>
     </div>
   );
 };

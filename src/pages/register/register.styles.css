@@ -8,18 +8,73 @@
 }
 
 .register {
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
   margin-bottom: 60px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .register-title {
-  margin-left: 14px;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: #212240;
+  text-align: center;
+}
+
+.register-input__group {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+#register-input {
+  padding-left: 42px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#register-input__firstname {
+  display: block;
+  padding-left: 42px;
+  width: 156px;
+  margin-right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+#register-input__lastname {
+  display: block;
+  padding-left: 10px;
+  width: 156px;
+  margin-left: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+#register-input__password {
+  display: block;
+  padding-left: 42px;
+  width: 156px;
+  margin-right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+#register-input__confirm-password {
+  display: block;
+  padding-left: 10px;
+  width: 156px;
+  margin-left: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.register-input__icon {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  margin-right: 10px;
+  padding-right: 10px;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .register-error {
@@ -32,7 +87,7 @@
 .register-link {
   font-size: 13px;
   font-weight: 600;
-  margin: 15px;
+  margin: 8px;
   color: #212240;
 }
 
