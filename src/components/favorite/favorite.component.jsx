@@ -22,21 +22,18 @@ const Favorite = ({
 
   useEffect(() => dispatchGetMeAction, [dispatchGetMeAction, favorite]);
 
-  const userFavorites = getme[0] && getme[0].favorite.map((item) => item._id);
-
   useEffect(() => {
     const userFavorites = getme[0] && getme[0].favorite.map((item) => item._id);
     if (userFavorites.includes(partnerId)) {
       setFavorite(partnerId);
     }
-  }, [getme, partner, userFavorites, favorite, partnerId]);
+  }, [getme, partnerId]);
 
   const handleAddfavorite = () => {
     dispatchAddFavorite(
       partnerId,
       () => {
         console.log('Favorito adicionado!');
-        dispatchGetMeAction();
         setFavorite(partnerId);
       },
       () => console.log('Erro ao adicionar favorito')
@@ -48,16 +45,17 @@ const Favorite = ({
       partnerId,
       () => {
         console.log('Favorito delatado!');
-        dispatchGetMeAction();
-        setFavorite(partnerId);
+        setFavorite('');
       },
       () => console.log('Erro ao deletar favorito')
     );
   };
 
+  console.log(favorite);
+
   return (
     <div className="favorite">
-      {setFavorite && !favorite ? (
+      {!favorite ? (
         <FavoriteIcon
           color="disabled"
           style={{ fontSize: 35 }}
