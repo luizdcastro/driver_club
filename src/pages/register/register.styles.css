@@ -86,7 +86,8 @@
 .register-link {
   font-size: 13px;
   font-weight: 600;
-  margin: 8px;
+  color: rgb(82,59,228);
+  margin-left: 12px;
 }
 
 .register-password:hover {

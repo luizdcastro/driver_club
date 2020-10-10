@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
+import FilterListIcon from '@material-ui/icons/FilterList';
 
 import './search.styles.css';
 
@@ -13,6 +14,7 @@ const SearchBar = ({ onChange }) => {
         type="text"
         onChange={onChange}
       />
+      <FilterListIcon className="filter-icon" style={{ fontSize: 30 }} />
     </div>
   );
 };

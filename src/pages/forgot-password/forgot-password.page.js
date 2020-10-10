@@ -39,12 +39,10 @@ const ForgotPassword = ({ dispatchForgotPassword }) => {
                 />
                 <EmailIcon className="forgot-input__icon " />
               </div>
-              <CustomButton name="Enviar Link" onClick={handleOnSubmmit} />
-              <div className="forgotPassword-link__container">
-                <Link className="forgotPassword-link" to="/login">
-                  Lembrou da senha?
-                </Link>
-              </div>
+              <CustomButton name="Recuperar" onClick={handleOnSubmmit} />
+        
+                <Link className="forgotPassword-link" to="/login">Voltar para login</Link>
+              
               {serverError ? (
                 <p className="forgot-password__error">{serverError}</p>
               ) : null}
@@ -59,7 +57,7 @@ const ForgotPassword = ({ dispatchForgotPassword }) => {
                 senha. Caso não localize o email, verifique sua caixa de spam.
               </p>
               <Link className="link-sent__button" to="/login">
-                Retornar para Login
+            Voltar para login
               </Link>
             </div>
           )}

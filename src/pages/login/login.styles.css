@@ -18,7 +18,6 @@
 .login-title {
   font-size: 18px;
   font-weight: 600;
-
   text-align: center;
   margin-left: 5px;
   margin-bottom: 25px;
@@ -26,6 +25,7 @@
 
 .login-input__group {
   display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
 }
@@ -36,9 +36,15 @@
   margin-bottom: 12px;
 }
 
+#login-input__password{
+  padding-left: 42px;
+  margin-top: 0;
+  margin-bottom:0;
+}
+
 .login-input__icon {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 6%;
   margin-right: 10px;
   padding-right: 10px;
@@ -57,16 +63,33 @@
 
 .login-link__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 15px;
+  justify-content: center;
+}
+
+.login-link__text{
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
 .login-link {
   font-size: 13px;
   font-weight: 600;
+  color: rgb(82,59,228);
+}
+
+.login-link__password {
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 12px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+    color: rgb(82,59,228);
+
 }
 
 .login-link:hover {
   filter: brightness(1.1);
 }
+

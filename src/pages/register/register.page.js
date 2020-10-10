@@ -40,7 +40,7 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
       <div>
         <form className="register" onSubmit={handleOnSubmmit}>
           <h2 className="register-title">
-            Crie uma conta para obter descontos
+            Crie sua conta
           </h2>
 
           <div className="register-input__group">
@@ -96,7 +96,7 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
 
           {serverError ? <p className="register-error">{serverError}</p> : null}
           <Link className="register-link" to="/login">
-            Já tem uma conta?
+            Voltar para login
           </Link>
         </form>
       </div>

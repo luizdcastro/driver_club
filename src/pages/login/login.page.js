@@ -6,8 +6,8 @@ import { getMe } from '../../redux/actions/getme.action';
 import { loginUser } from '../../redux/actions/auth.actions';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
-import PersonIcon from '@material-ui/icons/Person';
 import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
 import './login.styles.css';
 
 const Login = ({ dispatchLoginAction, dispatchGetme }) => {
@@ -31,7 +31,7 @@ const Login = ({ dispatchLoginAction, dispatchGetme }) => {
     <div className="login-container">
       <div>
         <form className="login" onSubmit={handleOnSubmmit}>
-          <h2 className="login-title">Entrar na minha conta</h2>
+          <h2 className="login-title">Faça seu login</h2>
           <div className="login-input__group">
             <FormInput
               id="login-input"
@@ -41,27 +41,26 @@ const Login = ({ dispatchLoginAction, dispatchGetme }) => {
               value={email}
               handleChange={(e) => setEmail(e.target.value)}
             />
-            <PersonIcon className="login-input__icon" />
+            <EmailIcon className="login-input__icon" />
           </div>
           <div className="login-input__group">
             <FormInput
-              id="login-input"
+              id="login-input__password"
               type="password"
               name="password"
               placeholder="Senha"
               value={password}
               handleChange={(e) => setPassword(e.target.value)}
             />
-            <EmailIcon className="login-input__icon" />
+            <LockIcon className="login-input__icon" /> 
+            <Link className="login-link__password" to="/forgot-password">
+            Esqueci minha senha            
+            </Link>          
           </div>
-          <CustomButton name="Entrar" onClick={handleOnSubmmit} />
-          <div className="login-link__container">
-            <Link className="login-link" to="/forgot-password">
-              Esqueceu sua senha?
-            </Link>
-            <Link to="/register" className="login-link">
-              Criar uma conta
-            </Link>
+          <CustomButton id="login-button" name="Entrar" onClick={handleOnSubmmit} />
+          <div className="login-link__container"> 
+          <p className="login-link__text">Não tem uma conta? <span><Link to="/register" className="login-link">
+Registre-se </Link></span></p>           
           </div>
           {serverError ? <p className="login-error">{serverError}</p> : null}
         </form>
