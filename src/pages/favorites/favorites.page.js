@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { deleteFavorite } from '../../redux/actions/favorite.actions';
 import { getMe } from '../../redux/actions/getme.action.js';
 import FavoriteCard from '../../components/favorite-card/favorite-card.component';
+import FavoriteIcon from '../../assets/icons/favorite.svg';
 import './favorites.styles.css';
 
 const Favorites = ({ getme, dispatchGetMeAction, dispatchDeleteFavorite }) => {
@@ -35,8 +36,9 @@ const Favorites = ({ getme, dispatchGetMeAction, dispatchDeleteFavorite }) => {
     return (
       <div className="no-favorite__container">
         <div>
+          <img className="no-favorite__icon" src={FavoriteIcon} alt="" />
           <p className="no-favorite__text">
-            Você não tem estabelecimentos favoritos.
+            Desculpe, você não possui favoritos.
           </p>
           <Link className="no-favorite__link" to="/categories">
             Voltar para categorias

@@ -2,7 +2,7 @@
   max-width: 90%;
   width: 1200px;
   margin: auto;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .account-title {
@@ -21,7 +21,7 @@
 
 .account-data__subtitle {
   font-size: 1.1rem;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
   margin-left: 14px;
 }
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import FavoriteCounter from '../favorite-counter/favorite-counter.component';
 import CouponCounter from '../../components/coupon-counter/coupon-counter.component';
+import FeatureTag from '../../components/feature-tag/feature-tag.component';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
@@ -88,15 +90,24 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
                   <AssessmentIcon className="menu-dropdown__icon" />
                   Calculadora
                 </Link>
-                <Link className="menu-item" to onClick={() => setOpen(!open)}>
-                  <DevicesIcon className="menu-dropdown__icon" />
-                  Descontos Online
-                </Link>
-                <Link className="menu-item" onClick={() => setOpen(!open)}>
-                  <LocalOfferIcon className="menu-dropdown__icon" />
-                  Sorteios
-                </Link>
-
+                <div className="menu-item__group">
+                  <Link className="menu-item" to onClick={() => setOpen(!open)}>
+                    <DevicesIcon className="menu-dropdown__icon" />
+                    Descontos Online
+                  </Link>
+                  <div className="menu-item__tag-online">
+                    <FeatureTag />
+                  </div>
+                </div>
+                <div className="menu-item__group">
+                  <Link className="menu-item" onClick={() => setOpen(!open)}>
+                    <LocalOfferIcon className="menu-dropdown__icon" />
+                    Sorteios
+                  </Link>
+                  <div className="menu-item__tag-sorteios">
+                    <FeatureTag />
+                  </div>
+                </div>
                 <Link className="menu-item" onClick={onLogout}>
                   <ExitToAppIcon className="menu-dropdown__icon" />
                   Sair

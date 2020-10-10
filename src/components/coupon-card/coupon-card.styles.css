@@ -6,7 +6,7 @@
   height: 160px;
   margin: auto;
   margin-bottom: 15px;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -62,7 +62,7 @@
 
 .coupon-card__button:hover {
   cursor: pointer;
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .coupon-card__link {
@@ -77,7 +77,7 @@
 
 .coupon-card__link:hover {
   text-decoration: none;
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .modal-coupon__container {
@@ -111,7 +111,7 @@
   width: 100%;
   max-width: 90%;
   height: 500px;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
 }
 .modal-coupon__name {
   position: absolute;

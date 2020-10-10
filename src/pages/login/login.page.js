@@ -30,8 +30,8 @@ const Login = ({ dispatchLoginAction, dispatchGetme }) => {
   return (
     <div className="login-container">
       <div>
-        <h2 className="login-title">Entrar na sua conta</h2>
         <form className="login" onSubmit={handleOnSubmmit}>
+          <h2 className="login-title">Entrar na minha conta</h2>
           <div className="login-input__group">
             <FormInput
               id="login-input"

@@ -29,7 +29,7 @@ const Home = () => {
             </Link>
           </div>
           <div>
-            <DiscontCalculator to="registration" />
+            <DiscontCalculator to="/register" />
           </div>
         </div>
       </div>

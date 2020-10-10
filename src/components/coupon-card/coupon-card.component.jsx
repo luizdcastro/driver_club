@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CloseIcon from '@material-ui/icons/Close';
-import Qrcode from '../../assets/images/qrcode.png';
+import QRCode from 'qrcode.react';
 
 import './coupon-card.styles.css';
 
@@ -29,7 +29,16 @@ const CounponCard = ({
               onClick={() => setModalVisible(false)}
               style={{ fontSize: 30 }}
             />
-            <img className="modal-coupon__qrcode" src={Qrcode} alt="qrcode" />
+            <QRCode
+              className="modal-coupon__qrcode"
+              value={'http://picturesofpeoplescanningqrcodes.tumblr.com/'}
+              size={128}
+              bgColor={'#ffffff'}
+              fgColor={'#000000'}
+              level={'L'}
+              includeMargin={false}
+              renderAs={'svg'}
+            />
             <h3 className="modal-coupon__validate">Período para utilizar</h3>
             <div className="modal-coupon__day-box">
               <p>Dias:</p>

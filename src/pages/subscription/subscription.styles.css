@@ -3,9 +3,9 @@
   max-width: 90%;
   width: 1200px;
   margin: auto;
+  color: rgba(0, 0, 0, 0.7);
 }
 .subscription-page__title {
   font-size: 21px;
-  color: #212240;
   font-weight: 700;
 }

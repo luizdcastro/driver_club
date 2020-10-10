@@ -1,16 +1,14 @@
 .create-discont__page {
   width: 1200px;
   max-width: 90%;
-
   height: auto;
   margin: auto;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
   padding-bottom: 8%;
 }
 
 .create-discont__page-title {
   font-size: 21px;
-  color: #212240;
   font-weight: 700;
 }
 

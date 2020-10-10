@@ -139,7 +139,7 @@
   height: 350px;
   max-height: 65%;
   max-width: 93%;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
 }
 

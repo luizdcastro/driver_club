@@ -128,6 +128,22 @@
   filter: brightness(1.2);
 }
 
+.menu-item__group {
+  position: relative;
+}
+
+.menu-item__tag-online {
+  position: absolute;
+  top: 12%;
+  left: 60%;
+}
+
+.menu-item__tag-sorteios {
+  position: absolute;
+  top: 12%;
+  left: 33%;
+}
+
 .close-menu__icon {
   display: flex;
   align-items: center;

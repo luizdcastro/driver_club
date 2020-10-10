@@ -2,12 +2,11 @@
   width: 1200px;
   max-width: 90%;
   margin: auto;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .calculator-title {
   font-size: 21px;
-  color: #212240;
   font-weight: 700;
 }
 

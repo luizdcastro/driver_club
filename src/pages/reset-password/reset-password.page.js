@@ -29,8 +29,8 @@ const Register = ({ dispatchRestPassword }) => {
   return (
     <div className="resetPassword-container">
       <div>
-        <h2 className="resetPassword-title">Cadastre uma nova senha</h2>
         <form className="resetPassword" onSubmit={handleOnSubmmit}>
+          <h2 className="resetPassword-title">Cadastre uma nova senha</h2>
           <div className="resetPassword-input__group">
             <FormInput
               id="resetPassword-input__password"

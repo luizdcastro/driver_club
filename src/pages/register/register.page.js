@@ -38,8 +38,11 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
   return (
     <div className="register-container">
       <div>
-        <h2 className="register-title">Crie uma conta para obter descontos</h2>
         <form className="register" onSubmit={handleOnSubmmit}>
+          <h2 className="register-title">
+            Crie uma conta para obter descontos
+          </h2>
+
           <div className="register-input__group">
             <FormInput
               id="register-input__firstname"

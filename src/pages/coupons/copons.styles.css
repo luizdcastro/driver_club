@@ -3,10 +3,10 @@
   max-width: 90%;
   width: 1200px;
   margin: auto;
+  color: rgba(0, 0, 0, 0.7);
 }
 .coupon-page__title {
   font-size: 21px;
-  color: #212240;
   font-weight: 700;
 }
 
@@ -14,16 +14,25 @@
   max-width: 90%;
   width: 1200px;
   margin: auto;
-  height: 500px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.no-coupon__icon {
+  height: 165px;
+  width: 165px;
+  opacity: 0.6;
 }
 
 .no-coupon__text {
   font-size: 1.3rem;
   margin-bottom: 25px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .no-coupon__link {
@@ -34,7 +43,11 @@
   color: rgb(82, 59, 228);
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0.6px 1.2px 0 rgba(0, 0, 0, 0.2);
+  font-size: 15px;
 }
 
 .no-coupon__link:hover {

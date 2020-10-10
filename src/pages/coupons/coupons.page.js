@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import CouponCard from '../../components/coupon-card/coupon-card.component';
 import { getMe } from '../../redux/actions/getme.action.js';
 import { deleteCoupon } from '../../redux/actions/coupon.actions';
+import CouponIcon from '../../assets/icons/cupom.svg';
 import './copons.styles.css';
 
 const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
@@ -35,7 +36,8 @@ const Coupons = ({ getme, dispatchDeleteCoupon, dispatchGetMeAction }) => {
     return (
       <div className="no-coupon__container">
         <div>
-          <p className="no-coupon__text">Você não tem nenhum cupom criado.</p>
+          <img className="no-coupon__icon" src={CouponIcon} alt="" />
+          <p className="no-coupon__text">Desculpe, você não possui cupons.</p>
           <Link className="no-coupon__link" to="/categories">
             Voltar para categorias
           </Link>

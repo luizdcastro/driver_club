@@ -12,7 +12,7 @@
   flex-direction: column;
   background-color: #fff;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 4px;
   margin-bottom: 60px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -20,7 +20,7 @@
 .register-title {
   font-size: 18px;
   font-weight: 600;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
   text-align: center;
 }
 
@@ -88,7 +88,7 @@
   font-size: 13px;
   font-weight: 600;
   margin: 8px;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .register-password:hover {

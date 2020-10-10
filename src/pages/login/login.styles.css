@@ -9,9 +9,8 @@
 
 .login {
   padding: 25px;
-  padding-top: 40px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 4px;
   margin-bottom: 60px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -19,8 +18,10 @@
 .login-title {
   font-size: 18px;
   font-weight: 600;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
   text-align: center;
+  margin-left: 5px;
+  margin-bottom: 25px;
 }
 
 .login-input__group {
@@ -64,7 +65,7 @@
 .login-link {
   font-size: 13px;
   font-weight: 600;
-  color: #212240;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .login-link:hover {

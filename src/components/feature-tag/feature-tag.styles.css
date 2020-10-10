@@ -1,0 +1,15 @@
+.feature-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 60px;
+  height: 16px;
+  background-color: rgb(255, 255, 255);
+}
+
+.feature-tag__text {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgb(82, 59, 228);
+}

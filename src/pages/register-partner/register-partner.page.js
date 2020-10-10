@@ -10,18 +10,26 @@ import CustomButton from '../../components/custom-button/custom-button.component
 import IconOne from '../../assets/icons/space.svg';
 import IconTwo from '../../assets/icons/taxi.svg';
 import IconThree from '../../assets/icons/report.svg';
+import PersonIcon from '@material-ui/icons/Person';
+import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
+import PhoneIcon from '@material-ui/icons/Phone';
 import './register-partner.styles.css';
 
 const RegisterPartner = ({ dispatchRegisterAction, dispatchGetme }) => {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [serverError, setServerError] = useState('');
+  const name = `${firstName} ${lastName}`;
   const isPartner = true;
 
   useEffect(() => dispatchGetme, [dispatchGetme]);
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   const handleOnSubmmit = (event) => {
     event.preventDefault();
@@ -57,41 +65,66 @@ const RegisterPartner = ({ dispatchRegisterAction, dispatchGetme }) => {
         <div className="register-partner__form">
           <h2>Cadastre seu negócio grátis</h2>
           <form>
-            <FormInput
-              type="name"
-              name="name"
-              placeholder="Nome"
-              value={name}
-              handleChange={(e) => setName(e.target.value)}
-            />
-            <FormInput
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={email}
-              handleChange={(e) => setEmail(e.target.value)}
-            />
-            <FormInput
-              type="phone"
-              name="phone"
-              placeholder="Telefone"
-              value={phone}
-              handleChange={(e) => setPhone(e.target.value)}
-            />
-            <FormInput
-              type="password"
-              name="password"
-              placeholder="Senha"
-              value={password}
-              handleChange={(e) => setPassword(e.target.value)}
-            />
-            <FormInput
-              type="password"
-              name="passwordConfirm"
-              placeholder="Confirmação de Senha"
-              value={passwordConfirm}
-              handleChange={(e) => setPasswordConfirm(e.target.value)}
-            />
+            <div className="register-partner-input__group">
+              <FormInput
+                id="registerpartner-input__firstname"
+                type="name"
+                name="name"
+                placeholder="Nome"
+                value={firstName}
+                handleChange={(e) => setFirstName(e.target.value)}
+              />
+              <FormInput
+                id="register-partner-input__lastname"
+                type="name"
+                name="name"
+                placeholder="Nome"
+                value={lastName}
+                handleChange={(e) => setLastName(e.target.value)}
+              />
+              <PersonIcon className="register-partner-input__icon-name" />
+            </div>
+            <div className="register-partner-input__group">
+              <FormInput
+                id="register-partner__input"
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={email}
+                handleChange={(e) => setEmail(e.target.value)}
+              />
+              <EmailIcon className="register-partner-input__icon" />
+            </div>
+            <div className="register-partner-input__group">
+              <FormInput
+                id="register-partner__input"
+                type="phone"
+                name="phone"
+                placeholder="Telefone"
+                value={phone}
+                handleChange={(e) => setPhone(e.target.value)}
+              />
+              <PhoneIcon className="register-partner-input__icon" />
+            </div>
+            <div className="register-partner-input__group">
+              <FormInput
+                id="register-partner-input__password"
+                type="password"
+                name="password"
+                placeholder="Senha"
+                value={password}
+                handleChange={(e) => setPassword(e.target.value)}
+              />
+              <FormInput
+                id="register-partner-input__confirm-password"
+                type="password"
+                name="passwordConfirm"
+                placeholder="Confirmar Senha"
+                value={passwordConfirm}
+                handleChange={(e) => setPasswordConfirm(e.target.value)}
+              />
+              <LockIcon className="register-partner-input__icon" />
+            </div>
             <CustomButton name="Cadastrar" onClick={handleOnSubmmit} />
             {serverError ? (
               <p className="register-error">{serverError}</p>

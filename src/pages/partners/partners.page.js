@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { fetchPartnersByCategory } from '../../redux/actions/partner.actions';
 import SearchBar from '../../components/search/search.component';
 import PartnerCard from '../../components/partner-card/partner-card.component';
+import PartnerIcon from '../../assets/icons/partner.svg';
 import './partners.styles.css';
 
 const Partners = ({ partner, dispatchGetPartners }) => {
@@ -35,6 +36,7 @@ const Partners = ({ partner, dispatchGetPartners }) => {
     return (
       <div className="no-partner__container">
         <div>
+          <img className="no-partner__icon" src={PartnerIcon} alt="" />
           <p className="no-partner__text">Nenhum estabelecimento encontrado.</p>
           <Link className="no-partner__link" to="/categories">
             Voltar para categorias
