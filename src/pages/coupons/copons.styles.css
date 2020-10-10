@@ -3,7 +3,6 @@
   max-width: 90%;
   width: 1200px;
   margin: auto;
-  color: rgba(0, 0, 0, 0.7);
 }
 .coupon-page__title {
   font-size: 21px;
@@ -23,8 +22,8 @@
 }
 
 .no-coupon__icon {
-  height: 165px;
-  width: 165px;
+  height: 148px;
+  width: 148px;
   opacity: 0.6;
 }
 
@@ -32,7 +31,6 @@
   font-size: 1.3rem;
   margin-bottom: 25px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.7);
 }
 
 .no-coupon__link {

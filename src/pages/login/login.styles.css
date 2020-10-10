@@ -18,7 +18,7 @@
 .login-title {
   font-size: 18px;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.7);
+
   text-align: center;
   margin-left: 5px;
   margin-bottom: 25px;
@@ -65,7 +65,6 @@
 .login-link {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.7);
 }
 
 .login-link:hover {
