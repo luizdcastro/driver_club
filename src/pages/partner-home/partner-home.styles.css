@@ -3,7 +3,6 @@
   max-width: 90%;
   height: auto;
   margin: auto;
-
   padding-bottom: 8%;
 }
 
@@ -30,10 +29,12 @@
   transition: 300ms;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+
 }
 
 .partner-home__card:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .partner-home__card:hover {
@@ -54,6 +55,7 @@
 
 .partner-home__card-subtitle {
   font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .partner-home__card-icon {

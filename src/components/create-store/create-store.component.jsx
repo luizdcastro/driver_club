@@ -80,10 +80,7 @@ const CreateStoreComponent = ({
   const modalCreated = () => {
     return (
       <div className="modal-partner__created">
-        <div className="modal-partner__content">
-          <h3 className="modal-partner__title">
-            Estabelecimento criado com sucesso!
-          </h3>
+        <div className="modal-partner__content">       
           <Link
             className="modal-partner__button"
             to="/partner-stores"
@@ -108,9 +105,9 @@ const CreateStoreComponent = ({
       {modal && modalCreated()}
       <form className="create-partner__form" onSubmit={handleOnSubmmit}>
         <h2 className="create-partner__title">
-          Adicionar novo estabelecimento
+          Preencha as informações do seu negócio
         </h2>
-        <label className="create-partner__label">Nome do negócio</label>
+        <label className="create-partner__label">Nome do estabelecimento</label>
         <FormInput
           id="create-partner__input-form"
           type="text"

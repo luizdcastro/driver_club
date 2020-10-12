@@ -31,7 +31,7 @@ const CounponCard = ({
             />
             <QRCode
               className="modal-coupon__qrcode"
-              value={'http://picturesofpeoplescanningqrcodes.tumblr.com/'}
+              value={'https://rocketcab.herokuapp.com/'}
               size={128}
               bgColor={'#ffffff'}
               fgColor={'#000000'}

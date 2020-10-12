@@ -15,7 +15,6 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import CloseIcon from '@material-ui/icons/Close';
 import DevicesIcon from '@material-ui/icons/Devices';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import AddIcon from '@material-ui/icons/Add';
 import './header.styles.css';
 
 const Header = ({ isLoggedIn, onLogout, isPartner }) => {
@@ -180,10 +179,6 @@ const Header = ({ isLoggedIn, onLogout, isPartner }) => {
           </React.Fragment>
         ) : isLoggedIn & isPartner ? (
           <React.Fragment>
-            <NavItem
-              name={<AddIcon style={{ fontSize: 20 }} />}
-              to="/account"
-            />
             <NavItemMenuPartner name={<MenuIcon style={{ fontSize: 20 }} />} />
           </React.Fragment>
         ) : (

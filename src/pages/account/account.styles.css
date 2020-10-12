@@ -20,8 +20,45 @@
 
 .account-data__subtitle {
   font-size: 1.1rem;
-
   margin-left: 14px;
+}
+
+.account-input__group {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+#account-input {
+  padding-left: 42px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#account-input__password {
+  display: block;
+  padding-left: 42px;
+  width: 156px;
+  margin-right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+#account-input__confirm-password {
+  display: block;
+  padding-left: 10px;
+  width: 156px;
+  margin-left: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.account-input__icon {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  margin-right: 10px;
+  padding-right: 10px;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .account-data__pessoal {

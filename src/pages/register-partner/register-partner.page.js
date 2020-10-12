@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import MaskedInput from 'react-text-mask';
 
 import { getMe } from '../../redux/actions/getme.action';
 import { registerUser } from '../../redux/actions/auth.actions';
@@ -96,14 +97,31 @@ const RegisterPartner = ({ dispatchRegisterAction, dispatchGetme }) => {
               <EmailIcon className="register-partner-input__icon" />
             </div>
             <div className="register-partner-input__group">
-              <FormInput
+             <MaskedInput
                 id="register-partner__input"
-                type="phone"
-                name="phone"
-                placeholder="Telefone"
-                value={phone}
-                handleChange={(e) => setPhone(e.target.value)}
-              />
+          className="form-input"
+          mask={[
+            '(',
+            /[1-9]/,
+            /\d/,
+            ')',
+            ' ',
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+            '-',
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+          ]}
+          placeholderChar={'\u2000'}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+             
               <PhoneIcon className="register-partner-input__icon" />
             </div>
             <div className="register-partner-input__group">

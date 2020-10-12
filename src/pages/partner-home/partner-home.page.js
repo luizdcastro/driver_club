@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 
 import { getMe } from '../../redux/actions/getme.action';
 import { selectGetMeData } from '../../redux/reducers/getme/getme.selector';
-import IconRental from '../../assets/icons/bicycle-parking.svg';
+import IconDashboard from '../../assets/icons/report.svg';
+import IconRestaurant from '../../assets/icons/groceries.svg';
+import IconDiscont from '../../assets/icons/discont.svg';
+import IconSearchParner from '../../assets/icons/search-partner.svg'
+
+
 
 import './partner-home.styles.css';
 
@@ -34,7 +39,7 @@ const PartnerHome = ({ getme, dispatchGetMeAction }) => {
                 passo é adicionar as informações do seu estabelecimento
               </p>
             </div>
-            <img className="partner-home__card-icon" src={IconRental} alt="" />
+            <img className="partner-home__card-icon" src={IconRestaurant} alt="" />
           </Link>
           <Link className="partner-home__card " to="/create-discont">
             <div className="partner-home__text-box">
@@ -44,7 +49,7 @@ const PartnerHome = ({ getme, dispatchGetMeAction }) => {
                 em dias e horários de menor movimento
               </p>
             </div>
-            <img className="partner-home__card-icon" src={IconRental} alt="" />
+            <img className="partner-home__card-icon" src={IconDiscont} alt="" />
           </Link>
           <Link className="partner-home__card " to="/partner-stores">
             <div className="partner-home__text-box">
@@ -54,17 +59,17 @@ const PartnerHome = ({ getme, dispatchGetMeAction }) => {
                 do seu negócio sempre atualizadas
               </p>
             </div>
-            <img className="partner-home__card-icon" src={IconRental} alt="" />
+            <img className="partner-home__card-icon" src={IconSearchParner} alt="" />
           </Link>
           <Link className="partner-home__card ">
             <div className="partner-home__text-box">
-              <p className="partner-home__card-title ">Meus descontos</p>
+              <p className="partner-home__card-title ">Dashboard</p>
               <p className="partner-home__card-subtitle">
-                Veja os cupons criados pelo seu estabelecimento e edite as
-                informações de acordo com suas regras de utilização
+                Acompanhe as metricas de avaliações, favoritos e descontos oferecidos pelo 
+                seu estabelecimento.
               </p>
             </div>
-            <img className="partner-home__card-icon" src={IconRental} alt="" />
+            <img className="partner-home__card-icon" src={IconDashboard} alt="" />
           </Link>
         </div>
       </div>
