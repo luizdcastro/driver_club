@@ -28,7 +28,7 @@ const PartnerStores = ({ dispatchGetPartners, user, partner }) => {
             filteredPartners.map((item) => (
               <React.Fragment key={item._id}>
                 <PartnerCard
-                  to={`/discont-details/${item._id}`}
+                  to={`/partner-edit/${item._id}`}
                   name={item.name}
                   category={item.category}
                   address={item.address}

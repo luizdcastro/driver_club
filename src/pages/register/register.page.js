@@ -15,6 +15,7 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [serverError, setServerError] = useState('');
@@ -27,6 +28,7 @@ const Register = ({ dispatchRegisterAction, dispatchGetme }) => {
     dispatchRegisterAction(
       name,
       email,
+      phone,
       password,
       passwordConfirm,
       () => console.log('Account created'),
@@ -108,6 +110,7 @@ const mapDispathToProps = (dispatch) => ({
   dispatchRegisterAction: (
     name,
     email,
+    phone,
     password,
     passwordConfirm,
     onSuccess,
@@ -115,7 +118,7 @@ const mapDispathToProps = (dispatch) => ({
   ) =>
     dispatch(
       registerUser(
-        { name, email, password, passwordConfirm },
+        { name, email, phone, password, passwordConfirm },
         onSuccess,
         onError
       )

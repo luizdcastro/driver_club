@@ -1,142 +1,142 @@
 .partner-discont__container {
-  display: flex;
-  position: relative;
-  min-height: 100px;
-  background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px 10px 0 0;
+	display: flex;
+	position: relative;
+	min-height: 100px;
+	background-color: #fff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 10px 10px 0 0;
 }
 
 .partner-discont__title {
-  position: absolute;
-  font-size: 16px;
-  font-weight: 600;
-  left: 2%;
+	position: absolute;
+	font-size: 16px;
+	font-weight: 600;
+	left: 2%;
 }
 
 .partner-discont__percentage {
-  position: absolute;
-  font-size: 17px;
-  font-weight: 700;
-  left: 2%;
-  top: 35%;
-  margin-bottom: 150px;
+	position: absolute;
+	font-size: 17px;
+	font-weight: 700;
+	left: 2%;
+	top: 35%;
+	margin-bottom: 150px;
 }
 
 .partner-discont__details {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  right: 50%;
-  top: 55%;
-  cursor: pointer;
-  border-radius: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	right: 50%;
+	top: 55%;
+	cursor: pointer;
+	border-radius: 100%;
 }
 
 .partner-discont__button-container {
-  position: absolute;
-  right: 2%;
-  top: 20%;
-  display: flex;
-  flex-direction: column;
+	position: absolute;
+	right: 2%;
+	top: 20%;
+	display: flex;
+	flex-direction: column;
 }
 
 .partner-discont__button__edit {
-  background-color: rgb(82, 59, 228);
-  border: solid 1px rgb(82, 59, 228);
-  color: rgb(255, 255, 255);
-  font-size: 13px;
-  font-weight: 700;
-  transition: 300ms;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  width: 100px;
-  height: 25px;
+	background-color: rgb(82, 59, 228);
+	border: solid 1px rgb(82, 59, 228);
+	color: rgb(255, 255, 255);
+	font-size: 13px;
+	font-weight: 700;
+	transition: 300ms;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100px;
+	height: 25px;
 }
 
 .partner-discont__button__delete {
-  background-color: #f08080;
-  border: solid 1px #f08080;
-  color: rgb(255, 255, 255);
-  font-size: 13px;
-  font-weight: 700;
-  transition: 300ms;
-  border-radius: 3px;
-  width: 100px;
-  height: 25px;
+	background-color: #f08080;
+	border: solid 1px #f08080;
+	color: rgb(255, 255, 255);
+	font-size: 13px;
+	font-weight: 700;
+	transition: 300ms;
+	border-radius: 3px;
+	width: 100px;
+	height: 25px;
 }
 
 .partner-discont__button__edit:focus,
 .partner-discont__button__edit:active {
-  outline: none;
+	outline: none;
 }
 
 .partner-discont__button__edit:hover {
-  cursor: pointer;
-  filter: brightness(1.1);
+	cursor: pointer;
+	filter: brightness(1.1);
 }
 
 .partner-discont__button__delete:focus,
 .partner-discont__button__delete:active {
-  outline: none;
+	outline: none;
 }
 
 .partner-discont__button__delete:hover {
-  cursor: pointer;
-  filter: brightness(1.1);
+	cursor: pointer;
+	filter: brightness(1.1);
 }
 
 #partner-discont__button__disabled {
-  opacity: 0.6;
+	opacity: 0.6;
 }
 #partner-discont__button__disabled:hover {
-  cursor: default;
-  filter: brightness(1);
+	cursor: pointer;
+	filter: brightness(1);
 }
 
 .partner-discont__button__light {
-  position: absolute;
-  height: 45px;
-  right: 1%;
-  top: 27%;
+	position: absolute;
+	height: 45px;
+	right: 1%;
+	top: 27%;
 }
 
 .partner-discont__expanded-details {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: #f8fafb;
-  border: solid 1px #dadce1;
-  border-top: none;
-  word-break: break-all;
-  font-size: 13px;
-  padding-left: 18px;
-  padding-right: 18px;
-  box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: #f8fafb;
+	border: solid 1px #dadce1;
+	border-top: none;
+	word-break: break-all;
+	font-size: 13px;
+	padding-left: 18px;
+	padding-right: 18px;
+	box-sizing: border-box;
 }
 
 .partner-discont__expanded__title {
-  font-size: 14px;
-  margin-bottom: 0;
+	font-size: 14px;
+	margin-bottom: 0;
 }
 
 .partner-discont__expanded__days-box {
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
+	display: flex;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .partner-discont__expanded__days-text {
-  margin-left: 5px;
+	margin-left: 5px;
 }
 
 .partner-discont__expanded__time {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .partner-discont__expanded__regras-title {
-  font-size: 14px;
-  margin-top: 0;
-  margin-bottom: 0;
+	font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 0;
 }

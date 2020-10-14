@@ -12,7 +12,7 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import PersonIcon from "@material-ui/icons/Person";
 import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
-import LockOpenIcon from '@material-ui/icons/LockOpen';
+import LockOpenIcon from "@material-ui/icons/LockOpen";
 import PhoneIcon from "@material-ui/icons/Phone";
 import "./account.styles.css";
 
@@ -40,6 +40,7 @@ const Account = ({
 		dispatchUpdateUser(
 			name,
 			email,
+			phone,
 			() => {
 				setDataUpdated(true);
 				setServerErrorData("");
@@ -126,9 +127,7 @@ const Account = ({
 							<p className="account-data__error">{serverErrorData}</p>
 						) : null}
 						{dataUpdated ? (
-							<p className="account-data__success">
-								Dados alterados com sucesso!
-							</p>
+							<p className="account-data__success">Dados alterados com sucesso!</p>
 						) : null}
 					</form>
 				</div>
@@ -153,7 +152,7 @@ const Account = ({
 								placeholder="Nova senha"
 								handleChange={(e) => setPassword(e.target.value)}
 							/>
-              	<FormInput
+							<FormInput
 								id="account-input__confirm-password"
 								type="password"
 								name="password"
@@ -161,15 +160,13 @@ const Account = ({
 								handleChange={(e) => setPasswordConfirm(e.target.value)}
 							/>
 							<LockIcon className="account-input__icon " />
-						</div>					
+						</div>
 						<CustomButton name="Salvar Senha" onClick={handleUpdatePassword} />
 						{serverErrorPassword ? (
 							<p className="account-data__error">{serverErrorPassword}</p>
 						) : null}
 						{passwordUpdated ? (
-							<p className="account-data__success">
-								Senha atualizada com sucesso!
-							</p>
+							<p className="account-data__success">Senha atualizada com sucesso!</p>
 						) : null}
 					</form>
 				</div>
@@ -183,8 +180,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	dispatchUpdateUser: (name, email, onSuccess, onError) =>
-		dispatch(updateUser({ name, email }, onSuccess, onError)),
+	dispatchUpdateUser: (name, email, phone, onSuccess, onError) =>
+		dispatch(updateUser({ name, email, phone }, onSuccess, onError)),
 	dispatchUpdatePassword: (
 		passwordCurrent,
 		password,

@@ -25,7 +25,7 @@ const ForgotPassword = ({ dispatchForgotPassword }) => {
   return (
     <div className="forgot-password__container">
       <div>
-        <form className="forgot-password">
+        <form className="forgot-password" onSubmit={handleOnSubmmit} >
           <h2 className="forgot-password__title">Recuperar Senha</h2>
           {!linkSent ? (
             <div>

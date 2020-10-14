@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import MaskedInput from "react-text-mask";
 import CloseIcon from "@material-ui/icons/Close";
 
 import {
-	createPartner,
-	getPartnerByUser,
+	editPartner,
+	fetchPartnerDetails,
 } from "../../redux/actions/partner.actions";
-import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import UploadImage from "../upload-image/upload-image.component";
-import "./create-store.component.styles.css";
-const CreateStoreComponent = ({
-	user,
+import FormInput from "../../components/form-input/form-input.component";
+import "./edit-store.styles.css";
+
+const EditStore = ({
+	partner,
 	uploadImage,
-	dispatchCreatePartner,
-	dispatchGetPartnerByUser,
+	setModalEditPartner,
+	dispatchPartnerDetails,
+	dispatchEditPartner,
 }) => {
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
@@ -30,10 +32,8 @@ const CreateStoreComponent = ({
 	const [open_at, setOpen_at] = useState("");
 	const [close_at, setClose_at] = useState("");
 	const [paymentMethods, setPaymenMethods] = useState([]);
-	const [created, setCreated] = useState("");
-	const [modal, setModal] = useState(false);
+	const [partnerId, setPartnerId] = useState("");
 	const [serverError, setServerError] = useState("");
-	const userId = user.userId;
 	const image = uploadImage.url;
 	const address = {
 		street: street,
@@ -47,10 +47,34 @@ const CreateStoreComponent = ({
 		close_at: close_at,
 	};
 
-	const handleOnSubmmit = (event) => {
+	const partnerDetail = partner;
+
+	useMemo(() => {
+		if (partnerDetail[0]) {
+			setPartnerId(partnerDetail[0].id);
+			setName(partnerDetail[0].name);
+			setPhone(partnerDetail[0].phone);
+			setWebsite(partnerDetail[0].website);
+			setCategory(partnerDetail[0].category);
+			setOpen_at(partnerDetail[0].hours.open_at);
+			setClose_at(partnerDetail[0].hours.close_at);
+			setPaymenMethods(partnerDetail[0].payment_methods);
+			setStreet(partnerDetail[0].address.street);
+			setNumber(partnerDetail[0].address.number);
+			setCep(partnerDetail[0].address.cep);
+			setCity(partnerDetail[0].address.city);
+			setState(partnerDetail[0].address.state);
+		}
+	}, [partnerDetail]);
+
+	useEffect(() => dispatchPartnerDetails(partnerId), [
+		dispatchPartnerDetails,
+		partnerId,
+	]);
+
+	const handleEditPartner = (event) => {
 		event.preventDefault();
-		dispatchCreatePartner(
-			user.userId,
+		dispatchEditPartner(
 			name,
 			category,
 			address,
@@ -59,42 +83,12 @@ const CreateStoreComponent = ({
 			hours,
 			paymentMethods,
 			image,
+			partnerId,
 			() => {
-				setCreated(true);
-				setModal(true);
+				setModalEditPartner(false);
+				dispatchPartnerDetails(partnerId);
 			},
 			(message) => setServerError(message)
-		);
-		if (created) {
-			dispatchGetPartnerByUser(userId);
-		}
-		setCreated("");
-	};
-
-	useEffect(() => {
-		dispatchGetPartnerByUser(userId);
-	}, [dispatchGetPartnerByUser, userId, created]);
-
-	const modalCreated = () => {
-		return (
-			<div className="modal-partner__created">
-				<div className="modal-partner__content">
-					<Link
-						className="modal-partner__button"
-						to="/partner-stores"
-						onClick={() => setCreated(false)}
-					>
-						Visualizar
-					</Link>
-					<Link
-						className="modal-partner__button"
-						onClick={() => setCreated(false)}
-						to="/create-store"
-					>
-						Adicionar novo
-					</Link>
-				</div>
-			</div>
 		);
 	};
 
@@ -112,9 +106,20 @@ const CreateStoreComponent = ({
 	};
 
 	return (
-		<div className="create-partner__container">
-			{modal && modalCreated()}
-			<form className="create-partner__form" onSubmit={handleOnSubmmit}>
+		<div className="edit-store__modal-container">
+			<CloseIcon
+				className="edit-store__modal-icon"
+				style={{ fontSize: 30 }}
+				onClick={() => {
+					dispatchPartnerDetails(partnerId);
+					setModalEditPartner(false);
+				}}
+			/>
+			<form
+				id="edit-partner__form"
+				className="create-partner__form"
+				onSubmit={handleEditPartner}
+			>
 				<h2 className="create-partner__title">
 					Preencha as informações do seu negócio
 				</h2>
@@ -169,7 +174,9 @@ const CreateStoreComponent = ({
 					onChange={(e) => setCategory(e.target.value)}
 				>
 					<option value="" disabled selected hidden>
-						Selecione uma categoria
+						{category
+							? category.charAt(0).toUpperCase() + category.slice(1)
+							: "Selecione uma categoria"}
 					</option>
 					<option value="postos">Postos</option>
 					<option value="locadoras">Locadoras</option>
@@ -202,7 +209,7 @@ const CreateStoreComponent = ({
 						onChange={(e) => setClose_at(e.target.value)}
 					/>
 				</div>
-				<label className="create-partner__label">Métodos de pagamento</label>
+				<label>Métodos de pagamento</label>
 				<select
 					className="create-partner__payment"
 					onChange={(e) => {
@@ -244,8 +251,26 @@ const CreateStoreComponent = ({
 						: null}
 				</div>
 				<label className="create-partner__label">Imagem do estabelecimento</label>
-				<div className="create-partner__image">
-					<UploadImage imageUrl />
+				<div className="edit-partner__image-box">
+					<div className="create-partner__image">
+						<UploadImage imageUrl />
+						<div className="edit-partner__image-preview ">
+							<img
+								src={uploadImage.url}
+								style={{
+									width: 36,
+									height: 36,
+									borderRadius: 5,
+									backgroundImage: `url(${uploadImage.url})`,
+									backgroundRepeat: "no-repeat",
+									backgroundSize: "cover",
+									backgroundPosition: "50% 50%",
+									marginRight: 10,
+								}}
+								alt=""
+							/>
+						</div>
+					</div>
 				</div>
 				<label className="create-partner__label">Endereço comercial</label>
 				<div className="create-partner__addrees-group ">
@@ -291,7 +316,7 @@ const CreateStoreComponent = ({
 					onChange={(e) => setState(e.target.value)}
 				>
 					<option value="" disabled selected hidden>
-						Estado
+						{state ? state.charAt(0).toUpperCase() + state.slice(1) : "Estado"}
 					</option>
 					<option value="Acre">Acre</option>
 					<option value="Alagoas">Alagoas </option>
@@ -323,8 +348,8 @@ const CreateStoreComponent = ({
 				</select>
 				<CustomButton
 					id="create-partner__button"
-					name="Cadastrar"
-					onClick={() => handleOnSubmmit}
+					name="Atualizar"
+					onClick={() => handleEditPartner}
 				/>
 				{serverError ? <p className="login-error">{serverError}</p> : null}
 			</form>
@@ -333,8 +358,9 @@ const CreateStoreComponent = ({
 };
 
 const mapDispatchToProps = (dispatch) => ({
-	dispatchCreatePartner: (
-		user,
+	dispatchPartnerDetails: (partnerId) =>
+		dispatch(fetchPartnerDetails(partnerId)),
+	dispatchEditPartner: (
 		name,
 		category,
 		address,
@@ -343,13 +369,13 @@ const mapDispatchToProps = (dispatch) => ({
 		hours,
 		payment_methods,
 		image,
+		partnerId,
 		onSuccess,
 		onError
 	) =>
 		dispatch(
-			createPartner(
+			editPartner(
 				{
-					user,
 					name,
 					category,
 					address,
@@ -359,19 +385,16 @@ const mapDispatchToProps = (dispatch) => ({
 					payment_methods,
 					image,
 				},
+				partnerId,
 				onSuccess,
 				onError
 			)
 		),
-	dispatchGetPartnerByUser: (userId) => dispatch(getPartnerByUser(userId)),
 });
 
 const mapStateToProps = (state) => ({
-	user: state.user,
+	partner: state.partner,
 	uploadImage: state.uploadImage,
 });
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(CreateStoreComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(EditStore);

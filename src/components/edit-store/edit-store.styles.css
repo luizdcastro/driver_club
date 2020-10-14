@@ -1,0 +1,32 @@
+.edit-store__modal-container {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	text-align: left;
+	background-color: #fff;
+	width: 700px;
+	max-width: 100%;
+}
+
+.edit-store__modal-icon {
+	position: absolute;
+	top: 2%;
+	right: 4%;
+	cursor: pointer;
+}
+
+#edit-partner__form {
+	padding-top: 60px;
+}
+
+.edit-partner__image-box {
+	display: flex;
+	position: relative;
+}
+
+.edit-partner__image-preview {
+	position: absolute;
+	top: 0;
+	margin-top: 24px;
+	margin-left: 11px;
+}

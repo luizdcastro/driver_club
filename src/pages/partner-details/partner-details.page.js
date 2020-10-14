@@ -90,7 +90,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
             </span>
           </p>
           <p className="expanded-site">
-            Site:{' '}
+            Website:{' '}
             <span>
               <a
                 id="links"
@@ -125,7 +125,7 @@ const PartnerDetails = ({ partner, dispatchPartnerDetails }) => {
               </React.Fragment>
             ))
           : null}
-      </div>
+      </div>      
     </div>
   );
 };

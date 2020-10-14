@@ -22,6 +22,7 @@ import DiscontDetails from '../pages/discont-details/discont-details.page';
 import RegisterPartner from '../pages/register-partner/register-partner.page';
 import PartnerHome from '../pages/partner-home/partner-home.page';
 import PartnerStores from '../pages/partner-stores/partner-stores.page';
+import PartnerEdit from '../pages/partner-edit/partner-edit.page'
 
 import { logoutUser } from '../redux/actions/auth.actions';
 
@@ -71,6 +72,7 @@ const App = ({ user, dispatchLogoutAction }) => {
             <Route exact path="/account" component={Account} />
             <Route exact path="/create-store" component={CreateStore} />
             <Route exact path="/create-discont" component={CreateDiscont} />
+            <Route exact path="/partner-edit/:partnerId" component={PartnerEdit} />
             <Route
               exact
               path="/discont-details/:partnerId"
