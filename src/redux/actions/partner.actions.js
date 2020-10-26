@@ -33,6 +33,17 @@ export const getPartnerByUser = (userId) => ({
 	},
 });
 
+export const deletePartner = (partnerId, onSuccess, onError) => ({
+	type: constants.API,
+	payload: {
+		method: "DELETE",
+		url: `/partners/${partnerId}`,
+		success: (response) => deletedPartner(response),
+		postProccessSuccess: onSuccess,
+		postProccessError: onError,
+	},
+});
+
 export const fetchPartnersByCategory = (categoryId) => ({
 	type: constants.API,
 	payload: {
@@ -58,6 +69,11 @@ const createdPartner = (data) => ({
 
 const editedPartner = (data) => ({
 	type: constants.EDIT_PARTNER,
+	payload: data,
+});
+
+const deletedPartner = (data) => ({
+	type: constants.DELETE_PARTNER,
 	payload: data,
 });
 

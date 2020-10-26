@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-import { getMe } from "../../redux/actions/getme.action.js";
-import { fetchPartnerDetails } from "../../redux/actions/partner.actions";
+import {
+	fetchPartnerDetails,
+	deletePartner,
+} from "../../redux/actions/partner.actions";
 import EditStore from "../../components/edit-store/edit-store.component";
 import PartnerCard from "../../components/partner-card/partner-card.component";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -12,14 +15,18 @@ import "./partner-edit.styles.css";
 const PartnerEdit = ({
 	partner,
 	dispatchPartnerDetails,
-	dispatchGetMeAction,
+	dispatchDeletePartner,
 }) => {
 	const [partnerDetail, setPartnerDetail] = useState("");
 	const [details, setDetails] = useState([]);
 	const [modalEditPartner, setModalEditPartner] = useState(false);
 	const { partnerId } = useParams();
 
-	useEffect(() => dispatchGetMeAction, [dispatchGetMeAction]);
+	let history = useHistory();
+
+	const handleClick = () => {
+		history.push("/partner-stores");
+	};
 
 	useEffect(() => dispatchPartnerDetails(partnerId), [
 		partnerId,
@@ -50,6 +57,18 @@ const PartnerEdit = ({
 		);
 	};
 
+	const handleDeleteStore = (event) => {
+		event.preventDefault();
+		dispatchDeletePartner(
+			partnerId,
+			() => {
+				dispatchPartnerDetails(partnerId);
+			},
+			() => console.log("Erro ao deletar disconto")
+		);
+		handleClick();
+	};
+
 	return (
 		<div className="partner-edit__container">
 			<div className="partner-details__hero">
@@ -62,7 +81,10 @@ const PartnerEdit = ({
 					>
 						Editar
 					</button>
-					<button className="partner-edit__button__delete" onClick={() => {}}>
+					<button
+						className="partner-edit__button__delete"
+						onClick={handleDeleteStore}
+					>
 						Deletar
 					</button>
 				</div>
@@ -147,8 +169,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	dispatchGetMeAction: () => dispatch(getMe()),
-
+	dispatchDeletePartner: (couponId, onSucess, onError) =>
+		dispatch(deletePartner(couponId, onSucess, onError)),
 	dispatchPartnerDetails: (partnerId) =>
 		dispatch(fetchPartnerDetails(partnerId)),
 });

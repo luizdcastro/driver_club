@@ -8,6 +8,8 @@ export default function partnerReducer(state = [], action) {
 			return action.payload;
 		case constants.CREATE_PARTNER:
 			return action.payload;
+		case constants.DELETE_PARTNER:
+			return action.payload;
 		case constants.EDIT_PARTNER:
 			return action.payload;
 		case constants.GET_PARTNER_BY_USER:
